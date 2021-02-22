@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "lerna run start --parallel",
+    "gd": "lerna bootstrap && cd back && npm run graphql-deploy",
     "gp": "git add . && git commit -m 'push it' && git push"
   },
   "devDependencies": {

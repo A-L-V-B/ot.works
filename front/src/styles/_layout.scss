@@ -1,0 +1,13 @@
+html,body{
+
+}
+
+main{
+    padding: $headerHeight $margeS;
+}
+
+.xs-only{display: none}
+@media all and (max-width:$s){
+    .xs-only{display: block}
+    
+}

@@ -1,0 +1,41 @@
+{
+  "name": "ot.works.front",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Ghazi Ahmed <hello@ahmedghazi.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "clean": "gatsby clean",
+    "start-c": "npm run clean && gatsby develop",
+    "start": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.32.4",
+    "gatsby-image": "^2.11.0",
+    "gatsby-plugin-favicon": "^3.1.6",
+    "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-sass": "^3.2.0",
+    "gatsby-plugin-sharp": "^2.14.1",
+    "gatsby-plugin-sitemap": "^2.12.0",
+    "gatsby-source-sanity": "^6.0.5",
+    "gatsby-transformer-remark": "^2.16.0",
+    "gatsby-transformer-sharp": "^2.12.0",
+    "node-sass": "^5.0.0",
+    "pubsub-js": "^1.9.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "throttle-debounce": "^3.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}
