@@ -2,38 +2,59 @@ export default {
   name: "project",
   type: "document",
   title: "Project",
-  // initialValue: {
-  //   seo: {
-  //     description: "test"
-  //   }
-  // },
   fields: [
+    {
+      name: "name",
+      type: "string",
+      title: "Name",
+      description: "Le nom du projet dans le back uniquement",
+    },
     {
       name: "title",
       type: "string",
       title: "Title",
+      description: "Description de la mission et du client",
+      validation: Rule => Rule.max(80).warning('Keep your titles short')
     },
     {
       name: "slug",
       type: "slug",
       title: "Slug",
-      description:
-        "Some frontends will require a slug to be set to be able to show the post",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
+      description: "Au plus court, sans connecteurs logiques",
     },
     {
-      name: "seo",
-      title: "SEO",
-      type: "seo",
-    },
-
-    {
-      name: "date",
+      name: "client",
       type: "string",
-      title: "Date",
+      title: "Client",
+      description: "Si le projet est perso, le nom du projet",
+    },
+    {
+      title: 'Category', 
+      name: 'category',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        list: [
+          {value: 'work', title: 'Work'},
+          {value: 'personal', title: 'Perso'},
+          {value: 'pro-bono', title: 'Pro bono'},
+          ],
+        },
+    }, 
+    {
+      name: "dateDelivered",
+      type: "date",
+      title: "Date delivered",
+    },
+    {
+      name: "projectImage",
+      type: "image",
+      title: "Project image",
+    },
+    {
+      name: "projectUrl",
+      type: "url",
+      title: "Live project URL",
     },
   ],
 };
