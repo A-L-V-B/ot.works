@@ -1,7 +1,10 @@
+import i18n from "../i18n";
+
 export default {
   name: "project",
   type: "document",
   title: "Project",
+  i18n: i18n,
   fields: [
     {
       name: "name",
