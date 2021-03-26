@@ -9,16 +9,10 @@ export default {
         title: "My Netlify deploys",
         sites: [
           {
-            title: "Sanity Studio",
-            apiId: "xxxxx-yyyy-zzzz-xxxx-yyyyyyyy",
-            buildHookId: "xxxyyyxxxyyyyxxxyyy",
-            name: "sanity-gatsby-blog-20-studio",
-          },
-          {
             title: "Website",
-            apiId: "yyyyy-xxxxx-zzzz-xxxx-yyyyyyyy",
-            buildHookId: "yyyyxxxxxyyyxxdxxx",
-            name: "sanity-gatsby-blog-20-web",
+            apiId: "cdcb222b-c224-4b7f-a3b0-96ef296d9816",
+            buildHookId: "6033ed427a9d5611d2c0bc8d",
+            name: "otworks",
           },
         ],
       },

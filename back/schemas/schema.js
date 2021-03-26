@@ -6,10 +6,12 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 import settings from "./documents/settings";
 import lang from "./documents/lang";
-import home from "./documents/home";
 import project from "./documents/project";
 import page from "./documents/page";
 import pageModulaire from "./documents/pageModulaire";
+import header from "./documents/header";
+import footer from "./documents/footer";
+import menu from "./documents/menu";
 
 import seo from "./objects/seo";
 import localeString from "./objects/localeString";
@@ -18,12 +20,15 @@ import portableTextFull from "./objects/portableTextFull";
 import imageFeatured from "./objects/imageFeatured";
 import images from "./objects/images";
 import titleTexte from "./objects/titleTexte";
+import internalLink from "./objects/internalLink";
 import texteUI from "./modules/texteUI";
 import textesUI from "./modules/textesUI";
 import imageUI from "./modules/imageUI";
 import imagesUI from "./modules/imagesUI";
 import texteImagesUI from "./modules/texteImagesUI";
 import textesImagesUI from "./modules/textesImagesUI";
+import projectListUi from "./modules/projectListUi";
+
 import pageModules from "./modules/pageModules";
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -36,7 +41,9 @@ export default createSchema({
     /* Your types here! */
     lang,
     settings,
-    home,
+    menu,
+    header,
+    footer,
     project,
     page,
     pageModulaire,
@@ -47,12 +54,14 @@ export default createSchema({
     imageFeatured,
     images,
     titleTexte,
+    internalLink,
     texteUI,
     textesUI,
     imageUI,
     imagesUI,
     texteImagesUI,
     textesImagesUI,
-    pageModules,
-  ]),
+    projectListUi,
+    pageModules
+  ])
 });

@@ -7,13 +7,14 @@ export default {
   i18n: i18n,
   fields: [
     {
-      name: "footerNote",
-      type: "object",
-      title: "Note footer",
+      name: "title",
+      title: "Site Title",
+      type: "string"
     },
     {
-      name: "footerLastLine",
-      type: "string",
-      title: "Pied de page",
-    },
-  }
+      name: "about",
+      type: "portableText",
+      title: "About"
+    }
+  ]
+};
