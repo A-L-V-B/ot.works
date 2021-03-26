@@ -30,6 +30,7 @@
     "prop-types": "^15.6",
     "react": "^16.2",
     "react-dom": "^16.2",
+    "react-icons": "^3.11.0",
     "sanity-plugin-dark-mode": "^0.0.32",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-intl-input": "^4.0.0",
