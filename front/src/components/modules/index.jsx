@@ -1,8 +1,6 @@
 import React from "react"
 import Texte from "./Texte"
-// import ImageModule from "./ImageModule"
 import ProjectListe from "./ProjectListe"
-// import TexteNote from "./TexteNote"
 import TexteListe from "./TexteListe"
 
 const Modules = ({ input }) => {

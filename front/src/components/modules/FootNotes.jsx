@@ -1,7 +1,7 @@
 import React from "react"
 import PortableText from "@sanity/block-content-to-react"
 
-function Footnotes({ blocks }) {
+function FootNotes({ blocks }) {
   const notes = blocks
     // filter out everything that's not a text block
     .filter(({ _type }) => _type === "block")
@@ -23,4 +23,4 @@ function Footnotes({ blocks }) {
   )
 }
 
-export default Footnotes
+export default FootNotes

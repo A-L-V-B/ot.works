@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PortableText from "@sanity/block-content-to-react"
-import Footnotes from "./Footnotes"
+import FootNotes from "./FootNotes"
 
 // const initialNote = []
 const Texte = ({ input }) => {
@@ -43,7 +43,7 @@ const Texte = ({ input }) => {
             serializers={serializers}
             className="mbL"
           />
-          <Footnotes blocks={input.text} />
+          <FootNotes blocks={input.text} />
         </div>
       </div>
     </section>
