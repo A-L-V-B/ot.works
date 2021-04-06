@@ -6,15 +6,14 @@
 @import "mixins";
 @import "utils";
 
-
 @import "typography";
 //@import "icons";
 
 @import "layout";
+@import "theme"; //dark-mode
 
 @import "templates/home";
 @import "templates/project";
-
 
 @import "components/header";
 @import "components/footer";
@@ -22,9 +21,15 @@
 // @import "components/card";
 // @import "components/project";
 
+@import "components/modules/all";
+@import "components/modules/footnotes";
+@import "components/modules/texte";
+@import "components/modules/project-liste";
+@import "components/modules/texte-liste";
 
 @import "components/ui/burger";
-@import "components/ui/pace";
+@import "components/ui/dark-mode";
+// @import "components/ui/pace";
 // @import "components/ui/language-switcher";
 // @import "components/ui/forms";
 // @import "components/ui/screensaver";

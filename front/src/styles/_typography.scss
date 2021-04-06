@@ -1,39 +1,45 @@
-
 @font-face {
-	// font-family: 'SuisseIntl-Regular';
-	// src: url('./fonts/SuisseIntl-Regular.woff') format('woff'),
-	// url('./fonts/SuisseIntl-Regular.woff2') format('woff2');
-	// font-weight: normal;
-	// font-style: normal;
-	// //font-display
+  // font-family: 'SuisseIntl-Regular';
+  // src: url('./fonts/SuisseIntl-Regular.woff') format('woff'),
+  // url('./fonts/SuisseIntl-Regular.woff2') format('woff2');
+  // font-weight: normal;
+  // font-style: normal;
+  // //font-display
 }
 
-
-  
 body {
-	color: $color1;
-	font-family: $fontPrimary;
-	font-size: $fontM;
-	//line-height: $fontSLh; 
+  color: $noir-100;
+  font-family: $fontPrimary;
+  font-size: $fontM;
+  line-height: $fontMLh;
 }
 
-.fXS{
-	font-size: $fontXS;
+// .fXS{
+// 	font-size: $fontXS;
+// }
+.fS {
+  font-size: $fontS;
+  line-height: $fontSLh;
 }
-.fS{
-	font-size: $fontS;
-	//line-height: $fontSLh; 
+.fM {
+  font-size: $fontM;
+  line-height: $fontMLh;
 }
-.fM{
-	font-size: $fontM;
-	//line-height: $fontMLh; 
+
+.fSeg {
+  font-family: serif;
 }
 
 /* Headings */
-h1,h2,h3,h4,h5,h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .headline {
-	font-size: $fontM;
-	font-weight: normal;
+  font-size: $fontM;
+  font-weight: normal;
 }
 
 // .small{
@@ -43,93 +49,102 @@ h1,h2,h3,h4,h5,h6,
 
 /* Links */
 //a{text-decoration: none;}
-a,.btn {
-	// color: blue;
-	color: $color1;
-	text-decoration: none;
-	&:focus,
-	&:active,
-	&:hover {
-		//color: $hover;
-	}
+a,
+.btn {
+  // color: blue;
+  // color: $color1;
+  text-decoration: none;
+  &:focus,
+  &:active,
+  &:hover {
+    //color: $hover;
+  }
 }
 
 /* Text elements */
 p {
-	// margin-bottom: 0;
-	line-height: 1.4;
-	// hyphens: auto;
-	&:last-child{margin-bottom: 0}
-	&:empty{display: none}
+  // margin-bottom: 0;
+  line-height: 1.4;
+  // hyphens: auto;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:empty {
+    display: none;
+  }
 }
-.texte{
-	p{text-indent: $margeM}
-	p:first-child{text-indent: 0}
+.texte {
+  p {
+    text-indent: $margeM;
+  }
+  p:first-child {
+    text-indent: 0;
+  }
 }
-
 
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 em {
-	font-style: italic;
+  font-style: italic;
 }
 
-button{background: transparent}
+button {
+  background: transparent;
+}
 
 hr {
-	background-color: #000;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+  background-color: #000;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
 }
-
-
 
 pre {
-	background: #f4f4f4;
-	line-height: 1.5;
-	margin-bottom: 1.5em;
-	overflow: auto;
-	padding: 0.75em 1.5em;
+  background: #f4f4f4;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+  overflow: auto;
+  padding: 0.75em 1.5em;
 }
 
-abbr, acronym, dfn {
-	border-bottom: $border;
-	cursor: help;
+abbr,
+acronym,
+dfn {
+  border-bottom: $border;
+  cursor: help;
 }
 address {
-	display: block;
-	font-style: initial;
+  display: block;
+  font-style: initial;
 }
 ins {
-	background: #fff9c0;
-	text-decoration: none;
+  background: #fff9c0;
+  text-decoration: none;
 }
 sup,
 sub {
-	font-size: 10px;
-	height: 0;
-	line-height: 1;
-	position: relative;
-	vertical-align: baseline;
+  font-size: 10px;
+  height: 0;
+  line-height: 1;
+  position: relative;
+  vertical-align: baseline;
 }
 sup {
-	bottom: 1ex;
+  bottom: 1ex;
 }
 sub {
-	top: .5ex;
+  top: 0.5ex;
 }
 
-
-@media all and (max-width:$s){
-	// body,h1,h2,h3,.fM{
-	// 	font-size: 20px;
-	// }
-	// .fS{font-size: 20px}
-	// .fXS{font-size: 12px}
-	// .texte p{
-	// 	text-indent: 20px;
-	// 	&:first-child{text-indent: 0}
-	// }
+@media all and (max-width: $s) {
+  // body,h1,h2,h3,.fM{
+  // 	font-size: 20px;
+  // }
+  // .fS{font-size: 20px}
+  // .fXS{font-size: 12px}
+  // .texte p{
+  // 	text-indent: 20px;
+  // 	&:first-child{text-indent: 0}
+  // }
 }

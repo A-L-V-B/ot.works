@@ -1,17 +1,17 @@
 export default {
-  type: 'object',
-  name: 'titleTexte',
-  title: 'Title texte',
+  type: "object",
+  name: "titleTexte",
+  title: "Title texte",
   fields: [
     {
-      name: 'title',
-      type: 'text',
-      title: 'Title',
+      name: "title",
+      type: "string",
+      title: "Title"
     },
     {
-      name: 'texte',
-      type: 'text',
-      title: 'Texte',
+      name: "texte",
+      type: "simplePortableText",
+      title: "Texte"
     }
-  ],
+  ]
 };

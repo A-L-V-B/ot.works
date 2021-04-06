@@ -1,33 +1,31 @@
-import React from 'react';
-import TexteModule from './TexteModule';
-import ImageModule from './ImageModule';
+import React from "react"
+import Texte from "./Texte"
+// import ImageModule from "./ImageModule"
+import ProjectListe from "./ProjectListe"
+// import TexteNote from "./TexteNote"
+import TexteListe from "./TexteListe"
 
-const Modules = (props) => {
-  // console.log(props)
-  const { sections } = props._rawContent
-  // console.log(sections)
+const Modules = ({ input }) => {
+  // console.log(input)
 
   const _renderModules = () => {
-    const _modules = sections.map((section, i) => {
-      // console.log(section)
-      switch (section._type) {
-        case "texteModule":
-          return <TexteModule key={i} body={section.text} />
-        case "imageModule":
-          return <ImageModule key={i} body={section.image} />
+    const _modules = input.map((module, i) => {
+      // console.log(module._type)
+      switch (module._type) {
+        case "texteUI":
+          return <Texte key={i} input={module} />
+        case "projectListUI":
+          return <ProjectListe key={i} input={module} />
+        case "texteListUI":
+          return <TexteListe key={i} input={module} />
         default:
-          return null;
+          return null
       }
     })
-    return _modules;
-      
+    return _modules
   }
 
-  return (
-    <div className="modules">
-      { sections && _renderModules() }
-    </div>
-  );
-};
+  return <div className="modules">{_renderModules()}</div>
+}
 
-export default Modules;
+export default Modules

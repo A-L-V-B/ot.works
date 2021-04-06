@@ -1,5 +1,5 @@
 export default {
-  name: "projectListUi",
+  name: "projectListUI",
   title: "project List UI",
   type: "object",
   fields: [
@@ -10,14 +10,19 @@ export default {
     },
     {
       name: "listedProjects",
-      type: "reference",
+      type: "array",
       title: "Réalisations listées",
-      to: [{ type: "project" }]
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "project" }]
+        }
+      ]
     }
   ],
   preview: {
     select: {
-      title: "title"
+      title: "listTitle"
     },
     prepare(selection) {
       const { title } = selection;

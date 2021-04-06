@@ -1,33 +1,33 @@
-header{
-    //position: sticky;
-    position: fixed; width: 100%;
-    top: 0;
-    z-index: 250;
-    //margin-bottom: $margeM;
-    padding: $margeS;
-    background: $bg;
-    nav{
-        ul{
-            // @include flexbox();
-            li{
-                margin-left: .5em;
-            }
-        }
-    }
+header {
+  //position: sticky;
+  // position: fixed;
+  // width: 100%;
+  // top: 0;
+  position: relative;
+  z-index: 250;
+  //margin-bottom: $margeM;
+  padding: 0 $margeS;
+  // background: $bg;
+  //   nav {
+  //     ul {
+  //       // @include flexbox();
+  //       li {
+  //         margin-left: 0.5em;
+  //       }
+  //     }
+  //   }
 }
 
-.downscroll{
-    header{
-        .inner{
-            @include slide(top, 0);
-        }
+.downscroll {
+  header {
+    .inner {
+      @include slide(top, 0);
     }
+  }
 }
 
-
-@media all and (max-width:$s){
-    header{
-        padding: $margeXS;
-        
-    }
+@media all and (max-width: $s) {
+  header {
+    padding: $margeXS;
+  }
 }

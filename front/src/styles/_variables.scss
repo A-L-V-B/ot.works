@@ -1,15 +1,18 @@
 /* BASE VARIABLES
  *******************/
 
-
 /* Sizes */
 $max-width: 1800px;
 $headerHeight: 122px;
 $headerHeightMobile: 50px;
 
 /* Colors */
-$color1: #000;
-$color2: #126dd6;
+$noir-100: #000;
+$noir-50: #595959;
+$bleu-100: #0029ff;
+$bleu-50: #4c69ff;
+$blanc-100: #ffffff;
+$blanc-50: #d9d9d9;
 
 //$links: $color1;
 //$hover: $color2;
@@ -17,10 +20,10 @@ $color2: #126dd6;
 $bg: white;
 
 /* PADDINGS */
-$margeXS: 10px;
-$margeS: $margeXS * 2;
-$margeM: $margeXS * 4;
-$margeL: $margeXS * 8;
+$margeXS: 5px;
+$margeS: $margeXS * 2; //10
+$margeM: $margeXS * 4; //20
+$margeL: $margeXS * 8; //40
 $margeXL: $margeL * 2;
 $gutter: $margeXS / 2;
 
@@ -29,13 +32,13 @@ $fontPrimary: helvetica, sans-serif;
 
 $fontXS: 16px;
 
-$fontS: 20px;
-$fontSLh: 1em;
+$fontS: 18px;
+$fontSLh: 1.278em;
 
-$fontM: 26px;
-$fontMLh: 1em;
+$fontM: 22px;
+$fontMLh: 1.227em;
 
-$borderWidth: 2px;
+$borderWidth: 1px;
 $border: $borderWidth solid;
 
 /* Breakpoints */

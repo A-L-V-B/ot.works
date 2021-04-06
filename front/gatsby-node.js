@@ -1,97 +1,118 @@
-// const path = require("path")
-// // const locales = require('./config/i18n')
-// // const {
-// //     replaceTrailing,
-// //     localizedSlug,
-// //     replaceBoth,
-// //     wrapper
-// // } = require('./src/core/gatsby-node-helpers')
+const path = require("path")
+const i18n = require("./config/i18n")
 
-// exports.createPages = async ({ graphql, actions }) => {
+// const templateZones = path.resolve("src/templates/zones.jsx")
+// const templateZone = path.resolve("src/templates/zone.jsx")
+// const templateHome = path.resolve("src/templates/home.jsx")
+// const templateDefault = path.resolve("src/templates/default.jsx")
+const templateModulaire = path.resolve("src/templates/modulaire.jsx")
+
+const getLocalizedPath = (node, path) => {
+  // console.log(path, node.locale)
+  return i18n[node.locale].default ? path : `/${i18n[node.locale].path}${path}`
+}
+
+// const getTemplate = (template) => {
+//   switch (template) {
+//     case "zones":
+//       return templateZones
+//     // case "zone": return templateZone
+//     case "default":
+//       return templateDefault
+//     case "home":
+//       return templateHome
+//     default:
+//       return templateDefault
+//   }
+// }
+
+/// /////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////
+// async function createAllPages(graphql, actions) {
 //   const { createPage } = actions
-
-//   const templateHome = path.resolve("src/templates/page-home.jsx")
-//   const templateDefault = path.resolve("src/templates/page-default.jsx")
-
-//   // createPage({
-//   //     path: '/',
-//   //     component: templateHome,
-//   //     context: {
-//   //         template: 'home'
-//   //     },
-//   // })
-
-//   //////////////////////////////////
-//   const projects = await graphql(`
+//   const result = await graphql(`
 //     {
 //       allSanityPage {
-//         edges {
-//           node {
-//             title
-//             isHome
-//             slug {
-//               current
-//             }
+//         nodes {
+//           _id
+//           locale
+//           title
+//           template
+//           slug {
+//             current
 //           }
 //         }
 //       }
 //     }
 //   `)
+//   if (result.errors) throw result.errors
 
-//   projects.data.allSanityPage.edges.forEach(({ node }) => {
-//     // console.log(node)
-//     const isHome = node.isHome
-//     // const path = `/project/${edge.node.uid}`
-//     const path = isHome ? "/" : node.slug.current
-//     const template = isHome ? templateHome : templateDefault
+//   const pages = (result.data.allSanityPage || {}).nodes || []
+//   pages.forEach((edge, index) => {
+//     // console.log(JSON.stringify(edge))
+//     const { _id, locale, template, slug = {} } = edge
+//     // const locale = getLocale(_id)
+//     // console.log(slug.current)
+//     // console.log(locale)
+//     const _template = template[0]
+
+//     const path = _template === `home` ? `/` : `/${slug.current}`
+//     const localizedPath = getLocalizedPath(edge, path)
+//     console.log(localizedPath)
 
 //     createPage({
-//       path: path,
-//       component: template,
+//       path: localizedPath,
+//       component: getTemplate(_template),
 //       context: {
-//         // uid: edge.node.uid,
-//         slug: path,
-//         // template: 'project'
+//         slug: slug.current,
+//         template: _template,
+//         locale: locale,
 //       },
 //     })
 //   })
 // }
 
-// // exports.onCreatePage = ({
-// //     page,
-// //     actions
-// // }) => {
-// //     const {
-// //         createPage,
-// //         deletePage
-// //     } = actions
+/// /////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////
+async function createAllPagesModulaire(graphql, actions) {
+  const { createPage } = actions
+  const result = await graphql(`
+    {
+      allSanityPageModulaire {
+        nodes {
+          id
+          locale
+          home
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `)
+  if (result.errors) throw result.errors
 
-// //     // Only create one 404 page at /404.html
-// //     if (page.path.includes('404')) {
-// //         return
-// //     }
+  const pages = (result.data.allSanityPageModulaire || {}).nodes || []
+  pages.forEach((edge, index) => {
+    // console.log(JSON.stringify(edge))
+    const { id, locale, home, slug = {} } = edge
 
-// //     // First delete the pages so we can re-create them
-// //     deletePage(page)
+    const path = home ? `/` : `/${slug.current}`
+    // const localizedPath = getLocalizedPath(edge, path)
+    // console.log(localizedPath)
+    createPage({
+      path: path,
+      component: templateModulaire,
+      context: {
+        // id: id,
+        slug: slug.current,
+        template: "modulaire",
+        locale: locale,
+      },
+    })
+  })
+}
 
-// //     Object.keys(locales).map(lang => {
-// //         // Remove the trailing slash from the path, e.g. --> /categories
-// //         page.path = replaceTrailing(page.path)
-
-// //         // Remove the leading AND traling slash from path, e.g. --> categories
-// //         const name = replaceBoth(page.path)
-
-// //         // Create the "slugs" for the pages. Unless default language, add prefix àla "/en"
-// //         const localizedPath = locales[lang].default ? page.path : `${locales[lang].path}${page.path}`
-// //         console.log(name)
-// //         return createPage({
-// //             ...page,
-// //             path: localizedPath,
-// //             context: {
-// //                 locale: lang,
-// //                 name,
-// //                 //template: name
-// //             },
-// //         })
-// //     })
-// // }
+exports.createPages = async ({ graphql, actions }) => {
+  await createAllPagesModulaire(graphql, actions)
+}

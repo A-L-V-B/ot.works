@@ -1,13 +1,39 @@
-html,body{
-
+:root {
+  --appHeight: 100%;
+  --headerHeight: 54px;
+  --md1: 8.33333%;
+  //   --margeS: 10px;
+  //   --margeM: 20px;
+  //   --margeL: 60px;
 }
 
-main{
-    padding: $headerHeight $margeS;
+html,
+body {
 }
 
-.xs-only{display: none}
-@media all and (max-width:$s){
-    .xs-only{display: block}
-    
+main {
+  // padding: var(--headerHeight) 0;
+}
+.container {
+  padding-left: $margeS;
+  padding-right: $margeS;
+}
+
+.mbS {
+  margin-bottom: $margeS;
+}
+.mbM {
+  margin-bottom: $margeM;
+}
+.mbL {
+  margin-bottom: $margeL;
+}
+
+.xs-only {
+  display: none;
+}
+@media all and (max-width: $s) {
+  .xs-only {
+    display: block;
+  }
 }

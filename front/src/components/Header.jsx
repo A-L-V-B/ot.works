@@ -1,70 +1,47 @@
 import React, { useContext } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
+// import { Link } from "gatsby"
+// import Img from "gatsby-image"
 // import { WrapperContext } from './Layout';
-import Burger from "./UI/Burger"
+
+import PortableText from "@sanity/block-content-to-react"
+import LocaleSwitcher from "./ui/LocaleSwitcher"
+import DarkMode from "./ui/DarkMode"
+
+const query = graphql`
+  query {
+    sanityHeader {
+      title
+      _rawAbout
+    }
+  }
+`
 
 const Header = () => {
-  // const _WrapperContext = useContext(WrapperContext)
-  // const { options } = _WrapperContext
-  //   const { header } = useStaticQuery(query)
-  //   const { logo, nav } = header
+  const { sanityHeader } = useStaticQuery(query)
 
   return (
     <header>
-      header
-      {/* <div className="row">
-        <div className="col-xs">
-          <Link to="/">
-            <Img
-              fluid={logo.asset.fluid}
-              alt="logo"
-              style={{
-                maxWidth: "200px",
-                maxHeight: 200 / logo.asset.fluid.aspectRatio,
-              }}
-            />
-          </Link>
+      <div className="row">
+        <div className="col-md-8">
+          <h1>{sanityHeader.title}</h1>
         </div>
-        <div className="col-xs">
-          <nav>
-            <ul className="x xje">
-              {nav.map(({ link }, i) => (
-                <li key={i}>
-                  <Link to={link.slug.current}>{link.title}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <div className="col-md-3">
+          <div className="about">
+            <PortableText blocks={sanityHeader._rawAbout} />
+          </div>
         </div>
-      </div> */}
-      <Burger />
+        <div className="col-md-1">
+          <div className="tar psa r0">
+            <LocaleSwitcher />
+            <DarkMode />
+          </div>
+        </div>
+      </div>
+
+      {/* <Burger /> */}
     </header>
   )
 }
 
 export default Header
-
-// const query = graphql`
-//   query {
-//     header: sanityHeader {
-//       logo {
-//         asset {
-//           url
-//           fluid(maxWidth: 700) {
-//             ...GatsbySanityImageFluid
-//           }
-//         }
-//       }
-//       nav {
-//         link {
-//           title
-//           slug {
-//             current
-//           }
-//         }
-//       }
-//     }
-//   }
-// `

@@ -97,21 +97,36 @@ export default {
             }
           },
           {
-            name: "note",
+            name: "footnote",
             type: "object",
-            title: "Note de bas de page",
+            title: "Footnote",
             blockEditor: {
               icon: FaSortNumericDown
             },
             fields: [
               {
-                title: "nbp",
-                name: "nbp",
-                description: "ffff",
-                type: "string"
+                name: "text",
+                type: "array",
+                of: [{ type: "block" }]
               }
             ]
           },
+          // {
+          //   name: "note",
+          //   type: "object",
+          //   title: "Note de bas de page",
+          //   blockEditor: {
+          //     icon: FaSortNumericDown
+          //   },
+          //   fields: [
+          //     {
+          //       title: "note",
+          //       name: "note",
+          //       description: "",
+          //       type: "string"
+          //     }
+          //   ]
+          // },
           {
             name: "link",
             type: "object",

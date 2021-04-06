@@ -1,0 +1,34 @@
+.project-liste {
+  h2,
+  li {
+    background: $noir-100;
+    color: $blanc-100;
+    border-bottom: $border;
+    padding: 6px $margeS 5px;
+  }
+  a {
+    color: $blanc-100;
+  }
+  h2 {
+    display: inline-block;
+  }
+  .project-metas {
+    a,
+    button {
+      width: var(--md1);
+      display: inline-block;
+      text-align: right;
+      color: white;
+    }
+  }
+  .image-overlay {
+    pointer-events: none;
+    z-index: 250;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--headerHeight) $margeS;
+  }
+}

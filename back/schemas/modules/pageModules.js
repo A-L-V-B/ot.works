@@ -8,19 +8,17 @@ export default {
       type: "array",
       of: [
         {
+          type: "texteUI"
+        },
+        {
           type: "textesUI"
         },
         {
-          type: "imagesUI"
+          type: "texteListUI"
         },
+
         {
-          type: "texteImagesUI"
-        },
-        {
-          type: "textesImagesUI"
-        },
-        {
-          type: "projectListUi"
+          type: "projectListUI"
         }
       ]
     }

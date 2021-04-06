@@ -1,5 +1,13 @@
-img{
-    max-width: 100%;
+img {
+  max-width: 100%;
 }
 
-.hidden{display: none;}
+.hidden {
+  display: none;
+}
+
+.cover {
+  //   background-color: red;
+  background-size: cover;
+  height: 100%;
+}

@@ -2,6 +2,7 @@
 import React from "react"
 import Helmet from "react-helmet"
 import { Layout } from "./src/components/Layout"
+import { LocaleWrapper } from "./src/components/ui/LocaleWrapper"
 // import { withPrefix } from 'gatsby'
 // const wrapPageElement = ({ element, props }) => <Layout {...props}>{element}</Layout>
 
@@ -20,7 +21,11 @@ const _wrapRootElement = ({ element }) => {
 
 const _wrapPageElement = ({ element, props }) => {
   // console.log(Layout)
-  return <Layout {...props}>{element}</Layout>
+  return (
+    <LocaleWrapper>
+      <Layout {...props}>{element}</Layout>
+    </LocaleWrapper>
+  )
 }
 
 const _onClientEntry = () => {

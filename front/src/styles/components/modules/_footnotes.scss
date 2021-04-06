@@ -1,0 +1,14 @@
+.footnotes {
+  counter-reset: listCounter;
+  li {
+    counter-increment: listCounter;
+    display: flex;
+    &::before {
+      content: "[" counter(listCounter) "]";
+      min-width: var(--md1);
+    }
+    a {
+      color: $bleu-100;
+    }
+  }
+}

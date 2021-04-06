@@ -1,0 +1,9 @@
+.texte-liste {
+  // background: red;
+  .inner {
+    max-width: calc((100% / 12) * 7);
+  }
+  .texte {
+    padding-left: var(--md1);
+  }
+}

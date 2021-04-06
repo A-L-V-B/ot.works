@@ -15,6 +15,7 @@ import menu from "./documents/menu";
 
 import seo from "./objects/seo";
 import localeString from "./objects/localeString";
+import simplePortableText from "./objects/simplePortableText";
 import portableText from "./objects/portableText";
 import portableTextFull from "./objects/portableTextFull";
 import imageFeatured from "./objects/imageFeatured";
@@ -27,7 +28,8 @@ import imageUI from "./modules/imageUI";
 import imagesUI from "./modules/imagesUI";
 import texteImagesUI from "./modules/texteImagesUI";
 import textesImagesUI from "./modules/textesImagesUI";
-import projectListUi from "./modules/projectListUi";
+import texteListUI from "./modules/texteListUI";
+import projectListUI from "./modules/projectListUI";
 
 import pageModules from "./modules/pageModules";
 
@@ -49,6 +51,7 @@ export default createSchema({
     pageModulaire,
     seo,
     localeString,
+    simplePortableText,
     portableText,
     portableTextFull,
     imageFeatured,
@@ -61,7 +64,8 @@ export default createSchema({
     imagesUI,
     texteImagesUI,
     textesImagesUI,
-    projectListUi,
+    texteListUI,
+    projectListUI,
     pageModules
   ])
 });
