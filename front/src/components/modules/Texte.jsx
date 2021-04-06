@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import PortableText from "@sanity/block-content-to-react"
 import Footnotes from "./Footnotes"
 
-const initialNote = []
+// const initialNote = []
 const Texte = ({ input }) => {
   // console.log(input)
-  const [notes, setNotes] = useState(initialNote)
+  // const [notes, setNotes] = useState(initialNote)
   // console.log(input)
   // const notes = input.text.map((el, i) => {
   //   console.log(el)
