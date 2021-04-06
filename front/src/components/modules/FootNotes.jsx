@@ -15,7 +15,6 @@ function Footnotes({ blocks }) {
   return (
     <ul className="footnotes fSeg fS">
       {notes.map(({ _key, text }) => (
-        // the _key is what markKey refers to in the main text component
         <li id={`${_key}`} key={_key}>
           <PortableText blocks={text} />
         </li>
