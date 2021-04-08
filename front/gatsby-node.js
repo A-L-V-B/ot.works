@@ -74,14 +74,12 @@ const getLocalizedPath = (node, path) => {
 
 /// /////////////////////////////////////////////////////////////
 /// /////////////////////////////////////////////////////////////
-async function createAllPagesModulaire(graphql, actions) {
+async function createAllPageModulaire(graphql, actions) {
   const { createPage } = actions
   const result = await graphql(`
     {
       allSanityPageModulaire {
         nodes {
-          id
-
           home
           slug {
             current
@@ -96,7 +94,7 @@ async function createAllPagesModulaire(graphql, actions) {
   pages.forEach((edge, index) => {
     Object.values(i18n).forEach((locale) => {
       // console.log(locale)
-      const { id, home, slug = {} } = edge
+      const { home, slug = {} } = edge
 
       const localizedPath = locale.default
         ? home
@@ -105,13 +103,13 @@ async function createAllPagesModulaire(graphql, actions) {
         : home
         ? `/${locale.path}`
         : `/${locale.path}/${slug.current}`
-      // const localizedPath = getLocalizedPath(edge, path)
-      console.log(localizedPath)
+
+      console.log("localizedPath", localizedPath)
+
       createPage({
         path: localizedPath,
         component: templateModulaire,
         context: {
-          // id: id,
           slug: slug.current,
           template: "modulaire",
           // locale: locale,
@@ -123,5 +121,5 @@ async function createAllPagesModulaire(graphql, actions) {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  await createAllPagesModulaire(graphql, actions)
+  await createAllPageModulaire(graphql, actions)
 }
