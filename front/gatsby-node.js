@@ -81,7 +81,7 @@ async function createAllPagesModulaire(graphql, actions) {
       allSanityPageModulaire {
         nodes {
           id
-          locale
+
           home
           slug {
             current
@@ -94,22 +94,31 @@ async function createAllPagesModulaire(graphql, actions) {
 
   const pages = (result.data.allSanityPageModulaire || {}).nodes || []
   pages.forEach((edge, index) => {
-    // console.log(JSON.stringify(edge))
-    const { id, locale, home, slug = {} } = edge
+    Object.values(i18n).forEach((locale) => {
+      // console.log(locale)
+      const { id, home, slug = {} } = edge
 
-    const path = home ? `/` : `/${slug.current}`
-    // const localizedPath = getLocalizedPath(edge, path)
-    // console.log(localizedPath)
-    createPage({
-      path: path,
-      component: templateModulaire,
-      context: {
-        // id: id,
-        slug: slug.current,
-        template: "modulaire",
-        locale: locale,
-      },
+      const localizedPath = locale.default
+        ? home
+          ? `/`
+          : `/${slug.current}`
+        : home
+        ? `/${locale.path}`
+        : `/${locale.path}/${slug.current}`
+      // const localizedPath = getLocalizedPath(edge, path)
+      console.log(localizedPath)
+      createPage({
+        path: localizedPath,
+        component: templateModulaire,
+        context: {
+          // id: id,
+          slug: slug.current,
+          template: "modulaire",
+          // locale: locale,
+        },
+      })
     })
+    // console.log(JSON.stringify(edge))
   })
 }
 

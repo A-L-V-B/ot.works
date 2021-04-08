@@ -12,22 +12,38 @@ body {
   font-family: $fontPrimary;
   font-size: $fontM;
   line-height: $fontMLh;
+  font-weight: 700;
 }
 
-// .fXS{
-// 	font-size: $fontXS;
-// }
 .fS {
   font-size: $fontS;
-  line-height: $fontSLh;
+  line-height: em(23px, $fontS);
 }
 .fM {
   font-size: $fontM;
-  line-height: $fontMLh;
+  line-height: em(27px, 22px);
+}
+@media all and (min-width: $lg) {
+  body,
+  .fM {
+    font-size: 27px;
+    line-height: em(32px, 27px);
+  }
+  .fS {
+    font-size: $fontS;
+    line-height: em(23px, $fontS);
+  }
 }
 
 .fSeg {
   font-family: serif;
+  font-weight: 400;
+}
+.fw400 {
+  font-weight: 400;
+}
+.fw500 {
+  font-weight: 500;
 }
 
 /* Headings */
@@ -39,7 +55,7 @@ h5,
 h6,
 .headline {
   font-size: $fontM;
-  font-weight: normal;
+  // font-weight: normal;
 }
 
 // .small{

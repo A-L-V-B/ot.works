@@ -1,4 +1,4 @@
-import * as Structure from 'sanity-plugin-intl-input/lib/structure';
+import * as Structure from "sanity-plugin-intl-input/lib/structure";
 
 // simpy re-exporting
 export const getDefaultDocumentNode = Structure.getDefaultDocumentNode;

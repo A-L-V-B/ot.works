@@ -14,9 +14,7 @@ $outer-margin: $gutter * 2 !default;
 // Create or emove breakpoints for your project
 // Syntax:
 // name SIZEem,
-$breakpoints:
-  sm 320px 46em,
-  md 992px 61em,
+$breakpoints: sm 320px 46em, md 992px 61em,
   //lg 75em 71em !default;
   lg 1441px 71em !default;
 $flexboxgrid-max-width: 1200px !default;
@@ -25,8 +23,8 @@ $flexboxgrid-max-width: 1200px !default;
 // -- Stop editing -- //
 //
 
-$gutter-compensation: $gutter-width * .5 * -1;
-$half-gutter-width: $gutter-width * .5;
+$gutter-compensation: $gutter-width * 0.5 * -1;
+$half-gutter-width: $gutter-width * 0.5;
 /*
 .wrapper {
   box-sizing: border-box;
@@ -66,7 +64,7 @@ $half-gutter-width: $gutter-width * .5;
   @include flex-grow(0);
   @include flex-shrink(0);
 
-  // we leave @include flex-basis(auto) out of common because  
+  // we leave @include flex-basis(auto) out of common because
   // in some spots we need it and some we dont
   // more why here: https://github.com/kristoferjoseph/flexboxgrid/issues/126
 
@@ -76,15 +74,15 @@ $half-gutter-width: $gutter-width * .5;
   padding-left: $gutter-width;
 }
 
-@for $i from 1 through 12{
-	.col-#{$i}{
+@for $i from 1 through 12 {
+  .col-#{$i} {
     box-sizing: border-box;
-		@include flex-grow(0);
+    @include flex-grow(0);
     @include flex-shrink(0);
-    
+
     @include flex-basis(100% / $grid-columns * $i);
     max-width: 100% / $grid-columns * $i;
-	}
+  }
 }
 
 $name: xs;
@@ -153,15 +151,14 @@ $name: xs;
   order: 1;
 }
 
-
 @each $breakpoint in $breakpoints {
   $name: nth($breakpoint, 1);
   $size: nth($breakpoint, 2);
   $container: nth($breakpoint, 3);
   @media only screen and (min-width: $size) {
-    .container {
-      width: $container;
-    }
+    // .container {
+    //   // width: $container;
+    // }
 
     .col-#{$name} {
       @include flexboxgrid-sass-col-common;
@@ -177,7 +174,7 @@ $name: xs;
     @for $i from 1 through $grid-columns {
       .col-#{$name}-offset-#{$i} {
         @include flexboxgrid-sass-col-common;
-        margin-left: 100% / $grid-columns * $i
+        margin-left: 100% / $grid-columns * $i;
       }
     }
     .col-#{$name} {

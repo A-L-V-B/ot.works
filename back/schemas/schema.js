@@ -7,14 +7,15 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import settings from "./documents/settings";
 import lang from "./documents/lang";
 import project from "./documents/project";
-import page from "./documents/page";
 import pageModulaire from "./documents/pageModulaire";
 import header from "./documents/header";
 import footer from "./documents/footer";
-import menu from "./documents/menu";
+// import menu from "./documents/menu";
 
 import seo from "./objects/seo";
 import localeString from "./objects/localeString";
+import localeText from "./objects/localeText";
+import localeSlug from "./objects/localeSlug";
 import simplePortableText from "./objects/simplePortableText";
 import portableText from "./objects/portableText";
 import portableTextFull from "./objects/portableTextFull";
@@ -43,14 +44,17 @@ export default createSchema({
     /* Your types here! */
     lang,
     settings,
-    menu,
+    // menu,
     header,
     footer,
     project,
-    page,
+
     pageModulaire,
+
     seo,
     localeString,
+    localeText,
+    localeSlug,
     simplePortableText,
     portableText,
     portableTextFull,

@@ -5,7 +5,8 @@ export default {
   fields: [
     {
       name: "title",
-      type: "string"
+      type: "string",
+      title: "Module Title"
     },
     {
       name: "liste",
@@ -19,6 +20,7 @@ export default {
     },
     prepare(selection) {
       const { title } = selection;
+      console.log(title);
       return {
         title: title,
         subtitle: "Textes liste UI"

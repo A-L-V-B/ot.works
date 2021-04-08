@@ -28,7 +28,7 @@ const LocaleSwitcher = () => {
         <li key={key} className={_className}>
           <Link
             to={path}
-            className={_className + " ttu"}
+            className={_className + " ttl"}
             onClick={() => dispatch(li.locale)}
           >
             {li.label}

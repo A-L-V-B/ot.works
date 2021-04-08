@@ -1,20 +1,40 @@
-import i18n from "../i18n";
+// import i18n from "../i18n";
 
 export default {
   name: "header",
   type: "document",
   title: "Header",
-  i18n: i18n,
+  preview: {
+    select: {
+      name: "homeButton"
+    },
+    prepare(selection) {
+      const { homeButton } = selection;
+      return {
+        title: homeButton
+      };
+    }
+  },
   fields: [
     {
-      name: "title",
-      title: "Site Title",
+      name: "homeButton",
+      title: "Home Button",
       type: "string"
     },
     {
-      name: "about",
+      name: "nav",
+      title: "Nav",
+      type: "array",
+      of: [
+        {
+          type: "internalLink"
+        }
+      ]
+    },
+    {
+      name: "contact",
       type: "portableText",
-      title: "About"
+      title: "Contact"
     }
   ]
 };

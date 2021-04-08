@@ -1,10 +1,8 @@
-footer{
-    padding: $margeS;
-    
+footer {
+  // padding: $margeS;
 }
 
-@media all and (max-width:$s){
-    footer{
-        
-    }
+@media all and (max-width: $s) {
+  footer {
+  }
 }

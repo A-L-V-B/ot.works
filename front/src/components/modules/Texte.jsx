@@ -1,16 +1,9 @@
 import React, { useState } from "react"
 import PortableText from "@sanity/block-content-to-react"
 import FootNotes from "./FootNotes"
+import { _localizeField } from "../../core/utils"
 
-// const initialNote = []
 const Texte = ({ input }) => {
-  // console.log(input)
-  // const [notes, setNotes] = useState(initialNote)
-  // console.log(input)
-  // const notes = input.text.map((el, i) => {
-  //   console.log(el)
-  //   return el.markDefs.note
-  // })
   const serializers = {
     types: {
       block(props) {
@@ -18,8 +11,6 @@ const Texte = ({ input }) => {
         switch (props.node.style) {
           // case "h1":
           //   return <h1>{props.children}</h1>
-          // case "h2":
-          //   return <h2>{props.children}</h2>
           default:
             return <p>{props.children}</p>
         }
@@ -36,14 +27,15 @@ const Texte = ({ input }) => {
   // console.log(notes)
   return (
     <section className="texte">
-      <div className="container">
-        <div className="inner">
-          <PortableText
-            blocks={input.text}
-            serializers={serializers}
-            className="mbL"
-          />
-          <FootNotes blocks={input.text} />
+      <div className="container-fluid">
+        <div className="container-inner">
+          <div className="mbL">
+            <PortableText
+              blocks={_localizeField(input.text)}
+              serializers={serializers}
+            />
+          </div>
+          <FootNotes blocks={_localizeField(input.text)} />
         </div>
       </div>
     </section>

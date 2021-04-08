@@ -11,3 +11,11 @@ img {
   background-size: cover;
   height: 100%;
 }
+
+.container-inner {
+  // @media all and (min-width: $sm) {
+  @media all and (min-width: 768px) {
+    width: calc((100% / 12) * 7);
+    max-width: 1022px;
+  }
+}

@@ -1,32 +1,42 @@
 import React, { useState } from "react"
+import { _localizeField, _localizeText } from "../../core/utils"
 
 const ProjectListe = ({ input }) => {
-  console.log(input)
+  // console.log(input)
   const [image, setImage] = useState()
 
   const { listTitle, listedProjects } = input
   return (
     <section className="project-liste">
-      <h2>{listTitle}</h2>
+      <div className="row ">
+        <div className="col-md-4 ">
+          <h2>{listTitle}</h2>
+        </div>
+      </div>
+
       <ul>
         {listedProjects.map((li, i) => (
-          <li key={i} data-image="">
+          <li key={i}>
             <div className="client">{li.client}</div>
-            <div className="x xjb">
-              <div className="title">{li.title}</div>
-              <div className="project-metas">
+            <div className="row">
+              <div className="col-md-10 col-xs-12">
+                <div className="title fw500">{_localizeField(li.title)}</div>
+              </div>
+              <div className="col-md-1 col-xs-9 tar">
                 <a href={li.projectUrl} target="_blank">
-                  lien
+                  {_localizeText("link")}
                 </a>
-                {li.projectImage && li.projectImage.asset && (
+              </div>
+              {li.projectImage && li.projectImage.asset && (
+                <div className="col-md-1 col-xs-3 tar">
                   <button
                     onMouseEnter={() => setImage(li.projectImage.asset.url)}
                     onMouseLeave={() => setImage(null)}
                   >
-                    image
+                    {_localizeText("image")}
                   </button>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </li>
         ))}

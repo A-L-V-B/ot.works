@@ -1,24 +1,20 @@
-const supportedLanguages = [
-  {id: 'fr', title: 'Français', isDefault: true},
-  {id: 'en', title: 'English'}
-]
+import { languages, baseLanguage } from "../i18n";
 
 export default {
-  name: 'localeString',
-  type: 'object',
+  name: "localeString",
+  type: "object",
+  title: "Localized string",
   fieldsets: [
     {
-      title: 'Translations',
-      name: 'translations',
-      options: {collapsible: true}
+      title: "Translations",
+      name: "translations",
+      options: { collapsible: true }
     }
   ],
-  fields: supportedLanguages.map(lang => (
-    {
-      title: lang.title,
-      name: lang.id,
-      type: 'string',
-      fieldset: lang.isDefault ? null : 'translations'
-    }
-  ))
-}
+  fields: languages.map(lang => ({
+    title: lang.title,
+    name: lang.name,
+    type: "string",
+    fieldset: lang.isDefault ? null : "translations"
+  }))
+};

@@ -1,10 +1,19 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import TexteListe from "./modules/TexteListe"
 
 const query = graphql`
   query {
     siteBuildMetadata {
       buildTime
+    }
+    sanityFooter {
+      texteList {
+        liste {
+          _rawTitle
+          _rawTexte
+        }
+      }
     }
   }
 `
@@ -12,6 +21,7 @@ const query = graphql`
 const Footer = () => {
   const {
     siteBuildMetadata: { buildTime },
+    sanityFooter,
   } = useStaticQuery(query)
 
   const date = new Date(buildTime)
@@ -39,7 +49,12 @@ const Footer = () => {
 
   return (
     <footer>
-      Modifié le {`${getFormatedDate()} à ${getFormatedTime()}`}
+      <TexteListe input={sanityFooter.texteList} />
+      <div className="container">
+        <div className="site-metas">
+          Modifié le {`${getFormatedDate()} à ${getFormatedTime()}`}
+        </div>
+      </div>
       {/* <div className="x xjb">
         <div className="col">
           <div className="copyright">© {new Date().getFullYear()} </div>

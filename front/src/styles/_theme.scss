@@ -16,6 +16,14 @@ body {
     button {
       color: $blanc-100;
     }
+    .cartouche {
+      background-color: $blanc-100;
+      color: $noir-100;
+      a,
+      button {
+        color: $noir-100;
+      }
+    }
     .footnotes a {
       color: $bleu-50;
     }

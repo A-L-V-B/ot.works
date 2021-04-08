@@ -11,8 +11,8 @@ import DarkMode from "./ui/DarkMode"
 const query = graphql`
   query {
     sanityHeader {
-      title
-      _rawAbout
+      homeButton
+      _rawContact
     }
   }
 `
@@ -23,19 +23,28 @@ const Header = () => {
   return (
     <header>
       <div className="row">
-        <div className="col-md-8">
-          <h1>{sanityHeader.title}</h1>
-        </div>
-        <div className="col-md-3">
-          <div className="about">
-            <PortableText blocks={sanityHeader._rawAbout} />
+        <div className="col-md-8 col-xs-7">
+          <div>
+            <h1 className="cartouche ">{sanityHeader.homeButton}</h1>
           </div>
         </div>
-        <div className="col-md-1">
+        <div className="col-md-3 hidden-sm">
+          <div className="cartouche ">
+            <div className="about">
+              <PortableText blocks={sanityHeader._rawContact} />
+            </div>
+          </div>
+        </div>
+        <div className="col-md-1 hidden-sm">
           <div className="tar psa r0">
-            <LocaleSwitcher />
-            <DarkMode />
+            <div className="cartouche">
+              <LocaleSwitcher />
+              <DarkMode />
+            </div>
           </div>
+        </div>
+        <div className="col-xs-5 sm-only tar">
+          <div className="cta-menu  cartouche">menu</div>
         </div>
       </div>
 

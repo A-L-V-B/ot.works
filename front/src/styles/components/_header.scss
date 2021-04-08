@@ -1,21 +1,35 @@
 header {
-  //position: sticky;
+  position: sticky;
   // position: fixed;
   // width: 100%;
-  // top: 0;
-  position: relative;
+  top: 0;
+  // position: relative;
   z-index: 250;
   //margin-bottom: $margeM;
   padding: 0 $margeS;
-  // background: $bg;
-  //   nav {
-  //     ul {
-  //       // @include flexbox();
-  //       li {
-  //         margin-left: 0.5em;
-  //       }
-  //     }
-  //   }
+  h1 {
+    display: inline-block;
+  }
+  a {
+    color: $noir-100;
+  }
+  .cartouche {
+    position: relative;
+    display: inline-block;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $blanc-100;
+      // background: red;
+      width: calc(100% + #{$margeS});
+      transform: translateX(-$margeXS);
+    }
+  }
 }
 
 .downscroll {
@@ -26,8 +40,9 @@ header {
   }
 }
 
-@media all and (max-width: $s) {
+@media all and (max-width: $sm) {
   header {
-    padding: $margeXS;
+    // padding: $margeXS;
+    height: var(--headerHeightMobile);
   }
 }

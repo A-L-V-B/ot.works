@@ -6,6 +6,9 @@
     &::before {
       content: "[" counter(listCounter) "]";
       min-width: var(--md1);
+      @media all and (max-width: $sm) {
+        min-width: $margeL;
+      }
     }
     a {
       color: $bleu-100;

@@ -9,13 +9,14 @@ const Modules = ({ input }) => {
   const _renderModules = () => {
     const _modules = input.map((module, i) => {
       // console.log(module._type)
+      // console.log(module)
       switch (module._type) {
         case "texteUI":
           return <Texte key={i} input={module} />
         case "projectListUI":
           return <ProjectListe key={i} input={module} />
-        case "texteListUI":
-          return <TexteListe key={i} input={module} />
+        // case "texteListUI":
+        //   return <TexteListe key={i} input={module} />
         default:
           return null
       }

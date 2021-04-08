@@ -1,23 +1,29 @@
 export default {
-  name: 'texteUI',
-  title: 'Texte UI',
-  type: 'object',
+  name: "texteUI",
+  title: "Texte UI",
+  type: "object",
   fields: [
     {
-      name: 'text',
-      type: 'portableText',
-      title: 'Texte',
+      name: "title",
+      type: "string",
+      title: "Module Title"
     },
+    {
+      name: "text",
+      // type: "portableText",
+      type: "localeText",
+      title: "Texte"
+    }
   ],
   preview: {
     select: {
-      title: 'text'
+      title: "text"
     },
     prepare(selection) {
-      const { title } = selection
+      const { title } = selection;
       return {
-        title: 'Texte UI'
-      }
+        title: "Texte UI"
+      };
     }
   }
 };

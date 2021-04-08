@@ -21,10 +21,11 @@ $bg: white;
 
 /* PADDINGS */
 $margeXS: 5px;
-$margeS: $margeXS * 2; //10
-$margeM: $margeXS * 4; //20
-$margeL: $margeXS * 8; //40
-$margeXL: $margeL * 2;
+$margeS: 10px; //10
+$margeM: 20px; //20
+$margeL: 40px; //40
+$margeXL: 80px; // 80
+$margeXXL: 120px;
 $gutter: $margeXS / 2;
 
 /* Fonts */
@@ -46,3 +47,7 @@ $cap: 1920px;
 $m: 1024px;
 $s: 982px;
 $xs: 500px;
+
+$sm: 982px;
+$md: 1118px;
+$lg: 1441px;

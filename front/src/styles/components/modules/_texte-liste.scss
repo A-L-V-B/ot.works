@@ -1,9 +1,16 @@
 .texte-liste {
   // background: red;
   .inner {
-    max-width: calc((100% / 12) * 7);
+    width: calc((100% / 12) * 7);
+    max-width: 1022px;
+  }
+  .title {
+    font-size: $fontS;
   }
   .texte {
     padding-left: var(--md1);
+    @media all and (max-width: $sm) {
+      padding-left: $margeL;
+    }
   }
 }

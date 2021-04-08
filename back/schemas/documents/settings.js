@@ -2,16 +2,27 @@ export default {
   name: "settings",
   type: "document",
   title: "Site Settings",
+  preview: {
+    select: {
+      siteTitle: "siteTitle"
+    },
+    prepare(selection) {
+      const { siteTitle } = selection;
+      return {
+        title: siteTitle.fr
+      };
+    }
+  },
   fields: [
     {
-      name: "title",
+      name: "siteTitle",
       title: "Site Title",
-      type: "string",
+      type: "localeString"
     },
     {
-      name: "about",
-      type: "portableText",
-      title: "About",
-    },
-  ],
+      name: "message404",
+      type: "localeText",
+      title: "Message 404"
+    }
+  ]
 };

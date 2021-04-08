@@ -1,6 +1,7 @@
 :root {
   --appHeight: 100%;
   --headerHeight: 54px;
+  --headerHeightMobile: 50px;
   --md1: 8.33333%;
   //   --margeS: 10px;
   //   --margeM: 20px;
@@ -14,7 +15,7 @@ body {
 main {
   // padding: var(--headerHeight) 0;
 }
-.container {
+.container-fluid {
   padding-left: $margeS;
   padding-right: $margeS;
 }
@@ -28,12 +29,32 @@ main {
 .mbL {
   margin-bottom: $margeL;
 }
-
-.xs-only {
+.mbXXL {
+  margin-bottom: $margeXXL;
+}
+.sm-only {
   display: none;
 }
-@media all and (max-width: $s) {
-  .xs-only {
+@media all and (max-width: $sm) {
+  .sm-only {
     display: block;
   }
+  .hidden-sm {
+    display: none;
+  }
+}
+
+@media all and (min-width: $lg) {
+  // .mbS {
+  //   margin-bottom: $margeS;
+  // }
+  // .mbM {
+  //   margin-bottom: $margeM;
+  // }
+  // .mbL {
+  //   margin-bottom: $margeL;
+  // }
+  // .mbXXL {
+  //   margin-bottom: 40px;
+  // }
 }

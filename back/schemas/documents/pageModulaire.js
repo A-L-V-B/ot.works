@@ -1,4 +1,6 @@
-import i18n from "../i18n";
+// import i18n from "../i18n";
+import localizePreview from "../localizePreview";
+import { baseLanguage } from "../i18n";
 
 export default {
   name: "pageModulaire",
@@ -6,25 +8,19 @@ export default {
   title: "Page Modulaire",
   preview: {
     select: {
-      title: "title",
+      title: `title.${baseLanguage.name}`,
       slug: "slug"
     },
     prepare(selection) {
       const { title, slug } = selection;
-      // console.log(slug)
       return {
         title: title,
         subtitle: slug.current
       };
     }
   },
-  i18n: i18n,
+
   fields: [
-    {
-      name: "locale",
-      type: "string",
-      hidden: true
-    },
     {
       name: "home",
       type: "boolean",
@@ -34,7 +30,7 @@ export default {
     },
     {
       name: "title",
-      type: "string",
+      type: "localeString",
       title: "Title"
     },
     {

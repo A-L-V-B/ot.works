@@ -1,18 +1,19 @@
-import i18n from "../i18n";
+// import i18n from "../i18n";
 
 export default {
   name: "menu",
-  // _id: 'menu', title: 'Menu',
+  // _id: 'menu',
+  title: "Menu",
   type: "document",
   description: "",
   // icon: Icon,
-  i18n: i18n,
+  // i18n: i18n,
   fields: [
-    {
-      name: "locale",
-      type: "string",
-      hidden: true
-    },
+    // {
+    //   name: "locale",
+    //   type: "string",
+    //   hidden: true
+    // },
     {
       name: "title",
       title: "Title",

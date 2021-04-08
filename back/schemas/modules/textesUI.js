@@ -1,32 +1,33 @@
 export default {
-  name: 'textesUI',
-  title: 'Textes UI',
-  type: 'object',
+  name: "textesUI",
+  title: "Textes UI",
+  type: "object",
   fields: [
     {
-      name: 'title',
-      type: 'string',
+      name: "title",
+      type: "string",
+      title: "Module Title"
     },
     {
-      name: 'textes',
-      type: 'array',
-      of: [{
-        type: 'texteUI'
-      }]
+      name: "textes",
+      type: "array",
+      of: [
+        {
+          type: "texteUI"
+        }
+      ]
     }
   ],
   preview: {
     select: {
-      title: 'title'
+      title: "title"
     },
     prepare(selection) {
-      const {
-        title
-      } = selection
+      const { title } = selection;
       return {
         title: title,
         subtitle: "Textes UI"
-      }
+      };
     }
   }
 };

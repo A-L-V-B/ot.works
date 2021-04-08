@@ -1,27 +1,24 @@
 //const website = require('./website')
 
 module.exports = {
-    'fr-fr': {
-      default: true,
-      label: 'Fr',
-      path: 'fr',
-      locale: 'fr-fr',
-      siteLanguage: 'fr',
-      ogLang: 'fr_FR',
-      projects: 'Projets',
-      about: 'À propos',
-      contact: 'Contact',
-    },
-    'en-gb': {
-      default: false,
-      label: 'En',
-      path: 'en',
-      locale: 'en-gb',
-      siteLanguage: 'en',
-      ogLang: 'en_GB' ,
-      projects: 'Projects',
-      about: 'About',
-      contact: 'Contact',
-    }
-  }
-  
+  fr: {
+    default: true,
+    label: "Fr",
+    path: "fr",
+    locale: "fr",
+    siteLanguage: "fr",
+    ogLang: "fr_FR",
+    link: "lien",
+    image: "image",
+  },
+  en: {
+    default: false,
+    label: "En",
+    path: "en",
+    locale: "en",
+    siteLanguage: "en",
+    ogLang: "en_GB",
+    link: "link",
+    image: "image",
+  },
+}
