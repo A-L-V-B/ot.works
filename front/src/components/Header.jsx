@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import clsx from "clsx"
 
@@ -31,6 +31,26 @@ const Header = () => {
   const { homeButton, _rawContact, nav } = sanityHeader
 
   const [smMenuActive, setSmMenuActive] = useState(false)
+
+  useEffect(() => {
+    const btns = document.querySelectorAll(".sm-menu a, .sm-menu button")
+
+    if (smMenuActive) {
+      btns.forEach((el) => {
+        el.addEventListener("click", setSmMenuActive(false))
+      })
+    } else {
+      btns.forEach((el) => {
+        el.removeEventListener("click", setSmMenuActive(false))
+      })
+    }
+
+    return () => {
+      btns.forEach((el) => {
+        el.removeEventListener("click", setSmMenuActive(false))
+      })
+    }
+  }, [smMenuActive])
 
   return (
     <header className={clsx(smMenuActive ? "is-active" : "")}>
