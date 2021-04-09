@@ -32,5 +32,8 @@
     width: 100%;
     height: 100%;
     padding: var(--headerHeight) $margeS;
+    @media all and (max-width: $sm) {
+      pointer-events: initial;
+    }
   }
 }

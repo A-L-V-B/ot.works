@@ -4,7 +4,7 @@ import { _localizeField, _localizeText } from "../../core/utils"
 const ProjectListe = ({ input }) => {
   // console.log(input)
   const [image, setImage] = useState()
-
+  console.log(image)
   const { listTitle, listedProjects } = input
   return (
     <section className="project-liste">
@@ -31,7 +31,12 @@ const ProjectListe = ({ input }) => {
                 <div className="col-md-1 col-xs-3 tar">
                   <button
                     onMouseEnter={() => setImage(li.projectImage.asset.url)}
-                    onMouseLeave={() => setImage(null)}
+                    // onMouseLeave={() => setImage(null)}
+                    onClick={() => {
+                      !image
+                        ? setImage(li.projectImage.asset.url)
+                        : setImage(null)
+                    }}
                   >
                     {_localizeText("image")}
                   </button>
@@ -42,9 +47,9 @@ const ProjectListe = ({ input }) => {
         ))}
       </ul>
       {image && (
-        <div className="image-overlay">
+        <div className="image-overlay" onClick={() => setImage(null)}>
           <div className="row center-xs h100">
-            <div className="col-md-10 h100">
+            <div className="col-md-10 col-xs-12 h100">
               <div
                 className="cover h100"
                 style={{
