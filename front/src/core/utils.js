@@ -21,3 +21,8 @@ export const _localizeText = (text) => {
     ? locales[localeCtx][text]
     : text
 }
+
+export const _gethomeUrl = () => {
+  const { localeCtx, dispatch } = useContext(LocaleContext)
+  return locales[localeCtx].default ? `/` : `/${locales[localeCtx]["path"]}`
+}

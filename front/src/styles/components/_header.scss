@@ -30,6 +30,11 @@ header {
       transform: translateX(-$margeXS);
     }
   }
+  .col-left {
+    a {
+      padding-right: 53px;
+    }
+  }
 }
 
 .downscroll {
@@ -48,7 +53,7 @@ header {
       .cartouche::before {
         display: none;
       }
-      .home-button,
+      a,
       .sm-menu-cta {
         color: $blanc-100;
       }
@@ -56,11 +61,13 @@ header {
         display: block;
       }
     }
+
     .home-button,
     .sm-menu-cta {
       position: relative;
       z-index: 251;
     }
+
     .sm-menu {
       position: fixed;
       display: none;
@@ -81,6 +88,9 @@ header {
       .cartouche::before {
         display: none;
       }
+    }
+    .menu-header ul.x {
+      flex-direction: column;
     }
   }
 }

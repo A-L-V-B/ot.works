@@ -6,6 +6,7 @@ import PortableText from "@sanity/block-content-to-react"
 import LocaleSwitcher from "./ui/LocaleSwitcher"
 import DarkMode from "./ui/DarkMode"
 import Menu from "./Menu"
+import { _gethomeUrl } from "../core/utils"
 
 const query = graphql`
   query {
@@ -35,11 +36,15 @@ const Header = () => {
     <header className={clsx(smMenuActive ? "is-active" : "")}>
       <div className="row">
         <div className="col-md-8 col-xs-7">
-          <div className="x">
+          <div className="col-left x">
             <div>
-              <h1 className="cartouche home-button">{homeButton}</h1>
+              <h1 className="cartouche home-button">
+                <Link to={_gethomeUrl()}>{homeButton}</Link>
+              </h1>
             </div>
-            <Menu input={nav} />
+            <div className="hidden-sm">
+              <Menu input={nav} />
+            </div>
           </div>
         </div>
         <div className="col-md-3 hidden-sm">
@@ -65,6 +70,7 @@ const Header = () => {
             <div className="cartouche ">menu</div>
           </div>
           <div className="sm-menu">
+            <Menu input={nav} />
             <div className="contact">
               <PortableText blocks={sanityHeader._rawContact} />
             </div>
