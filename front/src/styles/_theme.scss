@@ -1,5 +1,20 @@
 body {
-  background: $blanc-100;
+  &::before {
+    content: "";
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $noir-100;
+    // background-color: red;
+    transition: transform 0.4s;
+    @include bezier;
+    transform: translateY(100%);
+  }
+  // background: $blanc-100;
   color: $noir-100;
   transition: color 0.2s, background-color 0.2s;
   .project-liste h2,
@@ -10,7 +25,10 @@ body {
   }
 
   &.is-dark {
-    background: $noir-100;
+    &::before {
+      transform: translateY(0);
+    }
+    // background: $noir-100;
     color: $blanc-100;
     a,
     button {
