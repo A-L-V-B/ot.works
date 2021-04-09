@@ -50,7 +50,7 @@ const Footer = () => {
   return (
     <footer>
       <TexteListe input={sanityFooter.texteList} />
-      <div className="container">
+      <div className="container-fluid">
         <div className="site-metas">
           Modifié le {`${getFormatedDate()} à ${getFormatedTime()}`}
         </div>
