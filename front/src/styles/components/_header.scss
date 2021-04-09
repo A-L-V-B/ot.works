@@ -44,5 +44,43 @@ header {
   header {
     // padding: $margeXS;
     height: var(--headerHeightMobile);
+    &.is-active {
+      .cartouche::before {
+        display: none;
+      }
+      .home-button,
+      .sm-menu-cta {
+        color: $blanc-100;
+      }
+      .sm-menu {
+        display: block;
+      }
+    }
+    .home-button,
+    .sm-menu-cta {
+      position: relative;
+      z-index: 251;
+    }
+    .sm-menu {
+      position: fixed;
+      display: none;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: var(--appHeight);
+      padding: var(--headerHeightMobile) $margeS 0;
+      background: $noir-100;
+      color: $blanc-100;
+      a {
+        color: $blanc-100;
+      }
+      .bottom-right {
+        right: $margeS;
+        bottom: $margeS;
+      }
+      .cartouche::before {
+        display: none;
+      }
+    }
   }
 }

@@ -8,9 +8,9 @@
     B Media
     C Forms
   3 Typography
-  
-  
-  
+
+
+
 /* 1 GENERIC STYLES
 ================================================== */
 /*Mash up based on
@@ -20,11 +20,14 @@
 
 html {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
-*{
+* {
   //backface-visibility: hidden;
   // -webkit-user-select: none;
   // -moz-user-select: none;
@@ -45,8 +48,9 @@ html {
   box-sizing: border-box;
 }
 
-html, body {
-	height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 div {
@@ -89,10 +93,10 @@ img {
   }
 }
 
-ul{
+ul {
   list-style: none;
-  margin: 0!important;
-  padding: 0!important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .half {
@@ -107,13 +111,12 @@ ul.unstyled {
 .hide {
   /* Hide stuff without resorting to display:none; */
   visibility: hidden;
-  width: 0!important;
-  height: 0!important;
-  line-height: 0!important;
-  padding: 0!important;
-  margin: 0!important;
+  width: 0 !important;
+  height: 0 !important;
+  line-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
-
 
 /* 2 RESETS
 ================================================== */
@@ -121,7 +124,40 @@ ul.unstyled {
 /* 2A GLOBAL RESET
 Based on 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
 
-*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td, address, caption, cite, code, dfn, em, strong, th, var {
+*,
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+label,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td,
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
   margin: 0;
   padding: 0;
   border: 0;
@@ -160,13 +196,14 @@ img {
   vertical-align: top;
 }
 
-caption, th {
-  
+caption,
+th {
 }
 
 q {
-  &:before, &:after {
-    content: '';
+  &:before,
+  &:after {
+    content: "";
   }
 }
 
@@ -196,7 +233,9 @@ a img {
 /* 2B MEDIA
 Based on the Bootstrap toolkit from Twitter http://twitter.github.com/bootstrap */
 
-audio, canvas, video {
+audio,
+canvas,
+video {
   display: inline-block;
   *display: inline;
   *zoom: 1;
@@ -209,19 +248,24 @@ audio:not([controls]) {
 /* 2C FORMS
 Based on the Bootstrap toolkit from Twitter http://twitter.github.com/bootstrap */
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-size: 100%;
   margin: 0;
   vertical-align: baseline;
   *vertical-align: middle;
 }
 
-button, input {
+button,
+input {
   line-height: normal;
   *overflow: visible;
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -232,7 +276,9 @@ button {
 }
 
 input {
-  &[type="button"], &[type="reset"], &[type="submit"] {
+  &[type="button"],
+  &[type="reset"],
+  &[type="submit"] {
     cursor: pointer;
     -webkit-appearance: button;
   }
@@ -250,7 +296,7 @@ textarea {
 }
 
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 /* 3 TYPOGRAPHY
@@ -264,12 +310,16 @@ textarea {
 /* 'alert' has a basic style, since it's useful to have it standing out for testing purposes. */
 
 /* SRCSET */
-img[data-sizes="auto"] { display: block; width: 100%; }
+img[data-sizes="auto"] {
+  display: block;
+  width: 100%;
+}
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: blue;
 }
 
 ::selection {
-  color: blue; 
+  color: blue;
 }

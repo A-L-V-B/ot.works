@@ -1,37 +1,51 @@
-import React, { useContext } from "react"
-import { graphql, useStaticQuery } from "gatsby"
-// import { Link } from "gatsby"
-// import Img from "gatsby-image"
-// import { WrapperContext } from './Layout';
+import React, { useContext, useState } from "react"
+import { graphql, useStaticQuery, Link } from "gatsby"
+import clsx from "clsx"
 
 import PortableText from "@sanity/block-content-to-react"
 import LocaleSwitcher from "./ui/LocaleSwitcher"
 import DarkMode from "./ui/DarkMode"
+import Menu from "./Menu"
 
 const query = graphql`
   query {
     sanityHeader {
       homeButton
       _rawContact
+      nav {
+        label
+        link {
+          _type
+          slug {
+            current
+          }
+        }
+      }
     }
   }
 `
 
 const Header = () => {
   const { sanityHeader } = useStaticQuery(query)
+  const { homeButton, _rawContact, nav } = sanityHeader
+
+  const [smMenuActive, setSmMenuActive] = useState(false)
 
   return (
-    <header>
+    <header className={clsx(smMenuActive ? "is-active" : "")}>
       <div className="row">
         <div className="col-md-8 col-xs-7">
-          <div>
-            <h1 className="cartouche ">{sanityHeader.homeButton}</h1>
+          <div className="x">
+            <div>
+              <h1 className="cartouche home-button">{homeButton}</h1>
+            </div>
+            <Menu input={nav} />
           </div>
         </div>
         <div className="col-md-3 hidden-sm">
           <div className="cartouche ">
-            <div className="about">
-              <PortableText blocks={sanityHeader._rawContact} />
+            <div className="contact">
+              <PortableText blocks={_rawContact} />
             </div>
           </div>
         </div>
@@ -43,8 +57,24 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div className="col-xs-5 sm-only tar">
-          <div className="cta-menu  cartouche">menu</div>
+        <div className="col-xs-5 sm-only ">
+          <div
+            className="sm-menu-cta  tar curp"
+            onClick={() => setSmMenuActive(!smMenuActive)}
+          >
+            <div className="cartouche ">menu</div>
+          </div>
+          <div className="sm-menu">
+            <div className="contact">
+              <PortableText blocks={sanityHeader._rawContact} />
+            </div>
+            <div className="tar psa r0 b0 bottom-right">
+              <div className="cartouche">
+                <LocaleSwitcher />
+                <DarkMode />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
