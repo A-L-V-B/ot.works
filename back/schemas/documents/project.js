@@ -3,7 +3,7 @@
 export default {
   name: "project",
   type: "document",
-  title: "Project",
+  title: "Projects",
   // i18n: i18n,
   fields: [
     {
@@ -19,18 +19,18 @@ export default {
       description: "Description de la mission et du client"
       // validation: Rule => Rule.max(80).warning("Keep your titles short")
     },
-    // {
-    //   name: "slug",
-    //   type: "slug",
-    //   title: "Slug",
-    //   description: "Au plus court, sans connecteurs logiques"
-    // },
     {
-      name: "localeSlug",
-      type: "localeSlug",
-      title: "localeSlug",
+      name: "slug",
+      type: "slug",
+      title: "Slug",
       description: "Au plus court, sans connecteurs logiques"
     },
+    // {
+    //   name: "localeSlug",
+    //   type: "localeSlug",
+    //   title: "localeSlug",
+    //   description: "Au plus court, sans connecteurs logiques"
+    // },
     {
       name: "client",
       type: "string",
@@ -55,10 +55,15 @@ export default {
       type: "date",
       title: "Date delivered"
     },
+    // {
+    //   name: "projectImage",
+    //   type: "image",
+    //   title: "Project image"
+    // },
     {
-      name: "projectImage",
-      type: "image",
-      title: "Project image"
+      name: "imageFeatured",
+      type: "imageFeatured",
+      title: "Project Image"
     },
     {
       name: "projectUrl",

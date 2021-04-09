@@ -21,4 +21,8 @@ project slug generate
 #header,footer,... singleton
 test fieldset lang sur le doc entier
 #portable liens > remove desc
-virer langues
+#virer langues
+seo collapsible
+#project list order
+404
+favicon studio et front

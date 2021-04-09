@@ -15,6 +15,7 @@ import footer from "./documents/footer";
 import seo from "./objects/seo";
 import localeString from "./objects/localeString";
 import localeText from "./objects/localeText";
+import localeTextShort from "./objects/localeTextShort";
 import localeSlug from "./objects/localeSlug";
 import simplePortableText from "./objects/simplePortableText";
 import portableText from "./objects/portableText";
@@ -54,6 +55,7 @@ export default createSchema({
     seo,
     localeString,
     localeText,
+    localeTextShort,
     localeSlug,
     simplePortableText,
     portableText,

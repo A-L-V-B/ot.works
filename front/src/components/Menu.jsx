@@ -7,7 +7,7 @@ const Menu = ({ input }) => (
   <nav className="menu-header">
     <ul className="x">
       {input.map((li, i) => (
-        <li key={i} className="menu-item">
+        <li key={i} className="menu-item cartouche">
           <Link to={`/${li.link.slug.current}`}>{li.label}</Link>
         </li>
       ))}

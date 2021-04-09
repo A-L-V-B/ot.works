@@ -1,20 +1,20 @@
 import { languages, baseLanguage } from "../i18n";
 
 export default {
-  name: "localeSlug",
+  name: "localeTextShort",
   type: "object",
-  title: "Localized slug",
+  title: "Localized text short",
   fieldsets: [
     {
       title: "Translations",
-      name: "translations",
-      options: { collapsible: true }
+      name: "translations"
+      // options: { collapsible: true }
     }
   ],
   fields: languages.map(lang => ({
     title: lang.title,
     name: lang.name,
-    type: "slug"
-    // fieldset: lang.isDefault ? null : "translations"
+    type: "text",
+    rows: 3
   }))
 };

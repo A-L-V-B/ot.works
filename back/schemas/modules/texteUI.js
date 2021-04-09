@@ -1,6 +1,6 @@
 export default {
   name: "texteUI",
-  title: "Texte UI",
+  title: "Texte",
   type: "object",
   fields: [
     {
@@ -17,12 +17,13 @@ export default {
   ],
   preview: {
     select: {
-      title: "text"
+      title: "title"
     },
     prepare(selection) {
       const { title } = selection;
       return {
-        title: "Texte UI"
+        title: title,
+        subtitle: "Texte"
       };
     }
   }

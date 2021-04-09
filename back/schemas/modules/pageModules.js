@@ -10,12 +10,12 @@ export default {
         {
           type: "texteUI"
         },
-        {
-          type: "textesUI"
-        },
-        {
-          type: "texteListUI"
-        },
+        // {
+        //   type: "textesUI"
+        // },
+        // {
+        //   type: "texteListUI"
+        // },
 
         {
           type: "projectListUI"

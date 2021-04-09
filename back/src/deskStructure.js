@@ -28,11 +28,11 @@ export default () =>
     .title("Content")
     .items([
       S.listItem()
-        .title("Pages Modulaire")
+        .title("Pages")
         .schemaType("pageModulaire")
         .child(
           S.documentTypeList("pageModulaire")
-            .title("Pages Modulaire")
+            .title("Pages")
             .child(documentId =>
               S.document()
                 .documentId(documentId)
@@ -53,27 +53,34 @@ export default () =>
             )
         ),
       S.divider(),
+
+      // S.listItem()
+      //   .title("Projects")
+      //   .schemaType("pageModulaire")
+      //   .child(S.documentTypeList("project").title("Projects")),
+
       ...S.documentTypeListItems().filter(
         listItem =>
           ![
             "pageModulaire",
             "settings",
             "header",
-            // "menu",
+            // "project",
             "footer",
             "lang"
           ].includes(listItem.getId())
       ),
       S.divider(),
+
       S.listItem()
-        .title("Globals")
+        .title("Settings")
         .child(
           S.list()
-            .id("globals-level")
-            .title("Globals")
+            .id("settings-level")
+            .title("Settings")
             .items([
               S.listItem()
-                .title("settings")
+                .title("Global content")
                 .child(
                   S.editor()
                     .id("settings")

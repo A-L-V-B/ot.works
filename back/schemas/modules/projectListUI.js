@@ -1,11 +1,16 @@
 export default {
   name: "projectListUI",
-  title: "project List UI",
+  title: "project Liste",
   type: "object",
   fields: [
     {
-      name: "listTitle",
+      name: "title",
       type: "string",
+      title: "Titre"
+    },
+    {
+      name: "listTitle",
+      type: "localeString",
       title: "Titre de la liste"
     },
     {
@@ -22,13 +27,13 @@ export default {
   ],
   preview: {
     select: {
-      title: "listTitle"
+      title: "title"
     },
     prepare(selection) {
       const { title } = selection;
       return {
         title: title,
-        subtitle: "project Liste UI"
+        subtitle: "Project Liste"
       };
     }
   }

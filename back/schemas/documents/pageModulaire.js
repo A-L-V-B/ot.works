@@ -29,6 +29,10 @@ export default {
       layout: "checkbox"
     },
     {
+      name: "seo",
+      type: "seo"
+    },
+    {
       name: "title",
       type: "localeString",
       title: "Title"
@@ -37,24 +41,16 @@ export default {
       name: "slug",
       type: "slug",
       title: "Slug",
-      description: "Au plus court, sans connecteurs logiques",
-      options: {
-        source: "title",
-        maxLength: 96
-      }
-    },
-    {
-      name: "seo",
-      type: "seo"
+      description: "Au plus court, sans connecteurs logiques"
+      // options: {
+      //   source: "title",
+      //   maxLength: 96
+      // }
     },
 
-    // {
-    //   name: "imageHero",
-    //   type: "imageFeatured",
-    //   title: "Image Hero",
-    // },
     {
       name: "modules",
+      title: "Page content",
       type: "pageModules"
     }
   ]

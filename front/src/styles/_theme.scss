@@ -15,6 +15,9 @@ body {
     a,
     button {
       color: $blanc-100;
+      &:hover {
+        color: $blanc-50;
+      }
     }
     .cartouche {
       background-color: $blanc-100;
@@ -22,10 +25,16 @@ body {
       a,
       button {
         color: $noir-100;
+        &:hover {
+          color: $noir-50;
+        }
       }
     }
     .footnotes a {
       color: $bleu-50;
+      &:hover {
+        color: $bleu-100;
+      }
     }
     .project-liste {
       h2,
@@ -36,6 +45,9 @@ body {
       a,
       button {
         color: $noir-100;
+        &:hover {
+          color: $noir-50;
+        }
       }
     }
     // a,

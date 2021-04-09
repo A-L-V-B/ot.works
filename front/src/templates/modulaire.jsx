@@ -22,35 +22,6 @@ export const query = graphql`
         }
       }
       _rawModules(resolveReferences: { maxDepth: 10 })
-      # modules {
-      #   modules {
-      #     ... on SanityTexteUI {
-      #       _rawText
-      #     }
-      #     ... on SanityProjectListUI {
-      #       _type
-      #       listTitle
-      #       listedProjects {
-      #         client
-      #         title
-      #         projectUrl
-      #         projectImage {
-      #           asset {
-      #             url
-      #           }
-      #         }
-      #         dateDelivered
-      #       }
-      #     }
-      #     ... on SanityTexteListUI {
-      #       _type
-      #       title
-      #       liste {
-      #         _rawTexte
-      #       }
-      #     }
-      #   }
-      # }
     }
   }
 `

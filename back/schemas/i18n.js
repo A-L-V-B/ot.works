@@ -1,6 +1,6 @@
 const languages = [
-  { name: "fr", title: "Français", isDefault: true },
-  { name: "en", title: "English" }
+  { name: "fr", title: "Fr", isDefault: true },
+  { name: "en", title: "En" }
 ];
 // const baseLanguage = languages[0];
 const baseLanguage = languages.find(l => l.isDefault);

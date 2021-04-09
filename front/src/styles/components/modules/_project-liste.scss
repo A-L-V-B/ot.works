@@ -5,24 +5,12 @@
     color: $blanc-100;
     border-bottom: $border;
     padding: 6px $margeS 5px;
-    // @include debugSquare(7px);
   }
   a,
   button {
     color: $blanc-100;
   }
-  // h2 {
-  //   display: inline-block;
-  // }
-  // .project-metas {
-  //   a,
-  //   button {
-  //     width: var(--md1);
-  //     display: inline-block;
-  //     text-align: right;
-  //     color: white;
-  //   }
-  // }
+
   .image-overlay {
     pointer-events: none;
     z-index: 250;

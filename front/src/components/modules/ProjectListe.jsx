@@ -4,19 +4,25 @@ import { _localizeField, _localizeText } from "../../core/utils"
 const ProjectListe = ({ input }) => {
   // console.log(input)
   const [image, setImage] = useState()
-  console.log(image)
+  //
   const { listTitle, listedProjects } = input
+  // console.log(listedProjects)
+  const listedProjectsSorted = listedProjects.sort((a, b) => {
+    return new Date(b.dateDelivered) - new Date(a.dateDelivered)
+  })
+  // return null
   return (
     <section className="project-liste">
       <div className="row ">
         <div className="col-md-4 ">
-          <h2>{listTitle}</h2>
+          <h2>{_localizeField(listTitle)}</h2>
         </div>
       </div>
 
       <ul>
-        {listedProjects.map((li, i) => (
+        {listedProjectsSorted.map((li, i) => (
           <li key={i}>
+            {/* <div className="date">{li.dateDelivered}</div> */}
             <div className="client">{li.client}</div>
             <div className="row">
               <div className="col-md-10 col-xs-12">
@@ -31,7 +37,7 @@ const ProjectListe = ({ input }) => {
                 <div className="col-md-1 col-xs-3 tar">
                   <button
                     onMouseEnter={() => setImage(li.projectImage.asset.url)}
-                    // onMouseLeave={() => setImage(null)}
+                    onMouseLeave={() => setImage(null)}
                     onClick={() => {
                       !image
                         ? setImage(li.projectImage.asset.url)

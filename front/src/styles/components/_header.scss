@@ -10,8 +10,12 @@ header {
   h1 {
     display: inline-block;
   }
-  a {
+  a,
+  button {
     color: $noir-100;
+    &:hover {
+      color: $noir-50;
+    }
   }
   .cartouche {
     position: relative;

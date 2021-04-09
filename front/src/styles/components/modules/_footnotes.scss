@@ -12,6 +12,9 @@
     }
     a {
       color: $bleu-100;
+      &:hover {
+        color: $bleu-50;
+      }
     }
   }
 }

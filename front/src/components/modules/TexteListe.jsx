@@ -13,7 +13,7 @@ const TexteListe = ({ input }) => {
           <ul>
             {liste.map((li, i) => (
               <li key={i} className="mbM">
-                <h2 className="title fw400">{_localizeField(li._rawTitle)}</h2>
+                <h2 className="title ">{_localizeField(li._rawTitle)}</h2>
                 <div className="texte taj">
                   <BlockContent blocks={_localizeField(li._rawTexte)} />
                 </div>
