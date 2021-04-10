@@ -6,7 +6,7 @@ import PortableText from "@sanity/block-content-to-react"
 import LocaleSwitcher from "./ui/LocaleSwitcher"
 import DarkMode from "./ui/DarkMode"
 import Menu from "./Menu"
-import { _gethomeUrl } from "../core/utils"
+import { _getHomeUrl } from "../core/utils"
 
 const query = graphql`
   query {
@@ -14,7 +14,10 @@ const query = graphql`
       homeButton
       _rawContact
       nav {
-        label
+        label {
+          fr
+          en
+        }
         link {
           _type
           slug {
@@ -59,7 +62,7 @@ const Header = () => {
           <div className="col-left x">
             <div>
               <h1 className="cartouche home-button">
-                <Link to={_gethomeUrl()}>{homeButton}</Link>
+                <Link to={_getHomeUrl()}>{homeButton}</Link>
               </h1>
             </div>
             <div className="hidden-sm">

@@ -24,5 +24,20 @@ test fieldset lang sur le doc entier
 #virer langues
 seo collapsible
 #project list order
-404
+
 favicon studio et front
+back > show draft
+
+**FRONT**
+header scroll direction
+#check grille
+#projet date
+#footer 00:00:00 en tabular figure
+404
+#textes col-xs-1 col-md-7
+image hotspot
+image format sur mobile
+menu avec nav, sans nav
+#seo gent lang
+transition image fade 150ms
+menu

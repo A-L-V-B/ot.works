@@ -51,7 +51,7 @@ const Layout = ({ children, pageContext: { template } }) => {
     const md1Bounding = document
       .querySelector("header .col-md-1")
       .getBoundingClientRect()
-
+    if (md1Bounding.width > 180) md1Bounding.width = 180
     document.documentElement.style.setProperty(
       "--md1",
       md1Bounding.width + "px"
@@ -65,7 +65,7 @@ const Layout = ({ children, pageContext: { template } }) => {
         <main>{children}</main>
         <Footer />
       </div>
-      <Cursor />
+      {/* <Cursor /> */}
     </WrapperContext.Provider>
   )
 }

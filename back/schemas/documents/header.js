@@ -18,7 +18,7 @@ export default {
   fields: [
     {
       name: "homeButton",
-      title: "Home Button",
+      title: "Home button",
       type: "string"
     },
     {

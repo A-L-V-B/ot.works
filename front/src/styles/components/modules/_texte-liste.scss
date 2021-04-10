@@ -8,9 +8,15 @@
     font-size: $fontS;
   }
   .texte {
-    padding-left: var(--md1);
-    @media all and (max-width: $sm) {
-      padding-left: $margeL;
+    // padding-left: var(--md1);
+    hyphens: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    p {
+      max-width: 625px;
     }
+    // @media all and (max-width: $sm) {
+    //   padding-left: $margeL;
+    // }
   }
 }

@@ -15,7 +15,7 @@ img {
 .container-inner {
   // @media all and (min-width: $sm) {
   @media all and (min-width: 768px) {
-    width: calc((100% / 12) * 7);
+    // width: calc((100% / 12) * 7);
     max-width: 1022px;
   }
 }

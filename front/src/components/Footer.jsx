@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import TexteListe from "./modules/TexteListe"
+import { _localizeText } from "../core/utils"
 
 const query = graphql`
   query {
@@ -40,7 +41,7 @@ const Footer = () => {
     const mm = pad2(date.getMinutes())
     const ss = pad2(date.getSeconds())
 
-    return hh + "." + mm + "." + ss
+    return hh + ":" + mm + ":" + ss
   }
 
   const pad2 = (n) => {
@@ -52,22 +53,11 @@ const Footer = () => {
       <TexteListe input={sanityFooter.texteList} />
       <div className="container-fluid">
         <div className="site-metas">
-          Modifié le {`${getFormatedDate()} à ${getFormatedTime()}`}
+          {_localizeText("modifiedThe")} <span>{getFormatedDate()}</span>{" "}
+          {_localizeText("at")}{" "}
+          <span className="tabnum">{getFormatedTime()}</span>
         </div>
       </div>
-      {/* <div className="x xjb">
-        <div className="col">
-          <div className="copyright">© {new Date().getFullYear()} </div>
-        </div>
-        <div className="col">
-          <p>
-            Made with ❤ by the{" "}
-            <a href="ahmedghazi.com" target="_blank">
-              a_e_a_i_
-            </a>
-          </p>
-        </div>
-      </div> */}
     </footer>
   )
 }

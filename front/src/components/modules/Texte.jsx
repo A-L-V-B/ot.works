@@ -18,7 +18,7 @@ const Texte = ({ input }) => {
     },
     marks: {
       footnote: ({ children, markKey, mark }) => (
-        <span>
+        <span className="fSeg">
           <a href={`#${markKey}`}>{children}</a>
         </span>
       ),
@@ -28,15 +28,17 @@ const Texte = ({ input }) => {
   return (
     <section className="texte">
       <div className="container-fluid">
-        <div className="container-inner">
-          <div className="mbL">
-            <PortableText
-              blocks={_localizeField(input.text)}
-              serializers={serializers}
-            />
+        <div className="row">
+          <div className="col-md-7 col-xs-12">
+            <div className="mbL">
+              <PortableText
+                blocks={_localizeField(input.text)}
+                serializers={serializers}
+              />
+            </div>
           </div>
-          <FootNotes blocks={_localizeField(input.text)} />
         </div>
+        <FootNotes blocks={_localizeField(input.text)} />
       </div>
     </section>
   )

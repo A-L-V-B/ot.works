@@ -10,6 +10,12 @@ const ProjectListe = ({ input }) => {
   const listedProjectsSorted = listedProjects.sort((a, b) => {
     return new Date(b.dateDelivered) - new Date(a.dateDelivered)
   })
+
+  const _getYear = (d) => {
+    // console.log(d)
+    const year = new Date(d).getFullYear()
+    return !isNaN(year) ? `, ${year}` : ""
+  }
   // return null
   return (
     <section className="project-liste">
@@ -22,16 +28,19 @@ const ProjectListe = ({ input }) => {
       <ul>
         {listedProjectsSorted.map((li, i) => (
           <li key={i}>
-            {/* <div className="date">{li.dateDelivered}</div> */}
             <div className="client">{li.client}</div>
             <div className="row">
               <div className="col-md-10 col-xs-12">
-                <div className="title fw500">{_localizeField(li.title)}</div>
+                <div className="title fw500">
+                  {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
+                </div>
               </div>
               <div className="col-md-1 col-xs-9 tar">
-                <a href={li.projectUrl} target="_blank">
-                  {_localizeText("link")}
-                </a>
+                {li.projectUrl && (
+                  <a href={li.projectUrl} target="_blank">
+                    {_localizeText("link")}
+                  </a>
+                )}
               </div>
               {li.projectImage && li.projectImage.asset && (
                 <div className="col-md-1 col-xs-3 tar">

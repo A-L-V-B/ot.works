@@ -16,7 +16,7 @@ export default {
       type: "localeString",
       title: "Meta Title",
       description:
-        "Description courte et précise de la page, écrire pour les utilisateurs"
+        "Description courte et précise de la page, écrire pour les utilisateurs, 60 caractères max."
       // fieldset: "seoGroup"
     },
     {
@@ -24,7 +24,7 @@ export default {
       type: "localeTextShort",
       title: "Meta description",
       description:
-        "Description libre de la page pour informer les utilisateurs et faire marque"
+        "Description libre de la page pour informer les utilisateurs et faire marque, 50-160 caractères."
       // fieldset: "seoGroup"
     },
     {

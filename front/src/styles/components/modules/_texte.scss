@@ -1,8 +1,17 @@
 .texte {
-  .inner {
-    max-width: calc((100% / 12) * 7);
-  }
+  // .inner {
+  //   max-width: calc((100% / 12) * 7);
+  // }
   a {
     color: $noir-100;
+    &:hover {
+      color: $noir-50;
+    }
+    @media screen and(max-width: $sm) {
+      color: $noir-50;
+    }
+  }
+  p {
+    max-width: 731px;
   }
 }

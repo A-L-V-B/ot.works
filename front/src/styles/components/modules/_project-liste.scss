@@ -9,6 +9,9 @@
   a,
   button {
     color: $blanc-100;
+    &:hover {
+      color: $blanc-50;
+    }
   }
 
   .image-overlay {

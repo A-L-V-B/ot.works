@@ -1,14 +1,18 @@
 // import i18n from "../i18n";
-import localizePreview from "../localizePreview";
+// import localizePreview from "../localizePreview";
 import { baseLanguage } from "../i18n";
+
+import { FiFileText } from "react-icons/fi";
 
 export default {
   name: "pageModulaire",
   type: "document",
   title: "Page Modulaire",
+  icon: FiFileText,
   preview: {
     select: {
-      title: `title.${baseLanguage.name}`,
+      // title: `title.${baseLanguage.name}`,
+      title: "title",
       slug: "slug"
     },
     prepare(selection) {
@@ -25,7 +29,7 @@ export default {
       name: "home",
       type: "boolean",
       title: "Homepage",
-      description: "Cocher si cette page est la home du site",
+      // description: "Cocher si cette page est la home du site",
       layout: "checkbox"
     },
     {
@@ -34,8 +38,9 @@ export default {
     },
     {
       name: "title",
-      type: "localeString",
-      title: "Title"
+      type: "string",
+      title: "Name",
+      description: "Le nom de la page dans le back"
     },
     {
       name: "slug",

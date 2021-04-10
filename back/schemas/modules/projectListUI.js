@@ -1,22 +1,25 @@
+import { FiList } from "react-icons/fi";
+
 export default {
   name: "projectListUI",
-  title: "project Liste",
+  title: "Project list",
   type: "object",
+  icon: FiList,
   fields: [
     {
       name: "title",
       type: "string",
-      title: "Titre"
+      title: "Title"
     },
     {
       name: "listTitle",
       type: "localeString",
-      title: "Titre de la liste"
+      title: "List title"
     },
     {
       name: "listedProjects",
       type: "array",
-      title: "Réalisations listées",
+      title: "Listed projects",
       of: [
         {
           type: "reference",
@@ -33,7 +36,7 @@ export default {
       const { title } = selection;
       return {
         title: title,
-        subtitle: "Project Liste"
+        subtitle: "Project list"
       };
     }
   }

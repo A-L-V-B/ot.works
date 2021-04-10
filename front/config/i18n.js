@@ -10,6 +10,8 @@ module.exports = {
     ogLang: "fr_FR",
     link: "lien",
     image: "image",
+    modifiedThe: "Modifié le",
+    at: "à",
   },
   en: {
     default: false,
@@ -20,5 +22,7 @@ module.exports = {
     ogLang: "en_GB",
     link: "link",
     image: "image",
+    modifiedThe: "Modified on",
+    at: "at",
   },
 }

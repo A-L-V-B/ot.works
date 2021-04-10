@@ -7,10 +7,7 @@ export const query = graphql`
   query PageBySlug($slug: String!) {
     sanityPageModulaire(slug: { current: { eq: $slug } }) {
       home
-      title {
-        fr
-        en
-      }
+      title
       seo {
         metaTitle {
           fr

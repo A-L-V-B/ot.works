@@ -25,7 +25,7 @@ export default {
     {
       name: "texteList",
       type: "texteListUI",
-      title: "Texte Liste"
+      title: "Footer notes"
     }
   ]
 };

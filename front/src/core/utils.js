@@ -8,21 +8,22 @@ export function fileNameByUrl(url) {
   return decoded.substring(decoded.lastIndexOf("/") + 1)
 }
 
-export function _localizeField(field) {
+export const _getLocale = () => {
   const { localeCtx, dispatch } = useContext(LocaleContext)
-  return field[localeCtx]
+  return localeCtx
+}
+
+export function _localizeField(field) {
+  const locale = _getLocale()
+  return field[locale]
 }
 
 export const _localizeText = (text) => {
-  const { localeCtx, dispatch } = useContext(LocaleContext)
-  // console.log(locales[localeCtx])
-  // console.log("locale", localeCtx, text)
-  return locales[localeCtx] && locales[localeCtx][text]
-    ? locales[localeCtx][text]
-    : text
+  const locale = _getLocale()
+  return locales[locale] && locales[locale][text] ? locales[locale][text] : text
 }
 
-export const _gethomeUrl = () => {
-  const { localeCtx, dispatch } = useContext(LocaleContext)
-  return locales[localeCtx].default ? `/` : `/${locales[localeCtx]["path"]}`
+export const _getHomeUrl = () => {
+  const locale = _getLocale()
+  return locales[locale].default ? `/` : `/${locales[locale]["path"]}`
 }

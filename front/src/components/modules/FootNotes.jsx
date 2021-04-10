@@ -14,9 +14,14 @@ function FootNotes({ blocks }) {
 
   return (
     <ul className="footnotes fSeg fS">
-      {notes.map(({ _key, text }) => (
+      {notes.map(({ _key, text }, i) => (
         <li id={`${_key}`} key={_key}>
-          <PortableText blocks={text} />
+          <div className="row">
+            <div className="col-xs-1">[{i + 1}]</div>
+            <div className="col-md-6 col-xs-10">
+              <PortableText blocks={text} />
+            </div>
+          </div>
         </li>
       ))}
     </ul>

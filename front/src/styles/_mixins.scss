@@ -460,12 +460,12 @@ $sass-burger-add-vendor-prefixes: true !default;
   }
 }
 
-@mixin debugFiletY {
+@mixin debugFiletY($top: 20px) {
   &:before {
     z-index: 999;
     content: "";
     position: fixed;
-    top: 20px;
+    top: $top;
     height: 1px;
     width: 100vw;
     background: red;

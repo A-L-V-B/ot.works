@@ -1,12 +1,13 @@
 header {
-  position: sticky;
+  position: fixed;
   // position: fixed;
-  // width: 100%;
+  width: 100%;
   top: 0;
   // position: relative;
   z-index: 250;
   //margin-bottom: $margeM;
   padding: 0 $margeS;
+  @include debugFiletY(25px);
   h1 {
     display: inline-block;
   }

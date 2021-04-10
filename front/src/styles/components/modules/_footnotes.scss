@@ -1,20 +1,24 @@
 .footnotes {
-  counter-reset: listCounter;
+  // counter-reset: listCounter;
   li {
-    counter-increment: listCounter;
-    display: flex;
-    &::before {
-      content: "[" counter(listCounter) "]";
-      min-width: var(--md1);
-      @media all and (max-width: $sm) {
-        min-width: $margeL;
-      }
-    }
+    // counter-increment: listCounter;
+    // display: flex;
+    // &::before {
+    //   content: "[" counter(listCounter) "]";
+    //   width: var(--md1);
+    //   max-width: 180px;
+    //   @media all and (max-width: $sm) {
+    //     width: $margeL;
+    //   }
+    // }
     a {
       color: $bleu-100;
       &:hover {
         color: $bleu-50;
       }
+    }
+    p {
+      max-width: 625px;
     }
   }
 }

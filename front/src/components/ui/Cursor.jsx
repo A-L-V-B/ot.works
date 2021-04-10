@@ -13,6 +13,7 @@ const _Cursor = styled.div`
   transition: all 100ms ease;
   // mix-blend-mode: difference;
   pointer-events: none;
+  will-change: top, left;
   &.is-anchor-or-button {
     width: 50px;
     height: 50px;

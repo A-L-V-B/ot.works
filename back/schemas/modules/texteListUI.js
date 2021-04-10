@@ -6,11 +6,12 @@ export default {
     {
       name: "title",
       type: "string",
-      title: "Module Title"
+      title: "Title"
     },
     {
       name: "liste",
       type: "array",
+      title: "Notes",
       of: [{ type: "titleTexte" }]
     }
   ],

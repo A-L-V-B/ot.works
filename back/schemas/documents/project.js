@@ -1,10 +1,28 @@
-// import i18n from "../i18n";
+import { baseLanguage } from "../i18n";
+import { FiXSquare } from "react-icons/fi";
 
 export default {
   name: "project",
   type: "document",
   title: "Projects",
-  // i18n: i18n,
+  icon: FiXSquare,
+  preview: {
+    select: {
+      // title: `title.${baseLanguage.name}`,
+      title: "name",
+      category: "category.0",
+      media: "imageFeatured"
+    },
+    prepare(selection) {
+      const { title, category, media } = selection;
+
+      return {
+        title: title,
+        subtitle: category,
+        media: media ? media : ""
+      };
+    }
+  },
   fields: [
     {
       name: "name",
@@ -16,7 +34,7 @@ export default {
       name: "title",
       type: "localeString",
       title: "Title",
-      description: "Description de la mission et du client"
+      description: "Description de la mission et du client, 80 caractères max."
       // validation: Rule => Rule.max(80).warning("Keep your titles short")
     },
     {
@@ -55,6 +73,11 @@ export default {
       type: "date",
       title: "Date delivered"
     },
+    {
+      name: "projectUrl",
+      type: "url",
+      title: "Live project URL"
+    },
     // {
     //   name: "projectImage",
     //   type: "image",
@@ -64,11 +87,6 @@ export default {
       name: "imageFeatured",
       type: "imageFeatured",
       title: "Project Image"
-    },
-    {
-      name: "projectUrl",
-      type: "url",
-      title: "Live project URL"
     }
   ]
 };

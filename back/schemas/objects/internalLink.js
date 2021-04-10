@@ -1,13 +1,26 @@
+import { baseLanguage } from "../i18n";
+
 export default {
   title: "Internal Link",
   name: "internalLink",
   type: "object",
-  hidden: true,
+  preview: {
+    select: {
+      label: `label.${baseLanguage.name}`
+    },
+    prepare(selection) {
+      const { label } = selection;
+      return {
+        title: label,
+        subtitle: "test"
+      };
+    }
+  },
   fields: [
     {
       name: "label",
       // title: 'Title',
-      type: "string"
+      type: "localeString"
     },
     {
       name: "link",

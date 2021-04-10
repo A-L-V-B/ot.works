@@ -9,18 +9,25 @@ const TexteListe = ({ input }) => {
   return (
     <section className="texte-liste fS fSeg">
       <div className="container-fluid">
-        <div className="container-inner">
-          <ul>
-            {liste.map((li, i) => (
-              <li key={i} className="mbM">
-                <h2 className="title ">{_localizeField(li._rawTitle)}</h2>
-                <div className="texte taj">
-                  <BlockContent blocks={_localizeField(li._rawTexte)} />
+        <ul>
+          {liste.map((li, i) => (
+            <li key={i} className="mbM">
+              <div className="row">
+                <div className="col-xs-12">
+                  <h2 className="title ttu">{_localizeField(li._rawTitle)}</h2>
                 </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+              </div>
+              <div className="row">
+                <div className="col-xs-1"></div>
+                <div className="col-xs-11 col-md-6">
+                  <div className="texte taj">
+                    <BlockContent blocks={_localizeField(li._rawTexte)} />
+                  </div>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )

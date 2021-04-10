@@ -1,7 +1,10 @@
+import { FiAlignLeft } from "react-icons/fi";
+
 export default {
   name: "texteUI",
-  title: "Texte",
+  title: "Text",
   type: "object",
+  icon: FiAlignLeft,
   fields: [
     {
       name: "title",
@@ -12,7 +15,7 @@ export default {
       name: "text",
       // type: "portableText",
       type: "localeText",
-      title: "Texte"
+      title: "Text"
     }
   ],
   preview: {
@@ -23,7 +26,7 @@ export default {
       const { title } = selection;
       return {
         title: title,
-        subtitle: "Texte"
+        subtitle: "Text"
       };
     }
   }
