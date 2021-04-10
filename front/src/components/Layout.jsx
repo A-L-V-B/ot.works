@@ -2,6 +2,7 @@ import React, { createContext, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
 import Footer from "./Footer"
+import Cursor from "./ui/Cursor"
 
 const WrapperContext = createContext()
 
@@ -64,6 +65,7 @@ const Layout = ({ children, pageContext: { template } }) => {
         <main>{children}</main>
         <Footer />
       </div>
+      <Cursor />
     </WrapperContext.Provider>
   )
 }
