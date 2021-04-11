@@ -41,5 +41,5 @@ image hotspot
 image format sur mobile
 menu avec nav, sans nav
 #seo gent lang
-transition image fade 150ms
+#transition image fade 150ms
 menu
