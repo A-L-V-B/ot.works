@@ -1,58 +1,67 @@
-import React, { useState } from "react"
-import { _localizeField, _localizeText } from "../../core/utils"
+import React, { useState } from "react";
+import SanityImage from "../SanityImage";
+import { _localizeField, _localizeText } from "../../core/utils";
+import clsx from "clsx";
 
 const ProjectListe = ({ input }) => {
-  // console.log(input)
-  const [image, setImage] = useState()
-  //
-  const { listTitle, listedProjects } = input
+  const [image, setImage] = useState();
+
+  const { listTitle, listedProjects } = input;
   // console.log(listedProjects)
   const listedProjectsSorted = listedProjects.sort((a, b) => {
-    return new Date(b.dateDelivered) - new Date(a.dateDelivered)
-  })
+    return new Date(b.dateDelivered) - new Date(a.dateDelivered);
+  });
 
-  const _getYear = (d) => {
+  const _getYear = d => {
     // console.log(d)
-    const year = new Date(d).getFullYear()
-    return !isNaN(year) ? `, ${year}` : ""
-  }
+    const year = new Date(d).getFullYear();
+    return !isNaN(year) ? `, ${year}` : "";
+  };
+
+  const _preloadImage = asset => {
+    if (asset) {
+      const _image = new Image();
+      _image.src = asset.src;
+    }
+  };
   // return null
   return (
-    <section className="project-liste">
-      <div className="row ">
-        <div className="col-md-4 ">
+    <section className='project-liste'>
+      <div className='row '>
+        <div className='col-md-4 '>
           <h2>{_localizeField(listTitle)}</h2>
         </div>
       </div>
 
       <ul>
         {listedProjectsSorted.map((li, i) => (
-          <li key={i}>
-            <div className="client">{li.client}</div>
-            <div className="row">
-              <div className="col-md-10 col-xs-12">
-                <div className="title fw500">
+          <li
+            key={i}
+            onMouseEnter={() => _preloadImage(li.imageFeatured)}
+            // onMouseLeave={() => setPreloadImage(false)}
+          >
+            <div className='client'>{li.client}</div>
+            <div className='row'>
+              <div className='col-md-10 col-xs-12'>
+                <div className='title fw500'>
                   {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
                 </div>
               </div>
-              <div className="col-md-1 col-xs-9 tar">
+              <div className='col-md-1 col-xs-9 tar'>
                 {li.projectUrl && (
-                  <a href={li.projectUrl} target="_blank">
+                  <a href={li.projectUrl} target='_blank' rel='noreferrer'>
                     {_localizeText("link")}
                   </a>
                 )}
               </div>
-              {li.projectImage && li.projectImage.asset && (
-                <div className="col-md-1 col-xs-3 tar">
+              {li.imageFeatured && li.imageFeatured.asset && (
+                <div className='col-md-1 col-xs-3 tar'>
                   <button
-                    onMouseEnter={() => setImage(li.projectImage.asset.url)}
-                    onMouseLeave={() => setImage(null)}
+                    onMouseEnter={() => setImage(li.imageFeatured)}
+                    // onMouseLeave={() => setImage(null)}
                     onClick={() => {
-                      !image
-                        ? setImage(li.projectImage.asset.url)
-                        : setImage(null)
-                    }}
-                  >
+                      // !image ? setImage(li.imageFeatured) : setImage(null);
+                    }}>
                     {_localizeText("image")}
                   </button>
                 </div>
@@ -61,22 +70,22 @@ const ProjectListe = ({ input }) => {
           </li>
         ))}
       </ul>
-      {image && (
-        <div className="image-overlay" onClick={() => setImage(null)}>
-          <div className="row center-xs h100">
-            <div className="col-md-10 col-xs-12 h100">
-              <div
-                className="cover h100"
-                style={{
-                  backgroundImage: `url(${image})`,
-                }}
-              />
+
+      <div
+        className={clsx("image-overlay", image ? "show" : "hide")}
+        role='button'
+        tabIndex={0}
+        onClick={() => setImage(null)}>
+        <div className='row center-xs h100'>
+          <div className='col-md-10 col-xs-12 h100 '>
+            <div className='inner h100'>
+              {image && <SanityImage input={image} />}
             </div>
           </div>
         </div>
-      )}
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectListe
+export default ProjectListe;

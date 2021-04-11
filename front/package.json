@@ -1,46 +1,36 @@
 {
-  "name": "ot.works.front",
-  "private": true,
+  "name": "ot.works",
   "version": "1.0.0",
-  "description": "",
-  "main": "package.json",
-  "author": "Ghazi Ahmed <hello@ahmedghazi.com>",
-  "license": "UNLICENSED",
+  "private": true,
+  "description": "ot.works",
+  "author": "Ahmed Ghazi",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "clean": "gatsby clean",
-    "start-c": "npm run clean && gatsby develop",
+    "develop": "gatsby develop",
     "start": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
-    "babel-plugin-styled-components": "^1.12.0",
     "clsx": "^1.1.1",
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.32.4",
-    "gatsby-image": "^2.11.0",
-    "gatsby-plugin-favicon": "^3.1.6",
+    "gatsby": "^3.2.1",
     "gatsby-plugin-image": "^1.2.1",
-    "gatsby-plugin-react-helmet": "^3.10.0",
-    "gatsby-plugin-sass": "^3.2.0",
-    "gatsby-plugin-sharp": "^2.14.1",
-    "gatsby-plugin-sitemap": "^2.12.0",
-    "gatsby-plugin-styled-components": "^4.2.0",
-    "gatsby-source-sanity": "^6.0.5",
-    "gatsby-transformer-remark": "^2.16.0",
-    "gatsby-transformer-sharp": "^2.12.0",
-    "node-sass": "^5.0.0",
+    "gatsby-plugin-manifest": "^3.2.0",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-sass": "^4.2.0",
+    "gatsby-plugin-sharp": "^3.2.1",
+    "gatsby-plugin-sitemap": "^3.2.0",
+    "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-source-sanity": "^7.0.2",
+    "gatsby-transformer-sharp": "^3.2.0",
     "pubsub-js": "^1.9.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.2.3",
-    "throttle-debounce": "^3.0.1"
-  },
-  "devDependencies": {
-    "prettier": "^2.2.1"
+    "sass": "^1.32.8"
   }
 }

@@ -21,65 +21,32 @@ module.exports = {
     facebook: website.facebook,
   },
   plugins: [
-    "gatsby-plugin-react-helmet",
-    // 'gatsby-transformer-remark',
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sass",
-    "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: projectId,
         dataset: "production",
-
-        // a token with read permissions is required
-        // if you have a private dataset
-        token: accessToken,
-        // watchMode: true,
-        // overlayDrafts: true,
-        // If the Sanity GraphQL API was deployed using `--tag <name>`,
-        // use `graphqlTag` to specify the tag name. Defaults to `default`.
-        // graphqlTag: 'default',
       },
     },
+    "gatsby-plugin-sass",
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        logo: "./src/favicon-1500.png",
-
-        // WebApp Manifest Configuration
-        appName: website.titleAlt, // Inferred with your package.json
-        appDescription: website.description,
-        developerName: "a_e_a_i_",
-        developerURL: "ahmedghazi.com",
-        dir: "auto",
-        lang: "fr-FR",
-        background: website.backgroundColor,
-        theme_color: website.themeColor,
-        display: "standalone",
-        orientation: "any",
-        start_url: "/?homescreen=1",
-        version: "1.0",
-
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          yandex: false,
-          windows: false,
-        },
+        icon: "src/images/icon.png",
       },
     },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     // {
-    //   resolve: `gatsby-plugin-google-analytics`,
+    //   resolve: "gatsby-source-filesystem",
     //   options: {
-    //     trackingId: website.googleAnalyticsID,
+    //     name: "images",
+    //     path: "./src/images/"
     //   },
+    //   __key: "images"
     // }
   ],
 }

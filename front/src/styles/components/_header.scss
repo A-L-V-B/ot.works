@@ -7,7 +7,7 @@ header {
   z-index: 250;
   //margin-bottom: $margeM;
   padding: 0 $margeS;
-  @include debugFiletY(25px);
+  // @include debugFiletY(var(--headerHeight));
   h1 {
     display: inline-block;
   }
@@ -39,6 +39,10 @@ header {
     a {
       padding-right: 53px;
     }
+  }
+  button.sm-menu-cta {
+    line-height: 1;
+    width: 100%;
   }
 }
 

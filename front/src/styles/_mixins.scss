@@ -466,6 +466,7 @@ $sass-burger-add-vendor-prefixes: true !default;
     content: "";
     position: fixed;
     top: $top;
+    left: 0;
     height: 1px;
     width: 100vw;
     background: red;

@@ -1,43 +1,43 @@
-import React from "react"
-import Helmet from "react-helmet"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import Facebook from "./Facebook"
-import Twitter from "./Twitter"
-import { _getLocale } from "../../core/utils"
+import React from "react";
+import Helmet from "react-helmet";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import Facebook from "./Facebook";
+import Twitter from "./Twitter";
+import { _getLocale } from "../../core/utils";
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
-const SEO = ({
+const Seo = ({
   pageTitle,
   pageDescription,
   pageImage,
   pathname,
   page,
-  template,
+  template
 }) => {
-  const { site } = useStaticQuery(query)
+  const { site } = useStaticQuery(query);
   const {
     buildTime,
     siteMetadata: {
       siteTitle,
-      siteDescription,
+      // siteDescription,
       siteUrl,
       defaultBanner,
       author,
       twitter,
-      facebook,
-    },
-  } = site
+      facebook
+    }
+  } = site;
 
   //const localizedPath = i18n[locale].default ? '' : `/${i18n[locale].path}`
-  const homeURL = `${siteUrl}`
+  const homeURL = `${siteUrl}`;
 
   const seo = {
     title: page ? pageTitle + " - " + siteTitle : siteTitle,
     description: pageDescription,
     image: pageImage || defaultBanner,
-    url: `${siteUrl}${pathname || ""}`,
-  }
+    url: `${siteUrl}${pathname || ""}`
+  };
   // console.log(seo)
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
@@ -54,30 +54,30 @@ const SEO = ({
     name: seo.title,
     author: {
       "@type": "Person",
-      name: author,
+      name: author
     },
     copyrightHolder: {
       "@type": "Person",
-      name: author,
+      name: author
     },
     copyrightYear: "2019",
     creator: {
       "@type": "Person",
-      name: author,
+      name: author
     },
     publisher: {
       "@type": "Person",
-      name: author,
+      name: author
     },
     //datePublished: '2019-01-18T10:30:00+01:00',
     dateModified: buildTime,
     image: {
       "@type": "ImageObject",
-      url: `${siteUrl}${defaultBanner}`,
-    },
-  }
+      url: `${siteUrl}${defaultBanner}`
+    }
+  };
 
-  let schemaArticle = null
+  let schemaArticle = null;
 
   if (page) {
     schemaArticle = {
@@ -85,24 +85,24 @@ const SEO = ({
       "@type": "Article",
       author: {
         "@type": "Person",
-        name: author,
+        name: author
       },
       copyrightHolder: {
         "@type": "Person",
-        name: author,
+        name: author
       },
       copyrightYear: "2019",
       creator: {
         "@type": "Person",
-        name: author,
+        name: author
       },
       publisher: {
         "@type": "Organization",
         name: author,
         logo: {
           "@type": "ImageObject",
-          url: `${siteUrl}${defaultBanner}`,
-        },
+          url: `${siteUrl}${defaultBanner}`
+        }
       },
       //datePublished: node.first_publication_date,
       //dateModified: node.last_publication_date,
@@ -113,27 +113,27 @@ const SEO = ({
       name: seo.title,
       image: {
         "@type": "ImageObject",
-        url: seo.image,
+        url: seo.image
       },
-      mainEntityOfPage: seo.url,
-    }
+      mainEntityOfPage: seo.url
+    };
   }
 
   return (
     <>
       <Helmet title={seo.title}>
         <html lang={_getLocale()} />
-        <meta name="description" content={seo.description} />
-        <meta name="image" content={seo.image} />
-        <meta name="gatsby-starter" content="Gatsby Starter Prismic i18n" />
+        <meta name='description' content={seo.description} />
+        <meta name='image' content={seo.image} />
+        <meta name='gatsby-starter' content='Gatsby Starter Prismic i18n' />
         {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
         {!page && (
-          <script type="application/ld+json">
+          <script type='application/ld+json'>
             {JSON.stringify(schemaOrgWebPage)}
           </script>
         )}
         {page && (
-          <script type="application/ld+json">
+          <script type='application/ld+json'>
             {JSON.stringify(schemaArticle)}
           </script>
         )}
@@ -156,30 +156,30 @@ const SEO = ({
         username={twitter}
       />
     </>
-  )
-}
+  );
+};
 
-export default SEO
+export default Seo;
 
-SEO.propTypes = {
+Seo.propTypes = {
   title: PropTypes.string,
   desc: PropTypes.string,
   banner: PropTypes.string,
   pathname: PropTypes.string,
   page: PropTypes.bool,
   //node: PropTypes.object,
-  locale: PropTypes.string,
-}
+  locale: PropTypes.string
+};
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   title: null,
   desc: null,
   banner: null,
   pathname: null,
   page: false,
   //node: null,
-  locale: "fr-fr",
-}
+  locale: "fr-fr"
+};
 
 const query = graphql`
   query SEO {
@@ -187,7 +187,7 @@ const query = graphql`
       buildTime(formatString: "YYYY-MM-DD")
       siteMetadata {
         siteTitle
-        siteDescription
+        # siteDescription
         siteUrl
         defaultBanner: banner
         ogLanguage
@@ -197,4 +197,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

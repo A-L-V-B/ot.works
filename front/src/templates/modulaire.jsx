@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from "react"
-import { graphql } from "gatsby"
-import SEO from "../components/seo"
-import Modules from "../components/modules"
+import React from "react";
+import { graphql } from "gatsby";
+import Seo from "../components/seo";
+import Modules from "../components/modules";
 
 export const query = graphql`
   query PageBySlug($slug: String!) {
@@ -21,17 +21,17 @@ export const query = graphql`
       _rawModules(resolveReferences: { maxDepth: 10 })
     }
   }
-`
+`;
 
 const PageModulaire = ({ data }) => {
   // console.log(data.sanityPageModulaire)
-  const { home, title, seo, _rawModules } = data.sanityPageModulaire
+  const { home, seo, _rawModules } = data.sanityPageModulaire;
 
   // useEffect(() => {}, [])
 
   return (
-    <div className="page">
-      <SEO
+    <div className='page'>
+      <Seo
         pageTitle={seo.metaTitle.fr}
         pageDescription={seo.metaDescription.fr}
         // pageImage={image_featured.url}
@@ -41,7 +41,7 @@ const PageModulaire = ({ data }) => {
 
       {_rawModules && <Modules input={_rawModules.modules} />}
     </div>
-  )
-}
+  );
+};
 
-export default PageModulaire
+export default PageModulaire;

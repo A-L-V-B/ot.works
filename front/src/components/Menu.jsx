@@ -5,9 +5,9 @@ import { _localizeField } from "../core/utils"
 // import LinkFade from "./ui/TransitionLinks/LinkFade";
 
 const Menu = ({ input }) => {
-  console.log(input)
-  const menuSanitizd = input.map((el) => el.link)
-  // console.log(menuSanitizd)
+  // console.log(input)
+  // const menuSanitizd = input.map((el) => el.link)
+
   return (
     <nav className="menu-header">
       <ul className="x">

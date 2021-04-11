@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import clsx from "clsx"
+import React, { useEffect, useState } from "react";
+import { graphql, useStaticQuery, Link } from "gatsby";
+import clsx from "clsx";
 
-import PortableText from "@sanity/block-content-to-react"
-import LocaleSwitcher from "./ui/LocaleSwitcher"
-import DarkMode from "./ui/DarkMode"
-import Menu from "./Menu"
-import { _getHomeUrl } from "../core/utils"
+import PortableText from "@sanity/block-content-to-react";
+import LocaleSwitcher from "./ui/LocaleSwitcher";
+import DarkMode from "./ui/DarkMode";
+import Menu from "./Menu";
+import { _getHomeUrl } from "../core/utils";
 
 const query = graphql`
   query {
@@ -27,78 +27,75 @@ const query = graphql`
       }
     }
   }
-`
+`;
 
 const Header = () => {
-  const { sanityHeader } = useStaticQuery(query)
-  const { homeButton, _rawContact, nav } = sanityHeader
+  const { sanityHeader } = useStaticQuery(query);
+  const { homeButton, _rawContact, nav } = sanityHeader;
 
-  const [smMenuActive, setSmMenuActive] = useState(false)
+  const [smMenuActive, setSmMenuActive] = useState(false);
 
   useEffect(() => {
-    const btns = document.querySelectorAll(".sm-menu a, .sm-menu button")
+    const btns = document.querySelectorAll(".sm-menu a, .sm-menu button");
 
     if (smMenuActive) {
-      btns.forEach((el) => {
-        el.addEventListener("click", setSmMenuActive(false))
-      })
+      btns.forEach(el => {
+        el.addEventListener("click", _menuClose);
+      });
     } else {
-      btns.forEach((el) => {
-        el.removeEventListener("click", setSmMenuActive(false))
-      })
+      btns.forEach(el => _menuClose);
     }
 
     return () => {
-      btns.forEach((el) => {
-        el.removeEventListener("click", setSmMenuActive(false))
-      })
-    }
-  }, [smMenuActive])
+      btns.forEach(el => _menuClose);
+    };
+  }, [smMenuActive]);
+
+  const _menuClose = () => setSmMenuActive(false);
 
   return (
     <header className={clsx(smMenuActive ? "is-active" : "")}>
-      <div className="row">
-        <div className="col-md-8 col-xs-7">
-          <div className="col-left x">
+      <div className='row'>
+        <div className='col-md-8 col-xs-7'>
+          <div className='col-left x'>
             <div>
-              <h1 className="cartouche home-button">
+              <h1 className='cartouche home-button'>
                 <Link to={_getHomeUrl()}>{homeButton}</Link>
               </h1>
             </div>
-            <div className="hidden-sm">
+            <div className='hidden-sm'>
               <Menu input={nav} />
             </div>
           </div>
         </div>
-        <div className="col-md-3 hidden-sm">
-          <div className="cartouche ">
-            <div className="contact">
+        <div className='col-md-3 hidden-sm'>
+          <div className='cartouche '>
+            <div className='contact'>
               <PortableText blocks={_rawContact} />
             </div>
           </div>
         </div>
-        <div className="col-md-1 hidden-sm">
-          <div className="tar psa r0">
-            <div className="cartouche">
+        <div className='col-md-1 hidden-sm'>
+          <div className='tar psa r0'>
+            <div className='cartouche'>
               <LocaleSwitcher />
               <DarkMode />
             </div>
           </div>
         </div>
-        <div className="col-xs-5 sm-only ">
-          <div
-            className="sm-menu-cta  tar curp"
-            onClick={() => setSmMenuActive(!smMenuActive)}
-          >
-            <div className="cartouche ">menu</div>
-          </div>
-          <div className="sm-menu">
+        <div className='col-xs-5 sm-only '>
+          <button
+            className='sm-menu-cta  tar curp'
+            onClick={() => setSmMenuActive(!smMenuActive)}>
+            <div className='cartouche '>menu</div>
+          </button>
+          <div className='sm-menu'>
             <Menu input={nav} />
-            <div className="contact">
+            <div className='contact'>
               <PortableText blocks={sanityHeader._rawContact} />
             </div>
-            <div className="tar psa r0 b0 bottom-right">
-              <div className="cartouche">
+            <div className='tar psa r0 b0 bottom-right'>
+              <div className='cartouche'>
                 <LocaleSwitcher />
                 <DarkMode />
               </div>
@@ -109,7 +106,7 @@ const Header = () => {
 
       {/* <Burger /> */}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

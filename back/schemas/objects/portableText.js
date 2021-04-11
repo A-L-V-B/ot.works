@@ -1,6 +1,11 @@
 import React from "react";
 
-import { FaAlignJustify, FaImage, FaSortNumericDown } from "react-icons/fa";
+import {
+  FaAlignJustify,
+  FaImage,
+  FaSortNumericDown,
+  FaSuperscript
+} from "react-icons/fa";
 
 const alignRightJustify = props => (
   <p style={{ textAlign: "justify" }}>{props.children}</p>
@@ -22,8 +27,15 @@ export default {
       ],
       marks: {
         decorators: [
-          { title: "Strong", value: "strong" },
+          // { title: "Strong", value: "strong" },
           { title: "Emphasis", value: "em" },
+          {
+            title: "Superscript",
+            value: "sup",
+            blockEditor: {
+              icon: FaSuperscript
+            }
+          },
           {
             title: "Align Justify",
             value: "align_justify",

@@ -23,8 +23,26 @@
     width: 100%;
     height: 100%;
     padding: var(--headerHeight) $margeS;
-    @media all and (max-width: $sm) {
+    .show {
+      display: block;
+    }
+    .hide {
+      display: none;
+    }
+    .gatsby-image-wrapper {
+      // position: absolute;
+      // left: 50%;
+      // top: -50%;
+      // transform: translate(-50%, -50%);
       pointer-events: initial;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      // max-width: calc(100vh - #{$margeM});
+      // max-height: calc(100vh - (var(--headerHeight) * 2));
+    }
+    @media all and (max-width: $sm) {
     }
   }
 }
