@@ -53,6 +53,8 @@ body {
   font-family: $fontPrimary700;
   font-size: $fontM;
   line-height: $fontMLh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   // font-weight: 700;
 }
 
