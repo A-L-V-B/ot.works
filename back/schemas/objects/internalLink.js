@@ -19,7 +19,7 @@ export default {
   fields: [
     {
       name: "label",
-      // title: 'Title',
+      title: "Label",
       type: "localeString"
     },
     {

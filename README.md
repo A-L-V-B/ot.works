@@ -17,6 +17,8 @@ source ~/.profile
 
 npm install --legacy-peer-deps
 
+sanity documents delete ID
+
 **to do**
 localization
 mobile

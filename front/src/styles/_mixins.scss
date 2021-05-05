@@ -486,6 +486,7 @@ $sass-burger-add-vendor-prefixes: true !default;
 }
 
 @mixin debugSquare($size: 20px) {
+  position: relative;
   &:after {
     z-index: 999;
     content: "";

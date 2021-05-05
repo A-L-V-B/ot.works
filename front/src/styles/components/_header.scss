@@ -6,8 +6,13 @@ header {
   // position: relative;
   z-index: 250;
   //margin-bottom: $margeM;
-  padding: 0 $margeS;
+  // padding: 0 $margeS;
   // @include debugFiletY(var(--headerHeight));
+  min-height: 54px;
+  @include anime;
+  &.down {
+    @include slide(top, 0);
+  }
   h1 {
     display: inline-block;
   }
@@ -21,6 +26,7 @@ header {
   .cartouche {
     position: relative;
     display: inline-block;
+    padding: 0 $margeS $margeXS;
     &::before {
       content: "";
       position: absolute;
@@ -30,9 +36,11 @@ header {
       bottom: 0;
       left: 0;
       background-color: $blanc-100;
+      // background-color: red;
       // background: red;
-      width: calc(100% + #{$margeS});
-      transform: translateX(-$margeXS);
+      // width: calc(100% + #{$margeM});
+      // min-height: 1.455em;
+      // transform: translateX(-$margeS);
     }
   }
   .col-left {
@@ -46,13 +54,13 @@ header {
   }
 }
 
-.downscroll {
-  header {
-    .inner {
-      @include slide(top, 0);
-    }
-  }
-}
+// .downscroll {
+//   header {
+//     .inner {
+//       @include slide(top, 0);
+//     }
+//   }
+// }
 
 @media all and (max-width: $sm) {
   header {

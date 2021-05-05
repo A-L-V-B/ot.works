@@ -4,10 +4,11 @@ const DarkMode = () => {
   const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
+    //si on toggle la classe sur le body au changement de page la classe est nétoyée. Idéalement faire ce switch via le context
     if (isDark) {
-      document.body.classList.add("is-dark")
+      document.documentElement.classList.add("is-dark")
     } else {
-      document.body.classList.remove("is-dark")
+      document.documentElement.classList.remove("is-dark")
     }
   }, [isDark])
 

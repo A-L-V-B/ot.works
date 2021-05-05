@@ -3,8 +3,28 @@
   li {
     background: $noir-100;
     color: $blanc-100;
-    border-bottom: $border;
-    padding: 6px $margeS 5px;
+    // border-bottom: $border;
+    padding: 7px $margeS 6px;
+    padding: 0 $margeS;
+    // @include debugSquare(8px);
+    position: relative;
+    // &::after {
+    //   content: "";
+    //   display: block;
+    //   height: $borderWidth;
+    //   background: white;
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: $margeS;
+    //   width: calc(100% - #{$margeM});
+    // }
+    .inner {
+      padding: 7px 0 6px;
+      border-bottom: $border;
+    }
+  }
+  h2 {
+    padding-right: 0;
   }
   a,
   button {

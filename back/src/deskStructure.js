@@ -80,10 +80,10 @@ export default () =>
       //     ![
       //       "pageModulaire",
       //       "settings",
-      //       "header",
-      //       // "project",
-      //       "footer",
-      //       "lang"
+      //       // "header",
+      //       "project"
+      //       // "footer",
+      //       // "lang"
       //     ].includes(listItem.getId())
       // ),
       S.divider(),

@@ -20,7 +20,7 @@ body {
     transition: color 0.15s ease-out, background-color 0.15s ease-out;
   }
 
-  &.is-dark {
+  .is-dark & {
     &::before {
       background-color: $noir-100;
     }

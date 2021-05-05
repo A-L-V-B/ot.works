@@ -29,7 +29,9 @@ const ProjectListe = ({ input }) => {
     <section className="project-liste">
       <div className="row ">
         <div className="col-md-4 ">
-          <h2>{_localizeField(listTitle)}</h2>
+          <h2>
+            <div className="inner">{_localizeField(listTitle)}</div>
+          </h2>
         </div>
       </div>
 
@@ -40,33 +42,35 @@ const ProjectListe = ({ input }) => {
             onMouseEnter={() => _preloadImage(li.imageFeatured)}
             // onMouseLeave={() => setPreloadImage(false)}
           >
-            <div className="client">{li.client}</div>
-            <div className="row">
-              <div className="col-md-10 col-xs-12">
-                <div className="title fw500">
-                  {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
+            <div className="inner">
+              <div className="client">{li.client}</div>
+              <div className="row">
+                <div className="col-md-10 col-xs-12">
+                  <div className="title fw500">
+                    {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
+                  </div>
                 </div>
-              </div>
-              <div className="col-md-1 col-xs-9 tar">
-                {li.projectUrl && (
-                  <a href={li.projectUrl} target="_blank" rel="noreferrer">
-                    {_localizeText("link")}
-                  </a>
+                <div className="col-md-1 col-xs-9 tar">
+                  {li.projectUrl && (
+                    <a href={li.projectUrl} target="_blank" rel="noreferrer">
+                      {_localizeText("link")}
+                    </a>
+                  )}
+                </div>
+                {li.imageFeatured && li.imageFeatured.asset && (
+                  <div className="col-md-1 col-xs-3 tar">
+                    <button
+                      onMouseEnter={() => setImage(li.imageFeatured)}
+                      // onMouseLeave={() => setImage(null)}
+                      onClick={() => {
+                        !image ? setImage(li.imageFeatured) : setImage(null)
+                      }}
+                    >
+                      {_localizeText("image")}
+                    </button>
+                  </div>
                 )}
               </div>
-              {li.imageFeatured && li.imageFeatured.asset && (
-                <div className="col-md-1 col-xs-3 tar">
-                  <button
-                    onMouseEnter={() => setImage(li.imageFeatured)}
-                    onMouseLeave={() => setImage(null)}
-                    onClick={() => {
-                      !image ? setImage(li.imageFeatured) : setImage(null)
-                    }}
-                  >
-                    {_localizeText("image")}
-                  </button>
-                </div>
-              )}
             </div>
           </li>
         ))}
@@ -80,8 +84,12 @@ const ProjectListe = ({ input }) => {
       >
         <div className="row center-xs h100">
           <div className="col-md-10 col-xs-12 h100 ">
-            <div className="inner h100">
-              {image && <SanityImage input={image} />}
+            <div className="inner h100 x xjc xac">
+              {image && (
+                <div className="fadeIn">
+                  <SanityImage input={image} />
+                </div>
+              )}
             </div>
           </div>
         </div>
