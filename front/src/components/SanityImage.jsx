@@ -6,7 +6,7 @@ import { _localizeField } from "../core/utils"
 
 const sanityConfig = { projectId: "6hr2f37r", dataset: "production" }
 
-const SanityImage = ({ input }) => {
+const SanityImage = ({ input, className }) => {
   // const [imageLoaded, setImageloaded] = useState(false)
   const { asset, alt } = input
   const { metadata } = asset
@@ -15,12 +15,7 @@ const SanityImage = ({ input }) => {
   // useEffect(() => {}, []);
 
   return (
-    <figure
-    // style={{
-    //   opacity: imageLoaded ? 1 : 0,
-    //   transition: "opacity .5s ease",
-    // }}
-    >
+    <figure>
       <GatsbyImage
         image={imageData}
         alt={alt ? _localizeField(alt) : ""}
@@ -32,6 +27,7 @@ const SanityImage = ({ input }) => {
         //   backgroundColor: metadata.palette.dominant.background
         // }}
         objectFit="contain"
+
         // onLoad={() => {
         //   setImageloaded(true)
         // }}

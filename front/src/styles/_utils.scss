@@ -19,9 +19,9 @@ img {
     max-width: 1022px;
   }
 }
-
+/*
 .fadeIn {
-  animation: fadeIn 0.4s ease;
+  animation: fadeIn 1s ease;
 }
 @keyframes fadeIn {
   0% {
@@ -31,3 +31,16 @@ img {
     opacity: 1;
   }
 }
+
+.fadeOut {
+  animation: fadeOut 1s ease;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+*/

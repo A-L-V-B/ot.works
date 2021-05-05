@@ -12,6 +12,8 @@ module.exports = {
     image: "image",
     modifiedThe: "Modifié le",
     at: "à",
+    personal: "Personnel",
+    "pro-bono": "Pro bono",
   },
   en: {
     default: false,
@@ -24,5 +26,7 @@ module.exports = {
     image: "image",
     modifiedThe: "Modified on",
     at: "at",
+    personal: "Personal",
+    "pro-bono": "Pro bono",
   },
 }

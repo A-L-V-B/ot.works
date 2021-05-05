@@ -1,13 +1,12 @@
-import React, { useState } from "react"
-import SanityImage from "../SanityImage"
+import React, { useEffect, useState } from "react"
 import { _localizeField, _localizeText } from "../../core/utils"
-import clsx from "clsx"
+import ProjectOverlay from "./ProjectOverlay"
 
 const ProjectListe = ({ input }) => {
   const [image, setImage] = useState()
 
   const { listTitle, listedProjects } = input
-  // console.log(listedProjects)
+  console.log(listedProjects)
   const listedProjectsSorted = listedProjects.sort((a, b) => {
     return new Date(b.dateDelivered) - new Date(a.dateDelivered)
   })
@@ -18,13 +17,25 @@ const ProjectListe = ({ input }) => {
     return !isNaN(year) ? `, ${year}` : ""
   }
 
+  const _renderCat = (cat) => {
+    // return cat[0]
+    if (cat.length) {
+      if (cat[0] === "pro-bono" || cat[0] === "personal") {
+        return `, ${_localizeText(cat[0])}`
+      }
+    }
+  }
+
   const _preloadImage = (asset) => {
     if (asset) {
       const _image = new Image()
       _image.src = asset.src
     }
   }
-  // return null
+  // const _onMouseLeave = () => {
+
+  // }
+
   return (
     <section className="project-liste">
       <div className="row ">
@@ -39,7 +50,7 @@ const ProjectListe = ({ input }) => {
         {listedProjectsSorted.map((li, i) => (
           <li
             key={i}
-            onMouseEnter={() => _preloadImage(li.imageFeatured)}
+            // onMouseEnter={() => _preloadImage(li.imageFeatured)}
             // onMouseLeave={() => setPreloadImage(false)}
           >
             <div className="inner">
@@ -48,6 +59,7 @@ const ProjectListe = ({ input }) => {
                 <div className="col-md-10 col-xs-12">
                   <div className="title fw500">
                     {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
+                    {_renderCat(li.category)}
                   </div>
                 </div>
                 <div className="col-md-1 col-xs-9 tar">
@@ -61,7 +73,7 @@ const ProjectListe = ({ input }) => {
                   <div className="col-md-1 col-xs-3 tar">
                     <button
                       onMouseEnter={() => setImage(li.imageFeatured)}
-                      // onMouseLeave={() => setImage(null)}
+                      onMouseLeave={() => setImage(null)}
                       onClick={() => {
                         !image ? setImage(li.imageFeatured) : setImage(null)
                       }}
@@ -76,24 +88,7 @@ const ProjectListe = ({ input }) => {
         ))}
       </ul>
 
-      <div
-        className={clsx("image-overlay", image ? "show" : "hide")}
-        role="button"
-        tabIndex={0}
-        onClick={() => setImage(null)}
-      >
-        <div className="row center-xs h100">
-          <div className="col-md-10 col-xs-12 h100 ">
-            <div className="inner h100 x xjc xac">
-              {image && (
-                <div className="fadeIn">
-                  <SanityImage input={image} />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <ProjectOverlay image={image} />
     </section>
   )
 }

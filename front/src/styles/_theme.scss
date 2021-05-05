@@ -37,12 +37,12 @@ body {
     header .cartouche {
       // position: relative;
       &::before {
-        background-color: $blanc-50;
+        background-color: $noir-100;
       }
-      color: $noir-100;
+      color: $blanc-100;
       a,
       button {
-        color: $noir-100;
+        color: $blanc-100;
         &:hover {
           color: $noir-50;
         }
@@ -65,6 +65,16 @@ body {
         color: $noir-100;
         &:hover {
           color: $noir-50;
+        }
+      }
+    }
+    p {
+      color: $blanc-50;
+      a {
+        color: $blanc-50;
+        // color: red;
+        &:hover {
+          color: $blanc-100;
         }
       }
     }
