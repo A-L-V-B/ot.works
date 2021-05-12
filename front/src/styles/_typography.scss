@@ -137,8 +137,14 @@ p {
   &:empty {
     display: none;
   }
-  a {
-    word-break: break-all;
+  // a {
+  //   word-break: break-all;
+  // }
+}
+.fS p a {
+  color: $bleu-100;
+  &:hover {
+    color: $bleu-50;
   }
 }
 .texte {
