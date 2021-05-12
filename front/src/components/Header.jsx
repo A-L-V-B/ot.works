@@ -35,7 +35,11 @@ const Header = ({ direction }) => {
   const { homeButton, _rawContact, nav } = sanityHeader
 
   const [smMenuActive, setSmMenuActive] = useState(false)
+  const [windowLoaded, setWindowLoaded] = useState(false)
 
+  useEffect(() => {
+    setWindowLoaded(true)
+  }, [])
   useEffect(() => {
     const btns = document.querySelectorAll(".sm-menu a, .sm-menu button")
 
@@ -72,7 +76,7 @@ const Header = ({ direction }) => {
         <div className="col-md-3 hidden-sm">
           <div className="cartouche ">
             <div className="contact">
-              <PortableText blocks={_rawContact} />
+              {windowLoaded && <PortableText blocks={_rawContact} />}
             </div>
           </div>
         </div>
