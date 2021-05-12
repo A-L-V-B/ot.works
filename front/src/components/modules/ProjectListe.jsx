@@ -21,7 +21,7 @@ const ProjectListe = ({ input }) => {
     // return cat[0]
     if (cat.length) {
       if (cat[0] === "pro-bono" || cat[0] === "personal") {
-        return `, ${_localizeText(cat[0])}`
+        return `[${_localizeText(cat[0])}]`
       }
     }
   }
@@ -54,12 +54,13 @@ const ProjectListe = ({ input }) => {
             // onMouseLeave={() => setPreloadImage(false)}
           >
             <div className="inner">
-              <div className="client">{li.client}</div>
+              <div className="client">
+                {li.client} {_renderCat(li.category)}
+              </div>
               <div className="row">
                 <div className="col-md-10 col-xs-12">
                   <div className="title fw500">
                     {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
-                    {_renderCat(li.category)}
                   </div>
                 </div>
                 <div className="col-md-1 col-xs-9 tar">

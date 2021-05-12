@@ -2,7 +2,11 @@ export default {
   name: "seo",
   type: "object",
   title: "SEO",
-  collapsible: "true",
+  options: {
+    collapsible: true,
+    collapsed: true
+  },
+  // collapsible: "true",
   // fieldsets: [
   //   {
   //     title: "SEO",

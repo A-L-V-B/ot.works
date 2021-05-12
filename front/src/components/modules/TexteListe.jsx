@@ -5,7 +5,7 @@ import { _localizeField } from "../../core/utils"
 const TexteListe = ({ input }) => {
   // console.log(input)
   const { liste } = input
-  // console.log(liste)
+  console.log(liste)
   return (
     <section className="texte-liste fS fSeg">
       <div className="container-fluid">
@@ -21,7 +21,9 @@ const TexteListe = ({ input }) => {
                 <div className="col-xs-1"></div>
                 <div className="col-xs-11 col-md-6">
                   <div className="texte taj">
-                    <BlockContent blocks={_localizeField(li._rawTexte)} />
+                    {li._rawTexte && (
+                      <BlockContent blocks={_localizeField(li._rawTexte)} />
+                    )}
                   </div>
                 </div>
               </div>

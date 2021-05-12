@@ -39,7 +39,7 @@ const Texte = ({ input }) => {
             </div>
           </div>
         </div>
-        <FootNotes blocks={_localizeField(input.text)} />
+        {/* <FootNotes blocks={_localizeField(input.text)} /> */}
       </div>
     </section>
   )
