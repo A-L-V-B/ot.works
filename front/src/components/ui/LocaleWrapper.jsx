@@ -3,8 +3,10 @@ import { useState } from "react"
 
 const LocaleContext = createContext()
 
-const LocaleWrapper = ({ children }) => {
-  const [localeCtx, dispatch] = useState("fr")
+const LocaleWrapper = ({ children, pageContext }) => {
+  const { locale = "fr" } = pageContext
+  // console.log(locale)
+  const [localeCtx, dispatch] = useState(locale)
   // console.log(localeCtx)
   return (
     <LocaleContext.Provider value={{ localeCtx, dispatch }}>

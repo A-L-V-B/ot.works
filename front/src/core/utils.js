@@ -29,3 +29,7 @@ export const _getHomeUrl = () => {
   const locale = _getLocale()
   return locales[locale].default ? `/` : `/${locales[locale]["path"]}`
 }
+
+export const _unique = (value, index, self) => {
+  return self.indexOf(value) === index
+}

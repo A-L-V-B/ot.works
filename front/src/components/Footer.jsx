@@ -26,7 +26,7 @@ const Footer = () => {
   } = useStaticQuery(query)
 
   const date = new Date(buildTime)
-  console.log(date)
+  // console.log(date)
   const getFormatedDate = () => {
     const dd = pad2(date.getDate())
     const mm = pad2(date.getMonth() + 1)
@@ -53,7 +53,8 @@ const Footer = () => {
       <TexteListe input={sanityFooter.texteList} />
       <div className="container-fluid">
         <div className="site-metas">
-          {_localizeText("modifiedThe")} <span>{getFormatedDate()}</span>{" "}
+          {_localizeText("modifiedThe")}{" "}
+          <span className="tabnum">{getFormatedDate()}</span>{" "}
           {_localizeText("at")}{" "}
           <span className="tabnum">{getFormatedTime()}</span>
         </div>

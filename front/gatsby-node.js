@@ -104,7 +104,7 @@ async function createAllPageModulaire(graphql, actions) {
         ? `/${locale.path}`
         : `/${locale.path}/${slug.current}`
 
-      console.log("localizedPath", localizedPath)
+      console.log(locale.path, "localizedPath", localizedPath)
 
       createPage({
         path: localizedPath,
@@ -112,7 +112,7 @@ async function createAllPageModulaire(graphql, actions) {
         context: {
           slug: slug.current,
           template: "modulaire",
-          // locale: locale,
+          locale: locale.path,
         },
       })
     })

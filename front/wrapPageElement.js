@@ -22,7 +22,7 @@ const _wrapRootElement = ({ element }) => {
 const _wrapPageElement = ({ element, props }) => {
   // console.log(Layout)
   return (
-    <LocaleWrapper>
+    <LocaleWrapper {...props}>
       <Layout {...props}>{element}</Layout>
     </LocaleWrapper>
   )
