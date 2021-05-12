@@ -142,10 +142,15 @@ p {
   }
 }
 .texte {
-  hyphens: auto;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  // hyphens: auto;
+  // word-wrap: break-word;
+  // overflow-wrap: break-word;
+
   p {
+    &,
+    a {
+      word-break: keep-all;
+    }
     text-indent: $margeM;
   }
   p:first-child {
