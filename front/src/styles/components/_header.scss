@@ -9,7 +9,7 @@ header {
   // padding: 0 $margeS;
   // @include debugFiletY(var(--headerHeight));
   min-height: 54px;
-  @include anime;
+  @include anime(0.4s, 0s);
   &.down {
     @include slide(top, 0);
   }

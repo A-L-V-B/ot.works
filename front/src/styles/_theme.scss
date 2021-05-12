@@ -29,8 +29,10 @@ body {
     a,
     button {
       color: $blanc-100;
+      color: $blanc-50;
       &:hover {
         color: $blanc-50;
+        color: $blanc-100;
       }
     }
 
@@ -42,9 +44,9 @@ body {
       color: $blanc-100;
       a,
       button {
-        color: $blanc-100;
+        color: $blanc-50;
         &:hover {
-          color: $noir-50;
+          color: $blanc-100;
         }
       }
     }
