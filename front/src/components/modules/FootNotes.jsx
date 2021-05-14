@@ -24,7 +24,8 @@ function FootNotes({ blocks }) {
     .filter(({ _type }) => _type === "footnote")
 
   const notesUnique = notes.filter(_unique)
-  console.log(notesUnique[0].text)
+  if (!notesUnique) return null
+  // console.log(notesUnique[0].text)
   return (
     <ul className="footnotes fSeg fS">
       {notesUnique.map(({ _key, text }, i) => (
