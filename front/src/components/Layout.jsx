@@ -41,7 +41,7 @@ const Layout = ({ children, pageContext: { template } }) => {
       ? setDirection("down")
       : setDirection("up")
 
-    if (window.pageYOffset === 0) {
+    if (window.pageYOffset < 10) {
       setDirection("")
     }
 
