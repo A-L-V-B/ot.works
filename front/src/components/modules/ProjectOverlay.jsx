@@ -38,12 +38,12 @@ const ProjectOverlay = ({ image }) => {
               <div
                 className="cover"
                 style={{
-                  backgroundSize: "cover",
+                  backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   backgroundImage: `url(${_image.asset.url})`,
-                  backgroundColor:
-                    _image.asset.metadata.palette.dominant.background,
+                  // backgroundColor:
+                  //   _image.asset.metadata.palette.dominant.background,
                   width: "calc(100vw - 20px)",
                   height: "calc(100vh - 100px)",
                 }}

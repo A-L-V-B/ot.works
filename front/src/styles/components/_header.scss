@@ -43,9 +43,12 @@ header {
       // transform: translateX(-$margeS);
     }
   }
-  .col-left {
+  nav {
+    li:first-child a {
+      padding-left: 53px;
+    }
     a {
-      padding-right: 53px;
+      // padding-right: 53px;
     }
   }
   button.sm-menu-cta {
