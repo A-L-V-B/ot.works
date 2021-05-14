@@ -1,15 +1,35 @@
-import React from 'react';
+import React from "react"
+import { graphql } from "gatsby"
+import Helmet from "react-helmet"
+import PortableText from "@sanity/block-content-to-react"
 
-const Page404 = () => {
-    return (
-        <div className="page-404">
-            <div className="inner pt-xl pl-m pr-m">
-                <h1>Page Not Found</h1>
-                <p>The page requested couldn't be found</p>
-                <a href="/">Back home</a>
-            </div>
+export const query = graphql`
+  query {
+    settings: sanitySettings {
+      message404 {
+        fr: _rawFr(resolveReferences: { maxDepth: 10 })
+        # en: _rawEn(resolveReferences: { maxDepth: 10 })
+      }
+    }
+  }
+`
+
+const Page404 = (props) => {
+  console.log(props.data)
+  const { settings } = props.data
+
+  return (
+    <div className="page-404 ">
+      <Helmet>
+        <body className={"template-404"} />
+      </Helmet>
+      <div className="container-fluid">
+        <div className="texte">
+          <PortableText blocks={settings.message404.fr} />
         </div>
-    );
-};
+      </div>
+    </div>
+  )
+}
 
-export default Page404;
+export default Page404
