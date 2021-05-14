@@ -78,6 +78,9 @@ header {
       .cartouche::before {
         display: none;
       }
+      // nav .cartouche {
+      //   padding-left: 0;
+      // }
       a,
       .sm-menu-cta {
         color: $blanc-100;
@@ -113,9 +116,16 @@ header {
       .cartouche::before {
         display: none;
       }
+      .cartouche {
+        padding-left: 0;
+      }
     }
     .menu-header ul.x {
       flex-direction: column;
     }
+  }
+  .bottom-right .cartouche {
+    padding-right: 0;
+    padding-bottom: 0;
   }
 }
