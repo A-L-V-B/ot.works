@@ -43,14 +43,19 @@ header {
       // transform: translateX(-$margeS);
     }
   }
-  nav {
-    li:first-child a {
-      padding-left: 53px;
-    }
-    a {
-      // padding-right: 53px;
-    }
-  }
+  // nav {
+  //   .cartouche {
+  //     // padding-right: 53px;
+  //     padding-left: 26.5px;
+  //     padding-right: 26.5px;
+  //   }
+  //   li.cartouche:first-child {
+  //     padding-left: 43px;
+  //   }
+  //   li.cartouche:last-child {
+  //     padding-right: $margeS;
+  //   }
+  // }
   button.sm-menu-cta {
     line-height: 1;
     width: 100%;

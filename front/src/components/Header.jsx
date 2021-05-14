@@ -60,9 +60,9 @@ const Header = ({ direction }) => {
 
   return (
     <header className={clsx(direction, smMenuActive ? "is-active" : "")}>
-      <div className="row">
-        <div className="col-md-8 col-xs-7">
-          <div className="col-left x">
+      <div className="row no-gutter">
+        <div className="col-md-4 col-xs-7">
+          <div className="col-left x xjb">
             <div>
               <h1 className="cartouche home-button">
                 <Link to={_getHomeUrl()}>{homeButton}</Link>
@@ -73,6 +73,7 @@ const Header = ({ direction }) => {
             </div>
           </div>
         </div>
+        <div className="col-md-4"></div>
         <div className="col-md-3 hidden-sm">
           <div className="cartouche ">
             <div className="contact">
