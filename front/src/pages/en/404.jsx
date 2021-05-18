@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Helmet from "react-helmet"
-import PortableText from "@sanity/block-content-to-react"
+// import PortableText from "@sanity/block-content-to-react"
+import Texte from "../../components/modules/Texte"
 
 export const query = graphql`
   query {
@@ -25,7 +26,8 @@ const Page404 = (props) => {
       </Helmet>
       <div className="container-fluid">
         <div className="texte">
-          <PortableText blocks={settings.message404.en} />
+          {/* <PortableText blocks={settings.message404.en} /> */}
+          <Texte input={{ text: settings.message404 }} />
         </div>
       </div>
     </div>

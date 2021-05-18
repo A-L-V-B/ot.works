@@ -50,7 +50,9 @@ const Footer = () => {
 
   return (
     <footer>
-      <TexteListe input={sanityFooter.texteList} />
+      <div className="mbXXL">
+        <TexteListe input={sanityFooter.texteList} />
+      </div>
       <div className="container-fluid">
         <div className="site-metas">
           {_localizeText("modifiedThe")}{" "}

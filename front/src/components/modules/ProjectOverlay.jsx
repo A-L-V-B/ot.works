@@ -5,7 +5,7 @@ import SanityImage from "../SanityImage"
 const ProjectOverlay = ({ image }) => {
   const [_image, setImage] = useState()
   const [open, setOpen] = useState()
-
+  console.log(image)
   useEffect(() => {
     // console.log(image)
     if (image) {

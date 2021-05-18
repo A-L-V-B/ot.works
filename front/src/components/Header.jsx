@@ -61,19 +61,20 @@ const Header = ({ direction }) => {
   return (
     <header className={clsx(direction, smMenuActive ? "is-active" : "")}>
       <div className="row no-gutter">
-        <div className="col-md-4 col-xs-7">
-          <div className="col-left x xjb">
-            <div>
-              <h1 className="cartouche home-button">
-                <Link to={_getHomeUrl()}>{homeButton}</Link>
-              </h1>
-            </div>
+        <div className="col-md-3 col-xs-7">
+          <h1 className="cartouche home-button">
+            <Link to={_getHomeUrl()}>{homeButton}</Link>
+          </h1>
+          {/* <div className="col-left x xjb">
+            <div></div>
             <div className="hidden-sm">
               <Menu input={nav} />
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="col-md-4"></div>
+        <div className="col-md-5 hidden-sm">
+          <Menu input={nav} />
+        </div>
         <div className="col-md-3 hidden-sm">
           <div className="cartouche ">
             <div className="contact">
@@ -81,6 +82,7 @@ const Header = ({ direction }) => {
             </div>
           </div>
         </div>
+
         <div className="col-md-1 hidden-sm">
           <div className="tar psa r0">
             <div className="cartouche">
@@ -89,14 +91,16 @@ const Header = ({ direction }) => {
             </div>
           </div>
         </div>
-        <div className="col-xs-5 sm-only ">
-          <button
-            className="sm-menu-cta  tar curp"
-            onClick={() => setSmMenuActive(!smMenuActive)}
-          >
-            <div className="cartouche ">menu</div>
-          </button>
-          <div className="sm-menu">
+        <div className="col-xs-5 sm-only tar">
+          <div className=" cartouche">
+            <button
+              className="sm-menu-cta  tar curp "
+              onClick={() => setSmMenuActive(!smMenuActive)}
+            >
+              <div className=" ">menu</div>
+            </button>
+          </div>
+          <div className="sm-menu tal">
             <Menu input={nav} />
             <div className="contact">
               <PortableText blocks={sanityHeader._rawContact} />

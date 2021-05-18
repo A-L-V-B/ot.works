@@ -1,4 +1,5 @@
 .project-liste {
+  overflow-x: hidden;
   h2,
   li {
     background: $noir-100;
@@ -23,8 +24,12 @@
       border-bottom: $border;
     }
   }
+  li:last-child .inner {
+    border: none;
+  }
   h2 {
-    padding-right: 0;
+    // padding-right: 0;
+    display: inline-block;
   }
   a,
   button {
@@ -69,7 +74,11 @@
       // max-width: calc(100vh - #{$margeM});
       // max-height: calc(100vh - (var(--headerHeight) * 2));
     }
-    @media all and (max-width: $sm) {
-    }
+  }
+}
+
+@media all and (max-width: $sm) {
+  .project-liste {
+    overflow-x: hidden;
   }
 }

@@ -32,14 +32,20 @@ const ProjectListe = ({ input }) => {
       _image.src = asset.src
     }
   }
-  // const _onMouseLeave = () => {
-
-  // }
+  const _onMouseEnter = (li) => {
+    if (window.innerWidth < 1024) return
+    setImage(li.imageFeatured)
+  }
+  const _onMouseLeave = () => {
+    if (window.innerWidth < 1024) return
+    console.log("no mobile")
+    setImage(null)
+  }
 
   return (
     <section className="project-liste">
       <div className="row ">
-        <div className="col-md-4 ">
+        <div className="col-md-4 col-xs-9">
           <h2>
             <div className="inner">{_localizeField(listTitle)}</div>
           </h2>
@@ -73,9 +79,10 @@ const ProjectListe = ({ input }) => {
                 {li.imageFeatured && li.imageFeatured.asset && (
                   <div className="col-md-1 col-xs-3 tar">
                     <button
-                      onMouseEnter={() => setImage(li.imageFeatured)}
-                      onMouseLeave={() => setImage(null)}
+                      onMouseEnter={() => _onMouseEnter(li)}
+                      onMouseLeave={() => _onMouseLeave()}
                       onClick={() => {
+                        // console.log("click", image)
                         !image ? setImage(li.imageFeatured) : setImage(null)
                       }}
                     >

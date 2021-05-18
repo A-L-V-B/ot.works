@@ -9,11 +9,11 @@ const Menu = ({ input }) => {
   // const menuSanitizd = input.map((el) => el.link)
 
   return (
-    <nav className="menu-header">
+    <nav className="menu-header cartouche">
       <ul className="x">
         {input.map((li, i) => (
-          <li key={i} className="menu-item cartouche">
-            <Link to={`/${li.link.slug.current}`}>
+          <li key={i} className="menu-item ">
+            <Link to={`/${li.link.slug.current}`} className="prL">
               {_localizeField(li.label)}
             </Link>
           </li>

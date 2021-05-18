@@ -24,7 +24,7 @@ module.exports = {
     ogLang: "en_GB",
     link: "link",
     image: "image",
-    modifiedThe: "Modified on",
+    modifiedThe: "Latest build",
     at: "at",
     personal: "Personal",
     "pro-bono": "Pro bono",

@@ -13,6 +13,26 @@ function FootNotes({ blocks }) {
     )
   }
 
+  const serializers = {
+    marks: {
+      link: ({ mark, children }) => {
+        // Read https://css-tricks.com/use-target_blank/
+        // console.log(mark);
+        const { href } = mark
+        const blank =
+          href.indexOf("otworks") === -1 || href.indexOf("oliviertalbot") === -1
+        // console.log(href, href.indexOf("otworks"))
+        return blank ? (
+          <a href={href} target="_blank" rel="noopener, noreferrer">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
+        )
+      },
+    },
+  }
+
   const notes = blocks
     // filter out everything that's not a text block
     .filter(({ _type }) => _type === "block")
@@ -24,6 +44,7 @@ function FootNotes({ blocks }) {
     .filter(({ _type }) => _type === "footnote")
 
   const notesUnique = notes.filter(_unique)
+  // console.log(notesUnique)
   if (!notesUnique) return null
   // console.log(notesUnique[0].text)
   return (
@@ -33,7 +54,7 @@ function FootNotes({ blocks }) {
           <div className="row">
             <div className="col-xs-1">[{i + 1}]</div>
             <div className="col-md-6 col-xs-10">
-              <PortableText blocks={text} />
+              <PortableText blocks={text} serializers={serializers} />
             </div>
           </div>
         </li>
