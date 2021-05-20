@@ -14,11 +14,17 @@ $outer-margin: $gutter * 2 !default;
 // Create or emove breakpoints for your project
 // Syntax:
 // name SIZEem,
-$breakpoints: sm 320px 46em, md 992px 61em,
+// $breakpoints: sm 320px 46em, md 992px 61em,
+$breakpoints: sm 320px 46em, md 1025px 61em,
   //lg 75em 71em !default;
   lg 1441px 71em !default;
 $flexboxgrid-max-width: 1200px !default;
 
+/*
+$sm: 1024px;
+$md: 1118px;
+$lg: 1281px;
+*/
 //
 // -- Stop editing -- //
 //
