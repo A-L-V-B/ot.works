@@ -40,4 +40,9 @@ const _onClientEntry = () => {
   }
 }
 
-export { _wrapRootElement, _wrapPageElement, _onClientEntry }
+const _onRouteUpdate = ({ location }) => {
+  //console.log('new pathname', location.pathname)
+  PubSub.publish("ROUTE_UPDATE")
+}
+
+export { _wrapRootElement, _wrapPageElement, _onClientEntry, _onRouteUpdate }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import clsx from "clsx"
+import PubSub from "pubsub-js"
 
 import PortableText from "@sanity/block-content-to-react"
 import LocaleSwitcher from "./ui/LocaleSwitcher"
@@ -39,7 +40,14 @@ const Header = ({ direction }) => {
 
   useEffect(() => {
     setWindowLoaded(true)
+
+    const token = PubSub.subscribe("ROUTE_UPDATE", () => {
+      setSmMenuActive(false)
+    })
+
+    return () => PubSub.unsubscribe(token)
   }, [])
+
   useEffect(() => {
     const btns = document.querySelectorAll(".sm-menu a, .sm-menu button")
 
