@@ -9,14 +9,14 @@ export const query = graphql`
     settings: sanitySettings {
       message404 {
         fr: _rawFr(resolveReferences: { maxDepth: 10 })
-        # en: _rawEn(resolveReferences: { maxDepth: 10 })
+        en: _rawEn(resolveReferences: { maxDepth: 10 })
       }
     }
   }
 `
 
 const Page404 = (props) => {
-  console.log(props.data)
+  // console.log(props.data)
   const { settings } = props.data
 
   return (

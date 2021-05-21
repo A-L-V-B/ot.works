@@ -4,7 +4,7 @@ import FootNotes from "./FootNotes"
 import { _localizeField } from "../../core/utils"
 
 const Texte = ({ input }) => {
-  console.log(input)
+  // console.log(input)
   const serializers = {
     types: {
       block(props) {

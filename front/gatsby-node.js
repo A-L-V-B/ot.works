@@ -123,3 +123,19 @@ async function createAllPageModulaire(graphql, actions) {
 exports.createPages = async ({ graphql, actions }) => {
   await createAllPageModulaire(graphql, actions)
 }
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+  deletePage(page)
+  // You can access the variable "house" in your page queries now
+
+  const locale = page.path.indexOf("en") > -1 ? "en" : "fr"
+  // console.log(page.path, locale)
+  createPage({
+    ...page,
+    context: {
+      ...page.context,
+      locale: locale,
+    },
+  })
+}

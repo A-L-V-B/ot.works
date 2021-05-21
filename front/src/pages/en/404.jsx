@@ -8,15 +8,15 @@ export const query = graphql`
   query {
     settings: sanitySettings {
       message404 {
+        fr: _rawFr(resolveReferences: { maxDepth: 10 })
         en: _rawEn(resolveReferences: { maxDepth: 10 })
-        # en: _rawEn(resolveReferences: { maxDepth: 10 })
       }
     }
   }
 `
 
 const Page404 = (props) => {
-  console.log(props.data)
+  console.log(props)
   const { settings } = props.data
 
   return (
@@ -26,7 +26,6 @@ const Page404 = (props) => {
       </Helmet>
       <div className="container-fluid">
         <div className="texte">
-          {/* <PortableText blocks={settings.message404.en} /> */}
           <Texte input={{ text: settings.message404 }} />
         </div>
       </div>

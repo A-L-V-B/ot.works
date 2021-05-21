@@ -3,6 +3,8 @@ import PortableText from "@sanity/block-content-to-react"
 // import { _unique } from "../../core/utils"
 
 function FootNotes({ blocks }) {
+  // console.log(blocks)
+  // return null
   const _unique = (obj, index, arr) => {
     const _obj = JSON.stringify(obj)
     return (
