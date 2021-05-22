@@ -4,6 +4,7 @@ if (process.env.ENVIRONMENT !== "production") {
   dotenv.config()
 }
 // const { projectId, accessToken } = process.env
+const isProd = process.env.NODE_ENV === "production"
 const {
   api: { projectId, dataset },
 } = require("../back/sanity.json")
@@ -16,7 +17,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: website.title,
     siteDescription: website.description,
-    siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
+    siteUrl: website.url + pathPrefix,
     pathPrefix,
     banner: website.logo,
     ogLanguage: website.ogLanguage,
