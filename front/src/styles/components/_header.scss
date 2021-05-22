@@ -92,7 +92,7 @@ header {
       top: 0;
       width: 100%;
       height: var(--appHeight);
-      padding: 54px $margeS 0;
+      padding: var(--headerHeightMobile) $margeS 0;
       background: $noir-100;
       color: $blanc-100;
       a {

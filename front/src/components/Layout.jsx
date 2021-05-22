@@ -64,7 +64,7 @@ const Layout = ({ children, pageContext: { template } }) => {
     document.documentElement.style.setProperty("--headerHeight", 54 + "px")
     document.documentElement.style.setProperty(
       "--headerHeightMobile",
-      50 + "px"
+      54 + "px"
     )
 
     const md1Bounding = document

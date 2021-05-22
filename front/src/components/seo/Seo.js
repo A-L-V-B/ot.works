@@ -123,7 +123,7 @@ const Seo = ({
     <>
       <Helmet title={seo.title}>
         <html lang={_getLocale()} />
-
+        <link rel="alternate" href={_getLocale() === "fr" ? "/en" : "/"}></link>
         {/* <meta property="article:modified_time" content={buildTime} /> */}
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
