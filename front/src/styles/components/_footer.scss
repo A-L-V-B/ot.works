@@ -1,6 +1,9 @@
 footer {
   // padding: $margeS;
 }
+html[lang="fr"] footer .colonne {
+  display: none;
+}
 
 @media all and (max-width: $sm) {
   footer {

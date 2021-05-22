@@ -50,13 +50,13 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="mbXXL">
+      <div className="mbM">
         <TexteListe input={sanityFooter.texteList} />
       </div>
       <div className="container-fluid">
         <div className="site-metas">
           {_localizeText("modifiedThe")}
-          {": "}
+          <span className="colonne">{":"}</span>{" "}
           <span className="tabnum">{getFormatedDate()}</span>{" "}
           {_localizeText("at")}{" "}
           <span className="tabnum">{getFormatedTime()}</span>

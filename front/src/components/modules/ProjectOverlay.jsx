@@ -22,13 +22,13 @@ const ProjectOverlay = ({ image }) => {
   const _closeOverlay = () => {
     setOpen(false)
   }
-  console.log(_image.asset)
+  // console.log(_image.asset)
   return (
     <div
       className={clsx(
         "image-overlay",
         open ? "open" : "",
-        _image.asset.metadata.dimensions.aspectRatio > 1
+        _image?.asset.metadata.dimensions.aspectRatio > 1
           ? "is-landscape"
           : "is-portrait"
       )}
