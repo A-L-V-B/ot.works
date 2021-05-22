@@ -22,10 +22,16 @@ const ProjectOverlay = ({ image }) => {
   const _closeOverlay = () => {
     setOpen(false)
   }
-  // console.log(_image.asset)
+  console.log(_image.asset)
   return (
     <div
-      className={clsx("image-overlay", open ? "open" : "")}
+      className={clsx(
+        "image-overlay",
+        open ? "open" : "",
+        _image.asset.metadata.dimensions.aspectRatio > 1
+          ? "is-landscape"
+          : "is-portrait"
+      )}
       role="button"
       tabIndex={0}
       onClick={() => _closeOverlay()}
@@ -36,7 +42,7 @@ const ProjectOverlay = ({ image }) => {
             {/* {_image && <SanityImage input={_image} />} */}
             {_image && (
               <div
-                className="cover"
+                className={clsx("cover")}
                 style={{
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",

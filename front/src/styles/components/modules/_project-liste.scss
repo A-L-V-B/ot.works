@@ -55,12 +55,11 @@
     // background: red;
     opacity: 0;
     transition: opacity 0.4s ease;
+    pointer-events: none;
 
-    @media all and (min-width: $sm) {
-      pointer-events: none;
-    }
     &.open {
       opacity: 1;
+      pointer-events: all;
     }
     // &.fadeOut{opacity: 0;}
     .gatsby-image-wrapper {
@@ -82,5 +81,18 @@
 @media all and (max-width: $sm) {
   .project-liste {
     overflow-x: hidden;
+    .image-overlay {
+      &.is-landscape {
+        top: 50%;
+        transform: translateY(-50%);
+        height: 100vw;
+        padding: $margeS;
+        .cover {
+          width: 100% !important;
+          height: 100% !important;
+          background-size: cover !important;
+        }
+      }
+    }
   }
 }
