@@ -121,6 +121,15 @@ body {
         }
       }
     }
+    .texte p {
+      a {
+        color: $blanc-50;
+        // color: red;
+        &:hover {
+          color: $blanc-100;
+        }
+      }
+    }
     .fS p a,
     .footnotes a {
       color: $bleu-50;
@@ -139,17 +148,6 @@ body {
         color: $noir-100;
         &:hover {
           color: $noir-50;
-        }
-      }
-    }
-    .texte p,
-    p {
-      color: $blanc-50;
-      a {
-        color: $blanc-50;
-        // color: red;
-        &:hover {
-          color: $blanc-100;
         }
       }
     }

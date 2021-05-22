@@ -24,12 +24,12 @@ const Page404 = (props) => {
       <Helmet>
         <body className={"template-404"} />
       </Helmet>
-      <div className="container-fluid">
-        <div className="texte">
-          {/* <PortableText blocks={settings.message404.fr} /> */}
-          <Texte input={{ text: settings.message404 }} />
-        </div>
+      {/* <div className="container-fluid"> */}
+      <div className="texte">
+        {/* <PortableText blocks={settings.message404.fr} /> */}
+        <Texte input={{ text: settings.message404 }} />
       </div>
+      {/* </div> */}
     </div>
   )
 }

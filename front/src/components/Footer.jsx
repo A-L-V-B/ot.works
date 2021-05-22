@@ -55,7 +55,8 @@ const Footer = () => {
       </div>
       <div className="container-fluid">
         <div className="site-metas">
-          {_localizeText("modifiedThe")}{" "}
+          {_localizeText("modifiedThe")}
+          {": "}
           <span className="tabnum">{getFormatedDate()}</span>{" "}
           {_localizeText("at")}{" "}
           <span className="tabnum">{getFormatedTime()}</span>

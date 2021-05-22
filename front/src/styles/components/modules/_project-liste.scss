@@ -1,5 +1,6 @@
 .project-liste {
   overflow-x: hidden;
+
   h2,
   li {
     background: $noir-100;
@@ -30,6 +31,10 @@
   h2 {
     // padding-right: 0;
     display: inline-block;
+    padding-right: 0;
+    .inner {
+      padding-right: $margeS;
+    }
   }
   a,
   button {
@@ -40,7 +45,6 @@
   }
 
   .image-overlay {
-    pointer-events: none;
     z-index: 250;
     position: fixed;
     top: 0;
@@ -51,12 +55,10 @@
     // background: red;
     opacity: 0;
     transition: opacity 0.4s ease;
-    // .show {
-    //   display: block;
-    // }
-    // .hide {
-    //   display: none;
-    // }
+
+    @media all and (min-width: $sm) {
+      pointer-events: none;
+    }
     &.open {
       opacity: 1;
     }

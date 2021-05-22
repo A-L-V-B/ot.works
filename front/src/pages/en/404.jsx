@@ -24,10 +24,8 @@ const Page404 = (props) => {
       <Helmet>
         <body className={"template-404"} />
       </Helmet>
-      <div className="container-fluid">
-        <div className="texte">
-          <Texte input={{ text: settings.message404 }} />
-        </div>
+      <div className="texte">
+        <Texte input={{ text: settings.message404 }} />
       </div>
     </div>
   )

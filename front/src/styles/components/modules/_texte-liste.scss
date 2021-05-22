@@ -1,5 +1,6 @@
 .texte-liste {
   // background: red;
+  @include debugSquare(120px);
   .inner {
     width: calc((100% / 12) * 7);
     max-width: 1022px;
