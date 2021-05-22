@@ -118,12 +118,18 @@ const Seo = ({
       mainEntityOfPage: seo.url,
     }
   }
-
+  const alternateLang = _getLocale() === "en" ? "fr" : "en"
+  const alternatehref = _getLocale() === "en" ? "/" : "/en"
   return (
     <>
       <Helmet title={seo.title}>
         <html lang={_getLocale()} />
-        <link rel="alternate" href={_getLocale() === "fr" ? "/en" : "/"}></link>
+        <link
+          rel="alternate"
+          hreflang={alternateLang}
+          href={alternatehref}
+        ></link>
+
         {/* <meta property="article:modified_time" content={buildTime} /> */}
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
