@@ -6,7 +6,7 @@ if (process.env.ENVIRONMENT !== "production") {
 // const { projectId, accessToken } = process.env
 const {
   api: { projectId, dataset },
-} = require("../studio/sanity.json")
+} = require("../back/sanity.json")
 const { SANITY_READ_TOKEN } = process.env
 
 const website = require("./config/website")
