@@ -3,7 +3,11 @@ const dotenv = require("dotenv")
 if (process.env.ENVIRONMENT !== "production") {
   dotenv.config()
 }
-const { projectId, accessToken } = process.env
+// const { projectId, accessToken } = process.env
+const {
+  api: { projectId, dataset },
+} = require("../studio/sanity.json")
+const { SANITY_READ_TOKEN } = process.env
 
 const website = require("./config/website")
 const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix
@@ -24,8 +28,13 @@ module.exports = {
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: projectId,
-        dataset: "production",
+        // projectId: projectId,
+        // dataset: "production",
+        projectId,
+        dataset,
+        overlayDrafts: !isProd,
+        watchMode: !isProd,
+        token: SANITY_READ_TOKEN,
       },
     },
     "gatsby-plugin-sass",
