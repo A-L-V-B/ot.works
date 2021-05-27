@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Facebook from "./Facebook"
 import Twitter from "./Twitter"
 import { _getLocale } from "../../core/utils"
+import { _localizeField } from "../../core/utils"
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
 const Seo = ({
@@ -15,11 +16,11 @@ const Seo = ({
   page,
   template,
 }) => {
-  const { site } = useStaticQuery(query)
+  const { site, sanitySettings } = useStaticQuery(query)
   const {
     buildTime,
     siteMetadata: {
-      siteTitle,
+      // siteTitle,
       // siteDescription,
       siteUrl,
       defaultBanner,
@@ -31,7 +32,7 @@ const Seo = ({
 
   //const localizedPath = i18n[locale].default ? '' : `/${i18n[locale].path}`
   const homeURL = `${siteUrl}`
-
+  const siteTitle = _localizeField(sanitySettings.siteTitle)
   const seo = {
     title: page ? pageTitle + " - " + siteTitle : siteTitle,
     description: pageDescription,
@@ -202,6 +203,12 @@ const query = graphql`
         author
         twitter
         facebook
+      }
+    }
+    sanitySettings {
+      siteTitle {
+        fr
+        en
       }
     }
   }

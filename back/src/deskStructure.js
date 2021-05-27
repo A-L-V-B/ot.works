@@ -20,7 +20,7 @@ import {
 import IframePreview from "./previews/front/index";
 import SeoPreview from "./previews/seo/index";
 
-const remoteURL = "https://otworks.netlify.app/";
+const remoteURL = "https://preview-otworks.gtsb.io";
 const localURL = "http://localhost:8000";
 const previewURL =
   window.location.hostname === "localhost" ? localURL + "/" : remoteURL + "/";
