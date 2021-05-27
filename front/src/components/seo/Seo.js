@@ -34,7 +34,7 @@ const Seo = ({
   const homeURL = `${siteUrl}`
   const siteTitle = _localizeField(sanitySettings.siteTitle)
   const seo = {
-    title: page ? pageTitle + " - " + siteTitle : siteTitle,
+    title: page ? pageTitle + " – " + siteTitle : siteTitle,
     description: pageDescription,
     image: pageImage || defaultBanner,
     url: `${siteUrl}${pathname || ""}`,
