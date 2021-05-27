@@ -120,7 +120,7 @@ const Seo = ({
     }
   }
   const alternateLang = _getLocale() === "en" ? "fr" : "en"
-  const alternatehref = _getLocale() === "en" ? "/" : "/en"
+  const alternatehref = _getLocale() === "en" ? `${siteUrl}/` : `${siteUrl}/en`
   return (
     <>
       <Helmet title={seo.title}>
