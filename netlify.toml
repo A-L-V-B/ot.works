@@ -7,7 +7,7 @@
   from = "https://otworks.netlify.app/"
   to = "https://otworks.netlify.app/en"
   status = 301
-  force = false
+  force = true
   conditions = {Language = ["en"]}
 
 # [[redirects]]
