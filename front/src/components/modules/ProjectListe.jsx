@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import PubSub from "pubsub-js"
 import { _localizeField, _localizeText } from "../../core/utils"
 import ProjectOverlay from "./ProjectOverlay"
 
@@ -10,6 +11,16 @@ const ProjectListe = ({ input }) => {
   const listedProjectsSorted = listedProjects.sort((a, b) => {
     return new Date(b.dateDelivered) - new Date(a.dateDelivered)
   })
+
+  useEffect(() => {
+    const token = PubSub.subscribe("CLOSE_OVERLAY", _onCloseOverlay)
+    return () => PubSub.unsubscribe(token)
+  }, [image, setImage])
+
+  const _onCloseOverlay = () => {
+    // console.log("ProjectListe: _onCloseOverlay")
+    setImage(null)
+  }
 
   const _getYear = (d) => {
     // console.log(d)

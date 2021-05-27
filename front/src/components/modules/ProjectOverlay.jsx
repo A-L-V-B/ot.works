@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import clsx from "clsx"
+import PubSub from "pubsub-js"
 import SanityImage from "../SanityImage"
 
 const ProjectOverlay = ({ image }) => {
@@ -20,6 +21,9 @@ const ProjectOverlay = ({ image }) => {
     setOpen(true)
   }
   const _closeOverlay = () => {
+    // setOpen(false)
+    // console.log("ProjectOverlay : _closeOverlay")
+    PubSub.publish("CLOSE_OVERLAY")
     setOpen(false)
   }
   // console.log(_image.asset)
