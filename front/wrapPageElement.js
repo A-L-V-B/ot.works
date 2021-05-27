@@ -11,9 +11,9 @@ import { LocaleWrapper } from "./src/components/ui/LocaleWrapper"
 const _wrapRootElement = ({ element }) => {
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <script src="https://unpkg.com/pace-js@1.0.2/pace.min.js"></script>
-      </Helmet>
+      </Helmet> */}
       {element}
     </>
   )
