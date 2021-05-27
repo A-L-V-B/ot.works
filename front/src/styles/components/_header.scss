@@ -7,7 +7,7 @@ header {
   z-index: 250;
   //margin-bottom: $margeM;
   // padding: 0 $margeS;
-  // @include debugFiletY(var(--headerHeight));
+  // @include debugFiletX(calc(100vw - 10px));
   min-height: 54px;
   @include anime(0.4s, 0s);
   &.down {
@@ -26,7 +26,10 @@ header {
   .cartouche {
     position: relative;
     display: inline-block;
-    padding: 0 $margeS $margeXS;
+    padding: 0 $margeS + 3px $margeXS;
+    &.prS {
+      // padding-right: $margeS + 1px;
+    }
     &::before {
       content: "";
       position: absolute;

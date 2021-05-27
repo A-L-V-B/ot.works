@@ -94,8 +94,8 @@ const Header = ({ direction }) => {
         </div>
 
         <div className="col-md-1 hidden-sm">
-          <div className="tar psa r0">
-            <div className="cartouche">
+          <div className="tar psa r0 ">
+            <div className="cartouche prS">
               <LocaleSwitcher />
               <DarkMode />
             </div>

@@ -472,13 +472,13 @@ $sass-burger-add-vendor-prefixes: true !default;
     background: red;
   }
 }
-@mixin debugFiletX {
+@mixin debugFiletX($left: 20px) {
   &:after {
     z-index: 999;
     content: "";
     position: fixed;
     top: 0;
-    left: 20px;
+    left: $left;
     height: 100vh;
     width: 1px;
     background: blue;
