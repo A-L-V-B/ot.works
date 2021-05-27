@@ -66,6 +66,8 @@ const Header = ({ direction }) => {
 
   const _menuClose = () => setSmMenuActive(false)
 
+  const hasMenu = nav.length > 0
+  // console.log(nav)
   return (
     <header className={clsx(direction, smMenuActive ? "is-active" : "")}>
       <div className="row no-gutter">
@@ -81,7 +83,7 @@ const Header = ({ direction }) => {
           </div> */}
         </div>
         <div className="col-md-5 hidden-sm">
-          <Menu input={nav} />
+          {hasMenu && <Menu input={nav} />}
         </div>
         <div className="col-md-3 hidden-sm">
           <div className="cartouche ">
