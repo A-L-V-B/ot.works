@@ -4,6 +4,13 @@
   publish = "public"
 
 [[redirects]]
+  from = "https://otworks.netlify.app/en"
+  to = "https://otworks.netlify.app/fr"
+  status = 301
+  force = true
+  conditions = {Language = ["fr"]}
+
+[[redirects]]
   from = "https://otworks.netlify.app/"
   to = "https://otworks.netlify.app/en"
   status = 301
