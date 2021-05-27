@@ -6,13 +6,13 @@
 [[redirects]]
   from = "https://otworks.netlify.app/"
   to = "https://otworks.netlify.app/en"
-  status = 302
+  status = 301
   force = false
   conditions = {Language = ["en"]}
 
-[[redirects]]
-  from = "https://otworks.netlify.app/*"
-  to = "https://otworks.netlify.app/en/:splat"
-  status = 302
-  force = true
-  conditions = {Language = ["en"]}
+# [[redirects]]
+#   from = "https://otworks.netlify.app/*"
+#   to = "https://otworks.netlify.app/en/:splat"
+#   status = 301
+#   force = true
+#   conditions = {Language = ["en"]}
