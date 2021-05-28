@@ -33,6 +33,7 @@ const Seo = ({
   //const localizedPath = i18n[locale].default ? '' : `/${i18n[locale].path}`
   const homeURL = `${siteUrl}`
   const siteTitle = _localizeField(sanitySettings.siteTitle)
+  console.log(pageImage)
   const seo = {
     title: page ? pageTitle + " – " + siteTitle : siteTitle,
     description: pageDescription,

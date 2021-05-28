@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import Helmet from 'react-helmet'
+import PropTypes from "prop-types"
+import React from "react"
+import Helmet from "react-helmet"
 
 const Facebook = ({ url, name, type, title, desc, image }) => (
   <Helmet>
@@ -11,7 +11,7 @@ const Facebook = ({ url, name, type, title, desc, image }) => (
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:image" content={image} />
-    <meta property="og:image:alt" content={desc} />
+    <meta property="og:image:alt" content={image} />
   </Helmet>
 )
 
@@ -28,6 +28,6 @@ Facebook.propTypes = {
 }
 
 Facebook.defaultProps = {
-  type: 'website',
+  type: "website",
   name: null,
 }
