@@ -23,7 +23,7 @@ import SeoPreview from "./previews/seo/index";
 const remoteURL = "https://preview-otworks.gtsb.io";
 const localURL = "http://localhost:8000";
 const previewURL =
-  window.location.hostname === "localhost" ? localURL + "/" : remoteURL + "/";
+  window.location.hostname === "localhost" ? localURL + "/" : remoteURL + "";
 
 // export const getDefaultDocumentNode = props => {
 //   if (props.schemaType === "pageModulaire") {

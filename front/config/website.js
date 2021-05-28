@@ -4,7 +4,7 @@ module.exports = {
   titleAlt: "oliviertalbot.works", // Title for JSONLD
   description: "desc here",
   headline: "", // Headline for schema.org JSONLD
-  url: "https://otworks.netlify.app", // Domain of your site. No trailing slash!
+  url: "https://oliviertalbot.works", // Domain of your site. No trailing slash!
   logo: "/src/images/logo.png", // Used for SEO
   ogLanguage: "fr_FR", // Facebook Language
 
