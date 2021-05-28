@@ -50,6 +50,15 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        // Your custom domain, defaults to `cdn.usefathom.com`
+        // trackingUrl: "your-fathom-instance.com",
+        // Unique site id
+        siteId: "XIPNWTRS",
+      },
+    },
     // {
     //   resolve: "gatsby-source-filesystem",
     //   options: {
