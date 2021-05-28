@@ -59,7 +59,7 @@
 
     &.open {
       opacity: 1;
-      pointer-events: all;
+      // pointer-events: all;
     }
     // &.fadeOut{opacity: 0;}
     .gatsby-image-wrapper {
@@ -67,7 +67,7 @@
       // left: 50%;
       // top: -50%;
       // transform: translate(-50%, -50%);
-      pointer-events: initial;
+      // pointer-events: initial;
     }
     img {
       width: 100%;
@@ -82,6 +82,9 @@
   .project-liste {
     overflow-x: hidden;
     .image-overlay {
+      &.open {
+        pointer-events: all;
+      }
       &.is-landscape {
         top: 50%;
         transform: translateY(-50%);
