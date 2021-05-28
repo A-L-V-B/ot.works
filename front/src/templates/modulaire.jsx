@@ -30,7 +30,7 @@ export const query = graphql`
 `
 
 const PageModulaire = ({ data }) => {
-  console.log(data.sanityPageModulaire)
+  // console.log(data.sanityPageModulaire)
   const { home, seo, _rawModules } = data.sanityPageModulaire
 
   // useEffect(() => {}, [])
