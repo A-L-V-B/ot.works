@@ -1,5 +1,8 @@
 .modules {
   section {
     margin-bottom: $margeXXL;
+    &:last-child {
+      margin: 0;
+    }
   }
 }

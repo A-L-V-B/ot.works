@@ -38,6 +38,7 @@ const ProjectOverlay = ({ image }) => {
       )}
       role="button"
       tabIndex={0}
+      aria-label="image overlay, click to close"
       onClick={() => _closeOverlay()}
     >
       <div className="row center-xs h100">
