@@ -58,12 +58,12 @@ export default () =>
                     .component(IframePreview)
                     .icon(FiEye)
                     .title("Web")
-                    .options({ previewURL }),
-                  S.view
-                    .component(SeoPreview)
-                    .icon(FiEye)
-                    .title("SEO")
                     .options({ previewURL })
+                  // S.view
+                  //   .component(SeoPreview)
+                  //   .icon(FiEye)
+                  //   .title("SEO")
+                  //   .options({ previewURL })
                 ])
             )
         ),

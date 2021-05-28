@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Seo from "../components/seo"
 import Modules from "../components/modules"
+import { _localizeField } from "../core/utils"
 
 export const query = graphql`
   query PageBySlug($slug: String!) {
@@ -37,8 +38,8 @@ const PageModulaire = ({ data }) => {
   return (
     <div className="page">
       <Seo
-        pageTitle={seo.metaTitle.fr}
-        pageDescription={seo.metaDescription.fr}
+        pageTitle={_localizeField(seo.metaTitle)}
+        pageDescription={_localizeField(seo.metaDescription)}
         pageImage={seo.posterImage?.asset?.url}
         template={`template-modulaire`}
         page={home}
