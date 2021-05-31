@@ -11,7 +11,8 @@ header {
   min-height: 54px;
   @include anime(0.4s, 0s);
   &.down {
-    @include slide(top, 1);
+    // @include slide(top, 1);
+    transform: translateY(-200%);
   }
   h1 {
     display: inline-block;
