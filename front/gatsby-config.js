@@ -45,12 +45,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        query: `{}`, // your query
-        mapping: {}, // add if needed
+        // query: `{}`, // your query
+        // mapping: {}, // add if needed
         exclude: [`/dev-404-page`, `/404`, `/404.html`, `/en/404`, `/en/404/`],
         createLinkInHead: true,
-        addUncaughtPages: true,
-        additionalSitemaps: [], // add if needed
+        // addUncaughtPages: true,
+        // additionalSitemaps: [], // add if needed
       },
     },
     {
