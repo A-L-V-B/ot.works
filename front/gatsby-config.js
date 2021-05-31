@@ -41,7 +41,18 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    // "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+        query: `{}`, // your query
+        mapping: {}, // add if needed
+        exclude: [`/dev-404-page`, `/404`, `/404.html`, `/en/404`],
+        createLinkInHead: true,
+        addUncaughtPages: true,
+        additionalSitemaps: [], // add if needed
+      },
+    },
     {
       resolve: "gatsby-plugin-manifest",
       options: {
