@@ -11,7 +11,7 @@ header {
   min-height: 54px;
   @include anime(0.4s, 0s);
   &.down {
-    @include slide(top, 0);
+    @include slide(top, 1);
   }
   h1 {
     display: inline-block;
