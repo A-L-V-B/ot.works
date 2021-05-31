@@ -122,6 +122,7 @@ const Seo = ({
   }
   const alternateLang = _getLocale() === "en" ? "fr" : "en"
   const alternatehref = _getLocale() === "en" ? `${siteUrl}/` : `${siteUrl}/en`
+
   return (
     <>
       <Helmet title={seo.title}>
@@ -136,7 +137,6 @@ const Seo = ({
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
         <meta name="gatsby-starter" content="Gatsby Starter Prismic i18n" />
-        {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
         {!page && (
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgWebPage)}
@@ -147,7 +147,6 @@ const Seo = ({
             {JSON.stringify(schemaArticle)}
           </script>
         )}
-        {/* <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script> */}
         <body className={template} />
       </Helmet>
       <Facebook
