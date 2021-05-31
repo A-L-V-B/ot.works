@@ -79,47 +79,47 @@ const Seo = ({
     },
   }
 
-  let schemaArticle = null
+  // let schemaArticle = null
 
-  if (page) {
-    schemaArticle = {
-      "@context": "http://schema.org",
-      "@type": "WebPage",
-      author: {
-        "@type": "Person",
-        name: author,
-      },
-      copyrightHolder: {
-        "@type": "Person",
-        name: author,
-      },
-      copyrightYear: "2021",
-      creator: {
-        "@type": "Person",
-        name: author,
-      },
-      publisher: {
-        "@type": "Organization",
-        name: author,
-        logo: {
-          "@type": "ImageObject",
-          url: `${siteUrl}${defaultBanner}`,
-        },
-      },
-      //datePublished: node.first_publication_date,
-      //dateModified: node.last_publication_date,
-      description: seo.description,
-      headline: seo.title,
-      //inLanguage: 'en',
-      url: seo.url,
-      name: seo.title,
-      image: {
-        "@type": "ImageObject",
-        url: seo.image,
-      },
-      mainEntityOfPage: seo.url,
-    }
-  }
+  // if (page) {
+  //   schemaArticle = {
+  //     "@context": "http://schema.org",
+  //     "@type": "WebPage",
+  //     author: {
+  //       "@type": "Person",
+  //       name: author,
+  //     },
+  //     copyrightHolder: {
+  //       "@type": "Person",
+  //       name: author,
+  //     },
+  //     copyrightYear: "2021",
+  //     creator: {
+  //       "@type": "Person",
+  //       name: author,
+  //     },
+  //     publisher: {
+  //       "@type": "Organization",
+  //       name: author,
+  //       logo: {
+  //         "@type": "ImageObject",
+  //         url: `${siteUrl}${defaultBanner}`,
+  //       },
+  //     },
+  //     //datePublished: node.first_publication_date,
+  //     //dateModified: node.last_publication_date,
+  //     description: seo.description,
+  //     headline: seo.title,
+  //     //inLanguage: 'en',
+  //     url: seo.url,
+  //     name: seo.title,
+  //     image: {
+  //       "@type": "ImageObject",
+  //       url: seo.image,
+  //     },
+  //     mainEntityOfPage: seo.url,
+  //   }
+  // }
   const alternateLang = _getLocale() === "en" ? "fr" : "en"
   const alternatehref = _getLocale() === "en" ? `${siteUrl}/` : `${siteUrl}/en`
 
@@ -137,7 +137,7 @@ const Seo = ({
         <meta name="description" content={seo.description} />
         <meta name="image" content={seo.image} />
         <meta name="gatsby-starter" content="Gatsby Starter Prismic i18n" />
-        {!page && (
+        {/* {!page && (
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgWebPage)}
           </script>
@@ -146,7 +146,11 @@ const Seo = ({
           <script type="application/ld+json">
             {JSON.stringify(schemaArticle)}
           </script>
-        )}
+        )} */}
+        <script type="application/ld+json">
+          {JSON.stringify(schemaOrgWebPage)}
+        </script>
+
         <body className={template} />
       </Helmet>
       <Facebook
