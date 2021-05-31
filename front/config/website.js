@@ -10,8 +10,8 @@ module.exports = {
 
   // JSONLD / Manifest
   favicon: "src/images/icons/favicon.ico", // Used for manifest favicon generation
-  shortName: "aeai", // shortname for manifest. MUST be shorter than 12 characters
-  author: "aeai", // Author for schemaORGJSONLD
+  shortName: "otw", // shortname for manifest. MUST be shorter than 12 characters
+  author: "Olivier Talbot", // Author for schemaORGJSONLD
   themeColor: "#000000",
   backgroundColor: "#000000",
 

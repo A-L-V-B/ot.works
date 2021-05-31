@@ -47,7 +47,7 @@ module.exports = {
       options: {
         query: `{}`, // your query
         mapping: {}, // add if needed
-        exclude: [`/dev-404-page`, `/404`, `/404.html`, `/en/404`],
+        exclude: [`/dev-404-page`, `/404`, `/404.html`, `/en/404`, `/en/404/`],
         createLinkInHead: true,
         addUncaughtPages: true,
         additionalSitemaps: [], // add if needed
