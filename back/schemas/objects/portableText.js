@@ -4,7 +4,8 @@ import {
   FaAlignJustify,
   FaImage,
   FaSortNumericDown,
-  FaSuperscript
+  FaSuperscript,
+  FaSubscript
 } from "react-icons/fa";
 
 const alignRightJustify = props => (
@@ -34,6 +35,13 @@ export default {
             value: "sup",
             blockEditor: {
               icon: FaSuperscript
+            }
+          },
+          {
+            title: "Subscript",
+            value: "sub",
+            blockEditor: {
+              icon: FaSubscript
             }
           },
           {

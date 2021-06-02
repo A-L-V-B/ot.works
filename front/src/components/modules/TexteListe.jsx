@@ -20,13 +20,8 @@ const TexteListe = ({ input }) => {
       },
     },
     marks: {
-      // footnote: ({ children, markKey, mark }) => (
-      //   <span className="fSeg">
-      //     <a href={`#${markKey}`}>{children}</a>
-      //   </span>
-      // ),
       sup: ({ children }) => <sup>{children}</sup>,
-
+      sub: ({ children }) => <sub>{children}</sub>,
       link: ({ mark, children }) => {
         // Read https://css-tricks.com/use-target_blank/
         // console.log(mark);
