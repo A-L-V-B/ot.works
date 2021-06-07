@@ -1,6 +1,6 @@
 @font-face {
   font-family: "untitled-sans-web-bold";
-  src: url("./fonts/untitled-sans-web-bold-subset.woff2") format("woff2");
+  src: url("./fonts/untitled-sans-web-bold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   // font-display: optional;
@@ -15,7 +15,7 @@
 // }
 @font-face {
   font-family: "untitled-sans-web-medium";
-  src: url("./fonts/untitled-sans-web-medium-subset.woff2") format("woff2");
+  src: url("./fonts/untitled-sans-web-medium.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   // font-display: optional;
@@ -31,15 +31,14 @@
 
 @font-face {
   font-family: "untitled-serif";
-  src: url("./fonts/untitled-serif-web-regular-subset.woff2") format("woff2");
+  src: url("./fonts/untitled-serif-web-regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   // font-display: optional;
 }
 @font-face {
   font-family: "untitled-serif-Italic";
-  src: url("./fonts/untitled-serif-web-regular-italic-subset.woff2")
-    format("woff2");
+  src: url("./fonts/untitled-serif-web-regular-italic.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   // font-display: optional;
