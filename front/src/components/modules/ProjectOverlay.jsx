@@ -26,7 +26,7 @@ const ProjectOverlay = ({ image }) => {
     PubSub.publish("CLOSE_OVERLAY")
     setOpen(false)
   }
-
+  if (_image) console.log(_image.asset)
   return (
     <div
       className={clsx(
