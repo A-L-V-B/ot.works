@@ -7,7 +7,7 @@ const ProjectListe = ({ input }) => {
   const [image, setImage] = useState()
 
   const { listTitle, listedProjects } = input
-  // console.log(listedProjects)
+  console.log("ProjectListe", image)
   const listedProjectsSorted = listedProjects.sort((a, b) => {
     return new Date(b.dateDelivered) - new Date(a.dateDelivered)
   })
@@ -44,13 +44,21 @@ const ProjectListe = ({ input }) => {
     }
   }
   const _onMouseEnter = (li) => {
-    if (window.innerWidth < 1024) return
+    if (_isTouch()) return
     setImage(li.imageFeatured)
   }
   const _onMouseLeave = () => {
-    if (window.innerWidth < 1024) return
-    console.log("no mobile")
+    if (_isTouch()) return
+    console.log("_onMouseLeave no mobile")
     setImage(null)
+  }
+
+  const _isTouch = () => {
+    return (
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.msMaxTouchPoints > 0
+    )
   }
 
   return (

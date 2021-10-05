@@ -78,7 +78,7 @@
   }
 }
 
-@media all and (max-width: $sm) {
+@media all and (max-width: $md) {
   .project-liste {
     overflow-x: hidden;
     .image-overlay {
@@ -99,3 +99,14 @@
     }
   }
 }
+
+// @media all and (max-width: $md) {
+//   .project-liste {
+//     .image-overlay {
+//       &.open {
+//         pointer-events: all;
+//         background: red;
+//       }
+//     }
+//   }
+// }

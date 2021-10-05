@@ -38,9 +38,9 @@ module.exports = {
         token: SANITY_READ_TOKEN,
       },
     },
-    "gatsby-plugin-sass",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
     // "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
@@ -54,20 +54,20 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: "src/images/icon.png",
+        icon: `src/images/icon.png`,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
-      resolve: "gatsby-plugin-fathom",
+      resolve: `gatsby-plugin-fathom`,
       options: {
         // Your custom domain, defaults to `cdn.usefathom.com`
-        // trackingUrl: "your-fathom-instance.com",
+        // trackingUrl: `your-fathom-instance.com`,
         // Unique site id
-        siteId: "XIPNWTRS",
+        siteId: `XIPNWTRS`,
       },
     },
     // {

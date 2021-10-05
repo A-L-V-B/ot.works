@@ -6,10 +6,10 @@ import SanityImage from "../SanityImage"
 const ProjectOverlay = ({ image }) => {
   const [_image, setImage] = useState()
   const [open, setOpen] = useState()
-  // console.log(image)
+  // console.log(_image)
   useEffect(() => {
-    // console.log(image)
     if (image) {
+      // console.log(image)
       _openOverlay()
     } else {
       _closeOverlay()
@@ -22,17 +22,17 @@ const ProjectOverlay = ({ image }) => {
   }
   const _closeOverlay = () => {
     // setOpen(false)
-    // console.log("ProjectOverlay : _closeOverlay")
+    console.log("ProjectOverlay : _closeOverlay")
     PubSub.publish("CLOSE_OVERLAY")
     setOpen(false)
   }
-  // console.log(_image.asset)
+
   return (
     <div
       className={clsx(
         "image-overlay",
         open ? "open" : "",
-        _image?.asset.metadata.dimensions.aspectRatio > 1
+        _image && _image?.asset.metadata.dimensions.aspectRatio > 1
           ? "is-landscape"
           : "is-portrait"
       )}
