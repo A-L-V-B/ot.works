@@ -100,13 +100,15 @@
   }
 }
 
-// @media all and (max-width: $md) {
-//   .project-liste {
-//     .image-overlay {
-//       &.open {
-//         pointer-events: all;
-//         background: red;
-//       }
-//     }
-//   }
-// }
+@media all and (max-width: $sm) {
+  .project-liste {
+    .image-overlay {
+      &.is-landscape {
+        .cover {
+          width: 100% !important;
+          height: 100% !important;
+        }
+      }
+    }
+  }
+}
