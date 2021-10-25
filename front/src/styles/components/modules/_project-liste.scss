@@ -78,7 +78,12 @@
   }
 }
 
-// @media all and (max-width: $md) {
+.touch .project-liste {
+  .image-overlay.open {
+    pointer-events: all;
+  }
+}
+
 @media all and (max-width: 768px) {
   .project-liste {
     overflow-x: hidden;

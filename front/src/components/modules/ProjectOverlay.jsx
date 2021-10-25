@@ -22,7 +22,7 @@ const ProjectOverlay = ({ image }) => {
   }
   const _closeOverlay = () => {
     // setOpen(false)
-    // console.log("ProjectOverlay : _closeOverlay")
+    console.log("ProjectOverlay : _closeOverlay")
     PubSub.publish("CLOSE_OVERLAY")
     setOpen(false)
   }
