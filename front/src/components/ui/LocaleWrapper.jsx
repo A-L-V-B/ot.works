@@ -10,13 +10,14 @@ const LocaleWrapper = ({ children, pageContext }) => {
 
   useEffect(() => {
     const userLang = _detectUserLang()
+    console.log("userLang:", userLang)
     dispatch(userLang)
   }, [])
 
   const _detectUserLang = () => {
     const userLang = navigator.language || navigator.userLanguage
     // console.log(userLang)
-    return userLang !== "fr" ? "en" : "fr"
+    return userLang.toLowerCase().indexOf("fr") === -1 ? "en" : "fr"
   }
 
   return (

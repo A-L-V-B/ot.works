@@ -7,7 +7,7 @@ const ProjectListe = ({ input }) => {
   const [image, setImage] = useState()
 
   const { listTitle, listedProjects } = input
-  console.log("ProjectListe", image)
+  // console.log("ProjectListe", image)
   const listedProjectsSorted = listedProjects.sort((a, b) => {
     return new Date(b.dateDelivered) - new Date(a.dateDelivered)
   })
