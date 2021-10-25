@@ -78,7 +78,8 @@
   }
 }
 
-@media all and (max-width: $md) {
+// @media all and (max-width: $md) {
+@media all and (max-width: 768px) {
   .project-liste {
     overflow-x: hidden;
     .image-overlay {
