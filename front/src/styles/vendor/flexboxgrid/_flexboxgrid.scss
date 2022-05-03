@@ -86,8 +86,8 @@ $half-gutter-width: $gutter-width * 0.5;
     @include flex-grow(0);
     @include flex-shrink(0);
 
-    @include flex-basis(100% / $grid-columns * $i);
-    max-width: 100% / $grid-columns * $i;
+    @include flex-basis(calc(100% / #{$grid-columns} * #{$i}));
+    max-width: calc(100% / #{$grid-columns} * #{$i});
   }
 }
 
@@ -99,14 +99,14 @@ $name: xs;
 @for $i from 1 through $grid-columns {
   .col-#{$name}-#{$i} {
     @include flexboxgrid-sass-col-common;
-    @include flex-basis(100% / $grid-columns * $i);
-    max-width: 100% / $grid-columns * $i;
+    @include flex-basis(calc(100% / #{$grid-columns} * $i));
+    max-width: calc(100% / #{$grid-columns} * #{$i});
   }
 }
 @for $i from 1 through $grid-columns {
   .col-#{$name}-offset-#{$i} {
     @include flexboxgrid-sass-col-common;
-    margin-left: 100% / $grid-columns * $i;
+    margin-left: calc(100% / #{$grid-columns} * #{$i});
   }
 }
 .col-#{$name} {
@@ -173,14 +173,14 @@ $name: xs;
     @for $i from 1 through $grid-columns {
       .col-#{$name}-#{$i} {
         @include flexboxgrid-sass-col-common;
-        @include flex-basis(100% / $grid-columns * $i);
-        max-width: 100% / $grid-columns * $i;
+        @include flex-basis(calc(100% / #{$grid-columns} * #{$i}));
+        max-width: calc(100% / #{$grid-columns} * #{$i});
       }
     }
     @for $i from 1 through $grid-columns {
       .col-#{$name}-offset-#{$i} {
         @include flexboxgrid-sass-col-common;
-        margin-left: 100% / $grid-columns * $i;
+        margin-left: calc(100% / #{$grid-columns} * #{$i});
       }
     }
     .col-#{$name} {
