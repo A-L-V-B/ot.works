@@ -49,6 +49,7 @@ body {
   font-family: $fontPrimary700;
   font-size: $fontM;
   line-height: $fontMLh;
+  // line-height: 1.2777777777777777;
   // text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "kern" 1;
@@ -59,6 +60,10 @@ body {
 .fS {
   font-size: $fontS;
   line-height: em(23px, $fontS);
+  // &,
+  // p {
+  //   line-height: em(23px, $fontS);
+  // }
 }
 .fM {
   font-size: $fontM;
