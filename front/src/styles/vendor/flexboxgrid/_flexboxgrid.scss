@@ -99,7 +99,7 @@ $name: xs;
 @for $i from 1 through $grid-columns {
   .col-#{$name}-#{$i} {
     @include flexboxgrid-sass-col-common;
-    @include flex-basis(calc(100% / #{$grid-columns} * $i));
+    @include flex-basis(calc(100% / #{$grid-columns} * #{$i}));
     max-width: calc(100% / #{$grid-columns} * #{$i});
   }
 }
