@@ -25,7 +25,7 @@
     "gatsby-plugin-sass": "^4.2.0",
     "gatsby-plugin-sharp": "^3.2.1",
     "gatsby-source-filesystem": "^3.2.0",
-    "gatsby-source-sanity": "^7.0.2",
+    "gatsby-source-sanity": "^7.4.2",
     "gatsby-transformer-sharp": "^3.2.0",
     "pubsub-js": "^1.9.3",
     "react": "^17.0.1",
