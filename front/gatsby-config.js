@@ -5,10 +5,9 @@ if (process.env.ENVIRONMENT !== "production") {
 }
 // const { projectId, accessToken } = process.env
 const isProd = process.env.NODE_ENV === "production"
-const {
-  api: { projectId, dataset },
-} = require("../back/sanity.json")
-const { SANITY_READ_TOKEN } = process.env
+const { SANITY_READ_TOKEN, SANITY_DATASET, SANITY_PROJECT_ID } = process.env
+const projectId = SANITY_PROJECT_ID
+const dataset = SANITY_DATASET
 
 const website = require("./config/website")
 const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix
