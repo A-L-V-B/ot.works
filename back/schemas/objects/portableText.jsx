@@ -8,7 +8,7 @@ import {
   FaSubscript,
 } from 'react-icons/fa'
 
-// const alignRightJustify = (props) => <p style={{textAlign: 'justify'}}>{props.children}</p>
+const AlignRightJustify = (props) => <p style={{textAlign: 'justify'}}>{props.children}</p>
 
 export default {
   title: 'Portable Text',
@@ -31,24 +31,18 @@ export default {
           {
             title: 'Superscript',
             value: 'sup',
-            blockEditor: {
-              icon: FaSuperscript,
-            },
+            icon: FaSuperscript,
           },
           {
             title: 'Subscript',
             value: 'sub',
-            blockEditor: {
-              icon: FaSubscript,
-            },
+            icon: FaSubscript,
           },
           {
             title: 'Align Justify',
             value: 'align_justify',
-            blockEditor: {
-              icon: FaAlignJustify,
-              // render: alignRightJustify
-            },
+            icon: FaAlignJustify,
+            component: AlignRightJustify,
           },
         ],
         annotations: [
@@ -56,17 +50,13 @@ export default {
             title: 'Inline Icon',
             name: 'inlineicon',
             type: 'image',
-            blockEditor: {
-              icon: FaImage,
-            },
+            icon: FaImage,
           },
           {
             name: 'footnote',
             type: 'object',
             title: 'Footnote',
-            blockEditor: {
-              icon: FaSortNumericDown,
-            },
+            icon: FaSortNumericDown,
             fields: [
               {
                 name: 'text',
