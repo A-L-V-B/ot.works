@@ -13,6 +13,16 @@ export default {
   //   }),
   fields: [
     {
+      name: 'caption',
+      type: 'localeString',
+      title: 'Caption',
+    },
+    {
+      name: 'authors',
+      type: 'localeString',
+      title: 'Authors',
+    },
+    {
       name: 'attribution',
       type: 'string',
       title: 'Attribution',

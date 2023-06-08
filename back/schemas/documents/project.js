@@ -70,18 +70,31 @@ export default {
       type: 'imageFeatured',
       title: 'Project Image',
     },
+    {
+      name: 'collaborations',
+      type: 'array',
+      title: 'En collaboration avec',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'collaboration'}],
+        },
+      ],
+    },
   ],
   preview: {
     select: {
       title: 'name',
-      category: 'category',
+      date: 'dateDelivered',
       media: 'imageFeatured.asset',
     },
     prepare(selection) {
-      const {title, category, media} = selection
+      const {title, date, media} = selection
+      const year = date && date.split('-')[0]
+
       return {
         title: title,
-        subtitle: category[0],
+        subtitle: year,
         media: media,
       }
     },

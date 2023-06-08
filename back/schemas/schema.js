@@ -27,6 +27,7 @@ import textesImagesUI from './modules/textesImagesUI'
 import texteListUI from './modules/texteListUI'
 import projectListUI from './modules/projectListUI'
 import pageModules from './modules/pageModules'
+import collaboration from './documents/collaboration'
 
 export const schemaTypes = [
   lang,
@@ -35,6 +36,7 @@ export const schemaTypes = [
   header,
   footer,
   project,
+  collaboration,
 
   pageModulaire,
 

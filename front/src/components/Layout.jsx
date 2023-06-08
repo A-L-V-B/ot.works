@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react"
+import smartquotes from "smartquotes"
 // import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -21,6 +22,10 @@ const Layout = ({ children, pageContext: { template } }) => {
   const settings = {
     test: "test",
   }
+
+  useEffect(() => {
+    smartquotes().listen()
+  }, [])
 
   useEffect(() => {
     _onScroll()

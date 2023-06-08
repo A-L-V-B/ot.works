@@ -7,6 +7,7 @@ import {
   FiGlobe,
   FiEdit,
   FiEye,
+  FiUsers,
 } from 'react-icons/fi'
 
 import IframePreview from './previews/front/index'
@@ -42,6 +43,12 @@ export default (S) =>
         .schemaType('project')
         .icon(FiDatabase)
         .child(S.documentTypeList('project').title('Projects')),
+
+      S.listItem()
+        .title('Collaborations')
+        .schemaType('collaboration')
+        .icon(FiUsers)
+        .child(S.documentTypeList('collaboration').title('Collaborations')),
 
       S.divider(),
 
