@@ -45,7 +45,7 @@ const Texte = ({ input }) => {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-7 col-xs-12">
-            <div className="mbL">
+            <div className="mbL texte__intro">
               <PortableText
                 blocks={_localizeField(input.text)}
                 serializers={serializers}
