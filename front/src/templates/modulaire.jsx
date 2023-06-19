@@ -6,7 +6,7 @@ import { _localizeField } from "../core/utils"
 
 export const query = graphql`
   query PageBySlug($slug: String!) {
-    sanityPageModulaire(slug: { current: { eq: $slug } }) {
+    allPageModulaire(where: { slug: { current: { eq: $slug } } }) {
       home
       title
       seo {
@@ -18,9 +18,16 @@ export const query = graphql`
           fr
           en
         }
-        posterImage {
-          asset {
-            url
+        metaImage {
+          fr {
+            asset {
+              url
+            }
+          }
+          en {
+            asset {
+              url
+            }
           }
         }
       }
@@ -30,7 +37,6 @@ export const query = graphql`
 `
 
 const PageModulaire = ({ data }) => {
-  // console.log(data.sanityPageModulaire)
   const { home, seo, _rawModules } = data.sanityPageModulaire
 
   // useEffect(() => {}, [])
@@ -40,7 +46,7 @@ const PageModulaire = ({ data }) => {
       <Seo
         pageTitle={_localizeField(seo.metaTitle)}
         pageDescription={_localizeField(seo.metaDescription)}
-        pageImage={seo.posterImage?.asset?.url}
+        pageImage={_localizeField(seo.metaImage).asset?.url}
         template={`template-modulaire`}
         page={home}
       />
