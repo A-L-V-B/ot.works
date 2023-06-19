@@ -25,6 +25,9 @@
       border-bottom: $border;
     }
   }
+  ul .inner {
+    min-height: calc(3 * #{$fontMLh} + 15px);
+  }
   li:last-child .inner {
     border: none;
   }

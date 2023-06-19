@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { Fragment, useEffect, useState } from "react"
 import PubSub from "pubsub-js"
 import { _localizeField, _localizeText } from "../../core/utils"
 import ProjectOverlay from "./ProjectOverlay"
@@ -83,10 +83,39 @@ const ProjectListe = ({ input }) => {
                 {li.client} {_renderCat(li.category)}
               </div>
               <div className="row">
-                <div className="col-md-10 col-xs-12">
+                <div className="col-md-12 col-xs-12">
                   <div className="title fw500">
                     {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
                   </div>
+                </div>
+              </div>
+              <div className="row xab">
+                <div className="col-md-9 col-xs-12 col-md-offset-1">
+                  {li.collaborations && li.collaborations.length > 0 && (
+                    <div className="fS fw500">
+                      {_localizeText("with")}{" "}
+                      {li.collaborations.map((collaborator, index) => (
+                        <Fragment key={`collaborator-${index}`}>
+                          <a
+                            href={collaborator.url}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {collaborator.name} ({collaborator.job})
+                          </a>
+                          <span>
+                            {li.collaborations.length >= 2 &&
+                            index === li.collaborations.length - 2
+                              ? ` ${_localizeText("and")} `
+                              : li.collaborations.length >= 3 &&
+                                index < li.collaborations.length - 2
+                              ? ", "
+                              : ""}
+                          </span>
+                        </Fragment>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="col-md-1 col-xs-9 tar">
                   {li.projectUrl && (

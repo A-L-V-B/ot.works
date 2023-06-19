@@ -31,13 +31,12 @@ export const query = graphql`
           }
         }
       }
-      _rawModules(resolveReferences: { maxDepth: 20 })
+      _rawModules(resolveReferences: { maxDepth: 50 })
     }
   }
 `
 
 const PageModulaire = ({ data }) => {
-  console.log(data.sanityPageModulaire)
   const { home, seo, _rawModules } = data.sanityPageModulaire
 
   // useEffect(() => {}, [])

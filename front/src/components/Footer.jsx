@@ -16,6 +16,9 @@ const query = graphql`
         }
       }
     }
+    sanitySettings {
+      version
+    }
   }
 `
 
@@ -23,6 +26,7 @@ const Footer = () => {
   const {
     siteBuildMetadata: { buildTime },
     sanityFooter,
+    sanitySettings,
   } = useStaticQuery(query)
 
   const date = new Date(buildTime)
@@ -55,8 +59,7 @@ const Footer = () => {
       </div>
       <div className="container-fluid">
         <div className="site-metas">
-          {_localizeText("modifiedThe")}
-          <span className="colonne">{":"}</span>{" "}
+          v{sanitySettings.version}, {_localizeText("modifiedThe")}{" "}
           <span className="tabnum">{getFormatedDate()}</span>{" "}
           {_localizeText("at")}{" "}
           <span className="tabnum">{getFormatedTime()}</span>
