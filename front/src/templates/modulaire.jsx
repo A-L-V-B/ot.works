@@ -6,7 +6,7 @@ import { _localizeField } from "../core/utils"
 
 export const query = graphql`
   query PageBySlug($slug: String!) {
-    allPageModulaire(where: { slug: { current: { eq: $slug } } }) {
+    sanityPageModulaire(slug: { current: { eq: $slug } }) {
       home
       title
       seo {
@@ -37,6 +37,7 @@ export const query = graphql`
 `
 
 const PageModulaire = ({ data }) => {
+  console.log(data.sanityPageModulaire)
   const { home, seo, _rawModules } = data.sanityPageModulaire
 
   // useEffect(() => {}, [])
