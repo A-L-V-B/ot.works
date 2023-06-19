@@ -16,7 +16,6 @@ export const query = graphql`
 `
 
 const Page404 = (props) => {
-  console.log(props)
   const { settings } = props.data
 
   return (

@@ -1,18 +1,16 @@
-import { baseLanguage } from "./i18n";
+import {baseLanguage} from './i18n'
 
-export const localizePreview = select => {
-  console.log(select);
+export const localizePreview = (select) => {
   return {
-    title: "test"
-  };
+    title: 'test',
+  }
   return {
-    ...(title && { title: `${select.title}.${baseLanguage.name}` }),
+    ...(title && {title: `${select.title}.${baseLanguage.name}`}),
     ...(subtitle && {
-      subtitle: `${select.subtitle}.${baseLanguage.name}`
+      subtitle: `${select.subtitle}.${baseLanguage.name}`,
     }),
-    ...(media && { media: `${select.media}.${baseLanguage.name}` })
-  };
-  // console.log(preview);
+    ...(media && {media: `${select.media}.${baseLanguage.name}`}),
+  }
   // if (!preview) return null;
   // const { select } = preview;
   // if (!select) return null;
@@ -26,4 +24,4 @@ export const localizePreview = select => {
   //     ...(select.media && { media: `${select.media}.${baseLanguage.name}` })
   //   }
   // };
-};
+}

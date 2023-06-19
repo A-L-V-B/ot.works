@@ -5,7 +5,6 @@ import sanityConfig from "../../../config/sanity"
 
 const ImageModule = (props) => {
   const { body } = props
-  //   console.log(body)
   const fluidProps = getFluidGatsbyImage(
     body.asset._id,
     { maxWidth: 1440 },

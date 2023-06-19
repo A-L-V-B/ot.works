@@ -7,7 +7,6 @@ const ProjectListe = ({ input }) => {
   const [image, setImage] = useState()
 
   const { listTitle, listedProjects } = input
-  // console.log("ProjectListe", image)
   const listedProjectsSorted = listedProjects.sort((a, b) => {
     return new Date(b.dateDelivered) - new Date(a.dateDelivered)
   })
@@ -18,12 +17,10 @@ const ProjectListe = ({ input }) => {
   }, [image, setImage])
 
   const _onCloseOverlay = () => {
-    // console.log("ProjectListe: _onCloseOverlay")
     setImage(null)
   }
 
   const _getYear = (d) => {
-    // console.log(d)
     const year = new Date(d).getFullYear()
     return !isNaN(year) ? `, ${year}` : ""
   }
@@ -49,7 +46,6 @@ const ProjectListe = ({ input }) => {
   }
   const _onMouseLeave = () => {
     if (_isTouch()) return
-    console.log("_onMouseLeave no mobile")
     setImage(null)
   }
 
@@ -97,11 +93,11 @@ const ProjectListe = ({ input }) => {
                       {li.collaborations.map((collaborator, index) => (
                         <Fragment key={`collaborator-${index}`}>
                           <a
-                            href={collaborator.url}
+                            href={collaborator?.url}
                             target="_blank"
                             rel="noreferrer"
                           >
-                            {collaborator.name} ({collaborator.job})
+                            {collaborator?.name} ({collaborator?.job})
                           </a>
                           <span>
                             {li.collaborations.length >= 2 &&
@@ -130,7 +126,6 @@ const ProjectListe = ({ input }) => {
                       onMouseEnter={() => _onMouseEnter(li)}
                       onMouseLeave={() => _onMouseLeave()}
                       onClick={() => {
-                        // console.log("click", image)
                         !image ? setImage(li.imageFeatured) : setImage(null)
                       }}
                     >

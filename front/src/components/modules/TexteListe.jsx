@@ -3,14 +3,11 @@ import BlockContent from "@sanity/block-content-to-react"
 import { _localizeField } from "../../core/utils"
 
 const TexteListe = ({ input }) => {
-  // console.log(input)
   const { liste } = input
-  // console.log(liste)
 
   const serializers = {
     types: {
       block(props) {
-        // console.log(props)
         switch (props.node.style) {
           // case "h1":
           //   return <h1>{props.children}</h1>
@@ -24,7 +21,6 @@ const TexteListe = ({ input }) => {
       sub: ({ children }) => <sub>{children}</sub>,
       link: ({ mark, children }) => {
         // Read https://css-tricks.com/use-target_blank/
-        // console.log(mark);
         const { blank, href } = mark
         return blank ? (
           <a href={href} target="_blank" rel="noopener, noreferrer">

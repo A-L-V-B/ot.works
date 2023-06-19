@@ -11,7 +11,6 @@ const SanityImage = ({ input, className }) => {
   const { asset, alt } = input
   const { metadata } = asset
   const imageData = getGatsbyImageData(asset, { maxWidth: 1700 }, sanityConfig)
-  console.log(metadata)
   // useEffect(() => {}, []);
 
   return (

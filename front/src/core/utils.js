@@ -14,10 +14,8 @@ export const _getLocale = () => {
 }
 
 export function _localizeField(field) {
-  // console.log(field)
   if (!field) return ""
   const locale = _getLocale()
-  // console.log(locale)
   return field[locale]
 }
 

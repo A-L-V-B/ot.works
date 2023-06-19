@@ -11,7 +11,6 @@ export default {
     },
     prepare(selection) {
       const {title, slug} = selection
-      // console.log(slug)
       return {
         title: title,
         subtitle: slug.current,

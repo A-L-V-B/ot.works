@@ -30,7 +30,6 @@ const Footer = () => {
   } = useStaticQuery(query)
 
   const date = new Date(buildTime)
-  // console.log(date)
   const getFormatedDate = () => {
     const dd = pad2(date.getDate())
     const mm = pad2(date.getMonth() + 1)

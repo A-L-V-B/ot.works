@@ -53,7 +53,6 @@ const Layout = ({ children, pageContext: { template } }) => {
     _prevScrollTop = window.pageYOffset
   }
   const _format = () => {
-    // console.log("format");
     // const ww = window.innerWidth;
     // const wh = window.innerHeight;
     document.documentElement.style.setProperty(

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import styles from './IframePreview.module.css'
 
 const assemblePostUrl = ({displayed, options}) => {
-  console.log(displayed)
   const {slug, home} = displayed
   const {previewURL} = options
   if (!slug || !previewURL) {

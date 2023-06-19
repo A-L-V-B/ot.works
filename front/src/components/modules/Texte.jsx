@@ -4,11 +4,9 @@ import FootNotes from "./FootNotes"
 import { _localizeField } from "../../core/utils"
 
 const Texte = ({ input }) => {
-  // console.log(input)
   const serializers = {
     types: {
       block(props) {
-        // console.log(props)
         switch (props.node.style) {
           // case "h1":
           //   return <h1>{props.children}</h1>
@@ -27,7 +25,6 @@ const Texte = ({ input }) => {
 
       link: ({ mark, children }) => {
         // Read https://css-tricks.com/use-target_blank/
-        // console.log(mark);
         const { blank, href } = mark
         return blank ? (
           <a href={href} target="_blank" rel="noopener, noreferrer">
@@ -39,7 +36,6 @@ const Texte = ({ input }) => {
       },
     },
   }
-  // console.log(input)
   return (
     <section className="texte">
       <div className="container-fluid">
