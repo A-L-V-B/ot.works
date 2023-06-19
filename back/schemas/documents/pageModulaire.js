@@ -1,52 +1,52 @@
 // import i18n from "../i18n";
 // import localizePreview from "../localizePreview";
-import { baseLanguage } from "../i18n";
+import {baseLanguage} from '../i18n'
 
-import { FiFileText } from "react-icons/fi";
+import {FiFileText} from 'react-icons/fi'
 
 export default {
-  name: "pageModulaire",
-  type: "document",
-  title: "Page Modulaire",
+  name: 'pageModulaire',
+  type: 'document',
+  title: 'Page Modulaire',
   icon: FiFileText,
   preview: {
     select: {
       // title: `title.${baseLanguage.name}`,
-      title: "title",
-      slug: "slug"
+      title: 'title',
+      slug: 'slug',
     },
     prepare(selection) {
-      const { title, slug } = selection;
+      const {title, slug} = selection
       return {
         title: title,
-        subtitle: slug.current
-      };
-    }
+        subtitle: slug.current,
+      }
+    },
   },
 
   fields: [
     {
-      name: "home",
-      type: "boolean",
-      title: "Homepage",
+      name: 'home',
+      type: 'boolean',
+      title: 'Homepage',
       // description: "Cocher si cette page est la home du site",
-      layout: "checkbox"
+      layout: 'checkbox',
     },
     {
-      name: "seo",
-      type: "seo"
+      name: 'seo',
+      type: 'seo',
     },
     {
-      name: "title",
-      type: "string",
-      title: "Name",
-      description: "Le nom de la page dans le back"
+      name: 'title',
+      type: 'string',
+      title: 'Name',
+      description: 'Le nom de la page dans le back',
     },
     {
-      name: "slug",
-      type: "slug",
-      title: "Slug",
-      description: "Au plus court, sans connecteurs logiques"
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      description: 'Au plus court, sans connecteurs logiques',
       // options: {
       //   source: "title",
       //   maxLength: 96
@@ -54,9 +54,9 @@ export default {
     },
 
     {
-      name: "modules",
-      title: "Page content",
-      type: "pageModules"
-    }
-  ]
-};
+      name: 'modules',
+      title: 'Page content',
+      type: 'pageModules',
+    },
+  ],
+}

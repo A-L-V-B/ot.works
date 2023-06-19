@@ -28,6 +28,10 @@ import texteListUI from './modules/texteListUI'
 import projectListUI from './modules/projectListUI'
 import pageModules from './modules/pageModules'
 import collaboration from './documents/collaboration'
+import localeImage from './objects/localeImage'
+import siteTitle from './objects/siteTitle'
+import projectTitle from './objects/projectTitle'
+import metaTitle from './objects/metaTitle'
 
 export const schemaTypes = [
   lang,
@@ -45,6 +49,7 @@ export const schemaTypes = [
   localeText,
   localeTextShort,
   localeSlug,
+  localeImage,
   simplePortableText,
   portableText,
   portableTextFull,
@@ -61,4 +66,8 @@ export const schemaTypes = [
   texteListUI,
   projectListUI,
   pageModules,
+
+  siteTitle,
+  projectTitle,
+  metaTitle,
 ]

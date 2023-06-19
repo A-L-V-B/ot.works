@@ -1,5 +1,3 @@
-import {languages} from '../i18n'
-
 export default {
   name: 'seo',
   type: 'object',
@@ -19,16 +17,10 @@ export default {
   fields: [
     {
       name: 'metaTitle',
-      type: 'object',
+      type: 'metaTitle',
       title: 'Meta Title',
       description:
         'Description courte et précise de la page, écrire pour les utilisateurs, 60 caractères max.',
-      fields: languages.map((lang) => ({
-        title: lang.title,
-        name: lang.name,
-        type: 'string',
-        validation: (Rule) => [Rule.max(60).warning('Keep your title short')],
-      })),
     },
     {
       name: 'metaDescription',
@@ -39,11 +31,10 @@ export default {
       // fieldset: "seoGroup"
     },
     {
-      name: 'posterImage',
-      type: 'image',
-      title: 'Poster image',
+      name: 'metaImage',
+      type: 'localeImage',
+      title: 'Meta image',
       description: 'Taille recommandée : 1200×628',
-      // fieldset: "seoGroup"
     },
   ],
 }
