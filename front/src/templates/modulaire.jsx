@@ -5,41 +5,55 @@ import Modules from "../components/modules"
 import { _localizeField } from "../core/utils"
 
 export const query = graphql`
-  query PageBySlug($slug: String!) {
-    sanityPageModulaire(slug: { current: { eq: $slug } }) {
-      home
-      title
-      seo {
-        metaTitle {
-          fr
-          en
-        }
-        metaDescription {
-          fr
-          en
-        }
-        metaImage {
+  {
+    allSanityPageModulaire {
+      nodes {
+        home
+        title
+        slug {
           fr {
-            asset {
-              url
-            }
+            current
           }
           en {
-            asset {
-              url
+            current
+          }
+        }
+        seo {
+          metaTitle {
+            fr
+            en
+          }
+          metaDescription {
+            fr
+            en
+          }
+          metaImage {
+            fr {
+              asset {
+                url
+              }
+            }
+            en {
+              asset {
+                url
+              }
             }
           }
         }
+        _rawModules(resolveReferences: { maxDepth: 80 })
       }
-      _rawModules(resolveReferences: { maxDepth: 80 })
     }
   }
 `
 
-const PageModulaire = ({ data }) => {
-  const { home, seo, _rawModules } = data.sanityPageModulaire
+const PageModulaire = ({ data, pageContext }) => {
+  const { nodes } = data.allSanityPageModulaire
 
-  // useEffect(() => {}, [])
+  const page = nodes.find(
+    (el) => el.slug[pageContext.locale].current === pageContext.slug
+  )
+
+  const { home, seo, _rawModules } = page
 
   return (
     <div className="page">

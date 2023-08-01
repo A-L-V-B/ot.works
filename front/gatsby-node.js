@@ -81,7 +81,12 @@ async function createAllPageModulaire(graphql, actions) {
         nodes {
           home
           slug {
-            current
+            fr {
+              current
+            }
+            en {
+              current
+            }
           }
         }
       }
@@ -97,16 +102,16 @@ async function createAllPageModulaire(graphql, actions) {
       const localizedPath = locale.default
         ? home
           ? `/`
-          : `/${slug.current}`
+          : `/${slug[locale.path].current}`
         : home
         ? `/${locale.path}`
-        : `/${locale.path}/${slug.current}`
+        : `/${locale.path}/${slug[locale.path].current}`
 
       createPage({
         path: localizedPath,
         component: templateModulaire,
         context: {
-          slug: slug.current,
+          slug: slug[locale.path].current,
           template: "modulaire",
           locale: locale.path,
         },

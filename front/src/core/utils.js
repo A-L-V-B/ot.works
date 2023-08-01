@@ -20,6 +20,12 @@ export function _localizeField(field) {
   return field[locale]
 }
 
+export function _localizeSlug(slug) {
+  if (!slug) return ""
+  const locale = _getLocale()
+  return locale === "fr" ? slug[locale].current : "en/" + slug[locale].current
+}
+
 export const _localizeText = (text) => {
   const locale = _getLocale()
   return locales[locale] && locales[locale][text] ? locales[locale][text] : text

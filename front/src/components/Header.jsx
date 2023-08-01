@@ -21,7 +21,12 @@ const query = graphql`
         link {
           _type
           slug {
-            current
+            fr {
+              current
+            }
+            en {
+              current
+            }
           }
         }
       }

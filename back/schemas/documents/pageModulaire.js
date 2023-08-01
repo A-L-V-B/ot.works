@@ -19,7 +19,7 @@ export default {
       const {title, slug} = selection
       return {
         title: title,
-        subtitle: slug.current,
+        subtitle: slug[baseLanguage.name].current,
       }
     },
   },
@@ -44,7 +44,7 @@ export default {
     },
     {
       name: 'slug',
-      type: 'slug',
+      type: 'localeSlug',
       title: 'Slug',
       description: 'Au plus court, sans connecteurs logiques',
       // options: {

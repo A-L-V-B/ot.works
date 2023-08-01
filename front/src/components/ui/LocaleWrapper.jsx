@@ -12,6 +12,7 @@ const LocaleWrapper = ({ children, pageContext }) => {
   }, [])
 
   const _detectUserLang = () => {
+    if (pageContext.locale) return pageContext.locale.slice(0, 2)
     const userLang = navigator.language || navigator.userLanguage
     return userLang.toLowerCase().indexOf("fr") === -1 ? "en" : "fr"
   }

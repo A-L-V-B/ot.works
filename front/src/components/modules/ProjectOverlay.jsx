@@ -29,7 +29,7 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
             <img
               className={clsx("cover")}
               src={urlForImage(image.asset._id).height(1340).url()}
-              srcset={`${urlForImage(image.asset._id)
+              srcSet={`${urlForImage(image.asset._id)
                 .width(500)
                 .url()} 500w, ${urlForImage(image.asset._id)
                 .width(1024)
