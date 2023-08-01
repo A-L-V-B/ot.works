@@ -1,36 +1,20 @@
 import React, { useEffect, useState } from "react"
 import clsx from "clsx"
-import PubSub from "pubsub-js"
-import SanityImage from "../SanityImage"
+import { urlForImage } from "../../core/utils"
 
-const ProjectOverlay = ({ image }) => {
-  const [_image, setImage] = useState()
-  const [open, setOpen] = useState()
-
-  useEffect(() => {
-    if (image) {
-      _openOverlay()
-    } else {
-      _closeOverlay()
-    }
-  }, [image])
-
-  const _openOverlay = () => {
-    setImage(image)
-    setOpen(true)
-  }
+const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
   const _closeOverlay = () => {
-    // setOpen(false)
-    PubSub.publish("CLOSE_OVERLAY")
-    setOpen(false)
+    closeOverlay()
   }
+
+  if (!image) return null
 
   return (
     <div
       className={clsx(
         "image-overlay",
-        open ? "open" : "",
-        _image && _image?.asset.metadata.dimensions.aspectRatio > 1
+        showOverlay ? "open" : "",
+        image && image?.asset.metadata.dimensions.aspectRatio > 1
           ? "is-landscape"
           : "is-portrait"
       )}
@@ -40,41 +24,28 @@ const ProjectOverlay = ({ image }) => {
       onClick={() => _closeOverlay()}
     >
       <div className="row center-xs h100 x xac">
-        <div
-          className="inner pr"
-          style={{
-            width: "calc((100vw - 10px * 13) / 12 * 10 + 10px * 9)",
-            height: "calc(100vh - 100px)",
-          }}
-        >
-          {/* {_image && <SanityImage input={_image} />} */}
-          {_image && (
-            <div
-              style={{
-                display: "inline-block",
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
-            >
-              <img
-                className={clsx("cover")}
-                src={_image.asset.url}
-                style={{
-                  maxWidth: "calc((100vw - 10px * 13) / 12 * 10 + 10px * 9)",
-                  maxHeight: "calc(100vh - 100px)",
-                  width: "auto",
-                  height: "auto",
-                }}
-              />
-              {_image.credits && _image.credits.name && (
-                <div className="caption">
-                  {_image.credits?.job}: {_image.credits?.name}
-                </div>
-              )}
-            </div>
-          )}
+        <div className="pr overlay__inner">
+          <div className="overlay__image">
+            <img
+              className={clsx("cover")}
+              src={urlForImage(image.asset._id).height(1340).url()}
+              srcset={`${urlForImage(image.asset._id)
+                .width(500)
+                .url()} 500w, ${urlForImage(image.asset._id)
+                .width(1024)
+                .url()} 1024w, ${urlForImage(image.asset._id)
+                .width(1920)
+                .url()} 1920w, ${urlForImage(image.asset._id)
+                .width(2560)
+                .url()} 2560w`}
+              sizes="(max-width: 768px) calc(100vw - 10px * 2), calc((100vw - 10px * 13) / 12 * 10 + 10px * 9)"
+            />
+            {image.credits && image.credits.name && (
+              <div className="overlay__caption">
+                {image.credits?.job}: {image.credits?.name}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
