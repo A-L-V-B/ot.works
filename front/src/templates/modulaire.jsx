@@ -31,7 +31,7 @@ export const query = graphql`
           }
         }
       }
-      _rawModules(resolveReferences: { maxDepth: 50 })
+      _rawModules(resolveReferences: { maxDepth: 80 })
     }
   }
 `

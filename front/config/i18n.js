@@ -15,7 +15,7 @@ module.exports = {
     personal: "Personnel",
     "pro-bono": "Pro bono",
     with: "Avec",
-    and: "Et",
+    and: "et",
   },
   en: {
     default: false,
@@ -31,6 +31,6 @@ module.exports = {
     personal: "Personal",
     "pro-bono": "Pro bono",
     with: "With",
-    and: "And",
+    and: "and",
   },
 }

@@ -89,67 +89,67 @@ body {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    &::before {
-      background-color: $noir-100;
-    }
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     &::before {
+//       background-color: $noir-100;
+//     }
 
-    &,
-    a,
-    button {
-      color: $blanc-100;
-      color: $blanc-50;
-      &:hover {
-        color: $blanc-50;
-        color: $blanc-100;
-      }
-    }
+//     &,
+//     a,
+//     button {
+//       color: $blanc-100;
+//       color: $blanc-50;
+//       &:hover {
+//         color: $blanc-50;
+//         color: $blanc-100;
+//       }
+//     }
 
-    header .cartouche {
-      // position: relative;
-      &::before {
-        background-color: $noir-100;
-      }
-      color: $blanc-100;
-      a,
-      button {
-        color: $blanc-50;
-        // color: red;
-        &:hover {
-          color: $blanc-100;
-        }
-      }
-    }
-    .texte p {
-      a {
-        color: $blanc-50;
-        // color: red;
-        &:hover {
-          color: $blanc-100;
-        }
-      }
-    }
-    .fS p a,
-    .footnotes a {
-      color: $bleu-50;
-      &:hover {
-        color: $bleu-100;
-      }
-    }
-    .project-liste {
-      h2,
-      li {
-        background: $blanc-50;
-        color: $noir-100;
-      }
-      a,
-      button {
-        color: $noir-100;
-        &:hover {
-          color: $noir-50;
-        }
-      }
-    }
-  }
-}
+//     header .cartouche {
+//       // position: relative;
+//       &::before {
+//         background-color: $noir-100;
+//       }
+//       color: $blanc-100;
+//       a,
+//       button {
+//         color: $blanc-50;
+//         // color: red;
+//         &:hover {
+//           color: $blanc-100;
+//         }
+//       }
+//     }
+//     .texte p {
+//       a {
+//         color: $blanc-50;
+//         // color: red;
+//         &:hover {
+//           color: $blanc-100;
+//         }
+//       }
+//     }
+//     .fS p a,
+//     .footnotes a {
+//       color: $bleu-50;
+//       &:hover {
+//         color: $bleu-100;
+//       }
+//     }
+//     .project-liste {
+//       h2,
+//       li {
+//         background: $blanc-50;
+//         color: $noir-100;
+//       }
+//       a,
+//       button {
+//         color: $noir-100;
+//         &:hover {
+//           color: $noir-50;
+//         }
+//       }
+//     }
+//   }
+// }

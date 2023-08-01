@@ -13,28 +13,15 @@ export default {
   //   }),
   fields: [
     {
-      name: 'caption',
-      type: 'localeString',
-      title: 'Caption',
-    },
-    {
-      name: 'authors',
-      type: 'localeString',
-      title: 'Authors',
-    },
-    {
-      name: 'attribution',
-      type: 'string',
-      title: 'Attribution',
-      description: 'Au format "Travail : Nom"',
+      name: 'credits',
+      type: 'reference',
+      title: 'Crédit',
+      to: [{type: 'collaboration'}],
     },
     {
       name: 'alt',
       type: 'localeString',
       title: 'Alt text',
-      // description: "Important for SEO and accessiblity.",
-      // validation: Rule =>
-      //   Rule.error("You have to fill out the alternative text.").required(),
     },
   ],
   preview: {

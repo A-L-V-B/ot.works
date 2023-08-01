@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
+import usePrefersColorScheme from "use-prefers-color-scheme"
 
 const DarkMode = () => {
-  const [isDark, setIsDark] = useState(false)
+  const prefersColorScheme = usePrefersColorScheme()
+  const [isDark, setIsDark] = useState(prefersColorScheme === "dark")
 
   useEffect(() => {
-    //si on toggle la classe sur le body au changement de page la classe est nétoyée. Idéalement faire ce switch via le context
     if (isDark) {
       document.documentElement.classList.add("is-dark")
     } else {

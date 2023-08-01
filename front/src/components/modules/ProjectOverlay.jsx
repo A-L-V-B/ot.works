@@ -6,6 +6,7 @@ import SanityImage from "../SanityImage"
 const ProjectOverlay = ({ image }) => {
   const [_image, setImage] = useState()
   const [open, setOpen] = useState()
+
   useEffect(() => {
     if (image) {
       _openOverlay()
@@ -23,6 +24,7 @@ const ProjectOverlay = ({ image }) => {
     PubSub.publish("CLOSE_OVERLAY")
     setOpen(false)
   }
+
   return (
     <div
       className={clsx(
@@ -37,26 +39,42 @@ const ProjectOverlay = ({ image }) => {
       aria-label="image overlay, click to close"
       onClick={() => _closeOverlay()}
     >
-      <div className="row center-xs h100">
-        <div className="col-md-10 col-xs-12 h100 ">
-          <div className="inner h100 x xjc xac">
-            {/* {_image && <SanityImage input={_image} />} */}
-            {_image && (
-              <div
+      <div className="row center-xs h100 x xac">
+        <div
+          className="inner pr"
+          style={{
+            width: "calc((100vw - 10px * 13) / 12 * 10 + 10px * 9)",
+            height: "calc(100vh - 100px)",
+          }}
+        >
+          {/* {_image && <SanityImage input={_image} />} */}
+          {_image && (
+            <div
+              style={{
+                display: "inline-block",
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <img
                 className={clsx("cover")}
+                src={_image.asset.url}
                 style={{
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  backgroundImage: `url(${_image.asset.url})`,
-                  // backgroundColor:
-                  //   _image.asset.metadata.palette.dominant.background,
-                  width: "calc(100vw - 20px)",
-                  height: "calc(100vh - 100px)",
+                  maxWidth: "calc((100vw - 10px * 13) / 12 * 10 + 10px * 9)",
+                  maxHeight: "calc(100vh - 100px)",
+                  width: "auto",
+                  height: "auto",
                 }}
-              ></div>
-            )}
-          </div>
+              />
+              {_image.credits && _image.credits.name && (
+                <div className="caption">
+                  {_image.credits?.job}: {_image.credits?.name}
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>
