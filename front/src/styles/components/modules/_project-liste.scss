@@ -47,6 +47,44 @@
     }
   }
 
+  .credits {
+    @media all and (max-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-column-gap: $margeS;
+      font-size: $fontXS;
+      margin: 6px 0;
+    }
+
+    & > div {
+      display: inline;
+
+      &:nth-child(2) {
+        @media all and (max-width: 768px) {
+          grid-column: 2 / -1;
+          display: flex;
+          flex-direction: column;
+
+          & > span {
+            display: none;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $blanc-100;
+
+      @media all and (max-width: 768px) {
+        color: $blanc-50;
+      }
+
+      &:hover {
+        color: $blanc-50;
+      }
+    }
+  }
+
   .image-overlay {
     z-index: 250;
     position: fixed;
@@ -119,7 +157,7 @@
 .overlay__caption {
   position: absolute;
   background-color: white;
-  color: black;
+  color: $noir-100;
   bottom: 0;
   right: 0;
   transform: rotate(-90deg) translate(100%, calc(100% + 3px));
@@ -127,6 +165,18 @@
   font-size: $fontS;
   line-height: 18px;
   padding: 3px 3px;
+
+  a {
+    color: $noir-100;
+
+    @media all and (max-width: 768px) {
+      color: $noir-50 !important;
+    }
+
+    &:hover {
+      color: $noir-50;
+    }
+  }
 }
 
 @media all and (max-width: 768px) {

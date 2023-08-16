@@ -53,28 +53,30 @@ const ListeItem = ({ li }) => {
         <div className="row xab">
           <div className="col-md-9 col-xs-12 col-md-offset-1">
             {li.collaborations && li.collaborations.length > 0 && (
-              <div className="fS fw500">
-                {_localizeText("with")}{" "}
-                {li.collaborations.map((collaborator, index) => (
-                  <Fragment key={`collaborator-${index}`}>
-                    <a
-                      href={collaborator?.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {collaborator?.name} ({collaborator?.job})
-                    </a>
-                    <span>
-                      {li.collaborations.length >= 2 &&
-                      index === li.collaborations.length - 2
-                        ? ` ${_localizeText("and")} `
-                        : li.collaborations.length >= 3 &&
-                          index < li.collaborations.length - 2
-                        ? ", "
-                        : ""}
-                    </span>
-                  </Fragment>
-                ))}
+              <div className="fS fw500 credits">
+                <div>{_localizeText("with")} </div>
+                <div>
+                  {li.collaborations.map((collaborator, index) => (
+                    <Fragment key={`collaborator-${index}`}>
+                      <a
+                        href={collaborator?.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {collaborator?.name} ({collaborator?.job})
+                      </a>
+                      <span>
+                        {li.collaborations.length >= 2 &&
+                        index === li.collaborations.length - 2
+                          ? ` ${_localizeText("and")} `
+                          : li.collaborations.length >= 3 &&
+                            index < li.collaborations.length - 2
+                          ? ", "
+                          : ""}
+                      </span>
+                    </Fragment>
+                  ))}
+                </div>
               </div>
             )}
           </div>

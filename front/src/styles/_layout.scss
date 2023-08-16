@@ -1,6 +1,6 @@
 :root {
   --appHeight: 100%;
-  --headerHeight: 54px;
+  --headerHeight: calc(clamp(22px, 1.5vw, 27px) * 1.2272727273 * 2);
   --headerHeightMobile: 50px;
   --md1: 8.33333%;
   //   --margeS: 10px;

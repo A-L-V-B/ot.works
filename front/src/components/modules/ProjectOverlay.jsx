@@ -42,7 +42,16 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
             />
             {image.credits && image.credits.name && (
               <div className="overlay__caption">
-                {image.credits?.job}: {image.credits?.name}
+                {image.credits.job.charAt(0).toUpperCase() +
+                  image.credits.job.slice(1)}{" "}
+                :{" "}
+                {image.credits.url ? (
+                  <a href={image.credits.url} target="_blank" rel="noreferre">
+                    {image.credits.name}
+                  </a>
+                ) : (
+                  <>{image.credits.name}</>
+                )}
               </div>
             )}
           </div>

@@ -65,7 +65,6 @@ const Layout = ({ children, pageContext: { template } }) => {
     //   .getBoundingClientRect()
     // if (headerBounding.height > 56) headerBounding.height = 56
 
-    document.documentElement.style.setProperty("--headerHeight", 54 + "px")
     document.documentElement.style.setProperty(
       "--headerHeightMobile",
       54 + "px"
