@@ -7,7 +7,7 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
     closeOverlay()
   }
 
-  if (!image) return null
+  if (!image || !image.asset) return null
 
   return (
     <div
