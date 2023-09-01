@@ -5,16 +5,8 @@ import {
   FiArrowUp,
   FiArrowDown,
   FiGlobe,
-  FiEdit,
-  FiEye,
   FiUsers,
 } from 'react-icons/fi'
-
-import IframePreview from './previews/front/index'
-
-const remoteURL = 'https://preview-otworks.gtsb.io'
-const localURL = 'http://localhost:8000'
-const previewURL = window.location.hostname === 'localhost' ? localURL + '/' : remoteURL + ''
 
 export default (S) =>
   S.list()
@@ -27,15 +19,7 @@ export default (S) =>
         .child(
           S.documentTypeList('pageModulaire')
             .title('Pages')
-            .child((documentId) =>
-              S.document()
-                .documentId(documentId)
-                .schemaType('pageModulaire')
-                .views([
-                  S.view.form().icon(FiEdit),
-                  S.view.component(IframePreview).icon(FiEye).title('Web').options({previewURL}),
-                ])
-            )
+            .child((documentId) => S.document().documentId(documentId).schemaType('pageModulaire'))
         ),
 
       S.listItem()

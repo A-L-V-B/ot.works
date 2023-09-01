@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from "react"
-import PubSub from "pubsub-js"
 import { _localizeField, _localizeText } from "../../core/utils"
 import ProjectOverlay from "./ProjectOverlay"
 
@@ -50,7 +49,7 @@ const ListeItem = ({ li }) => {
             </div>
           </div>
         </div>
-        <div className="row xab">
+        <div className="row xab liste__bottom">
           <div className="col-md-9 col-xs-12 col-md-offset-1">
             {li.collaborations && li.collaborations.length > 0 && (
               <div className="fS fw500 credits">

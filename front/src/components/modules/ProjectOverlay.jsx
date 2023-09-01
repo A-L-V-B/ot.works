@@ -3,9 +3,33 @@ import clsx from "clsx"
 import { urlForImage } from "../../core/utils"
 
 const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
+  const [fixedDimension, setFixedDimension] = useState("width")
+
   const _closeOverlay = () => {
     closeOverlay()
   }
+
+  // check window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (!image || !image.asset) return
+      const windowWidth = window.innerWidth
+      const windowHeight = window.innerHeight
+      const containerSize =
+        windowWidth < 768
+          ? { h: windowHeight - 100, w: windowWidth - 20 }
+          : { h: windowHeight - 200, w: ((windowWidth - 130) / 12) * 7 + 60 }
+      const imageRatio = image.asset.metadata.dimensions.aspectRatio
+      const containerRatio = containerSize.w / containerSize.h
+
+      setFixedDimension(imageRatio > containerRatio ? "width" : "height")
+    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [image])
 
   if (!image || !image.asset) return null
 
@@ -14,9 +38,7 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
       className={clsx(
         "image-overlay",
         showOverlay ? "open" : "",
-        image && image?.asset.metadata.dimensions.aspectRatio > 1
-          ? "is-landscape"
-          : "is-portrait"
+        fixedDimension === "width" ? "fixed-width" : "fixed-height"
       )}
       role="button"
       tabIndex={0}

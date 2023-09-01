@@ -49,7 +49,7 @@ function FootNotes({ blocks }) {
       {notesUnique.map(({ _key, text }, i) => (
         <li id={`${_key}`} key={_key}>
           <div className="row">
-            <div className="col-xs-1">[{i + 1}]</div>
+            <div className="col-xs-1 footnotes__fig">[{i + 1}]</div>
             <div className="col-md-6 col-xs-10">
               <PortableText blocks={text} serializers={serializers} />
             </div>
