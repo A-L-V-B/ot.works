@@ -64,13 +64,15 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
               srcSet={`${urlForImage(image.asset._id)
                 .width(500)
                 .url()} 500w, ${urlForImage(image.asset._id)
-                .width(1024)
-                .url()} 1024w, ${urlForImage(image.asset._id)
-                .width(1920)
-                .url()} 1920w, ${urlForImage(image.asset._id)
-                .width(2560)
-                .url()} 2560w`}
-              sizes="(max-width: 768px) calc(100vw - 10px * 2), calc((100vw - 10px * 13) / 12 * 10 + 10px * 9)"
+                .width(800)
+                .url()} 800w, ${urlForImage(image.asset._id)
+                .width(1080)
+                .url()} 1280w, ${urlForImage(image.asset._id)
+                .width(1280)
+                .url()} 1280w, ${urlForImage(image.asset._id)
+                .width(1480)
+                .url()} 1480w`}
+              sizes="(max-width: 768px) calc(100vw - 20px), calc((100vw - 130px) / 12 * 7 + 60px)"
             />
             {image.credits && image.credits.name && (
               <div className="overlay__caption">
