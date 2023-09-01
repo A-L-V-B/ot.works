@@ -56,6 +56,8 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
         <div className="pr overlay__inner">
           <div className="overlay__image">
             <img
+              height={image.asset.metadata.dimensions.height}
+              width={image.asset.metadata.dimensions.width}
               alt={""}
               className={clsx("cover")}
               src={urlForImage(image.asset._id).height(1340).url()}
