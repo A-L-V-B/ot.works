@@ -56,9 +56,7 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
         <div className="pr overlay__inner">
           <div className="overlay__image">
             <img
-              alt={`${job ? `${job} : ` : ""}${
-                image.credits && image.credits.name ? image.credits.name : ""
-              }`}
+              alt={""}
               className={clsx("cover")}
               src={urlForImage(image.asset._id).height(1340).url()}
               srcSet={`${urlForImage(image.asset._id)
