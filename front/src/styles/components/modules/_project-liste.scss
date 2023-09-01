@@ -1,4 +1,5 @@
 .project-liste {
+  @include fadeIn(3);
   overflow-x: hidden;
 
   h2,

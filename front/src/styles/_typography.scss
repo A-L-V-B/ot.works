@@ -148,6 +148,7 @@ p {
   }
 }
 .texte {
+  @include fadeIn(2);
   // hyphens: auto;
   // word-wrap: break-word;
   // overflow-wrap: break-word;
