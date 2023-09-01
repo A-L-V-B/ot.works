@@ -57,13 +57,19 @@ const ListeItem = ({ li }) => {
                 <div>
                   {li.collaborations.map((collaborator, index) => (
                     <Fragment key={`collaborator-${index}`}>
-                      <a
-                        href={collaborator?.url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {collaborator?.name} ({collaborator?.job})
-                      </a>
+                      {collaborator.url ? (
+                        <a
+                          href={collaborator.url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {collaborator?.name} ({collaborator?.job})
+                        </a>
+                      ) : (
+                        <>
+                          {collaborator?.name} ({collaborator?.job})
+                        </>
+                      )}
                       <span>
                         {li.collaborations.length >= 2 &&
                         index === li.collaborations.length - 2

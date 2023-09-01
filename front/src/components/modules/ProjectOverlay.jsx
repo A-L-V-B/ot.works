@@ -4,12 +4,12 @@ import { urlForImage } from "../../core/utils"
 
 const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
   const [fixedDimension, setFixedDimension] = useState("width")
+  const [job, setJob] = useState("")
 
   const _closeOverlay = () => {
     closeOverlay()
   }
 
-  // check window resize
   useEffect(() => {
     const handleResize = () => {
       if (!image || !image.asset) return
@@ -31,6 +31,13 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
     }
   }, [image])
 
+  useEffect(() => {
+    if (!image || !image.credits) return
+    setJob(
+      image.credits.job.charAt(0).toUpperCase() + image.credits.job.slice(1)
+    )
+  }, [image])
+
   if (!image || !image.asset) return null
 
   return (
@@ -49,6 +56,9 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
         <div className="pr overlay__inner">
           <div className="overlay__image">
             <img
+              alt={`${job ? `${job} : ` : ""}${
+                image.credits && image.credits.name ? image.credits.name : ""
+              }`}
               className={clsx("cover")}
               src={urlForImage(image.asset._id).height(1340).url()}
               srcSet={`${urlForImage(image.asset._id)
@@ -64,9 +74,7 @@ const ProjectOverlay = ({ image, showOverlay, closeOverlay }) => {
             />
             {image.credits && image.credits.name && (
               <div className="overlay__caption">
-                {image.credits.job.charAt(0).toUpperCase() +
-                  image.credits.job.slice(1)}{" "}
-                :{" "}
+                {job ? `${job} : ` : ""}
                 {image.credits.url ? (
                   <a href={image.credits.url} target="_blank" rel="noreferre">
                     {image.credits.name}
