@@ -1,9 +1,9 @@
 export default {
-  name: "imageFeatured",
-  type: "image",
-  title: "Image",
+  name: 'imageFeatured',
+  type: 'image',
+  title: 'Image',
   options: {
-    hotspot: true
+    hotspot: true,
   },
   // validation: Rule =>
   //   Rule.custom(fields => {
@@ -13,30 +13,21 @@ export default {
   //   }),
   fields: [
     {
-      name: "attribution",
-      type: "string",
-      title: "Attribution",
-      description: 'Au format "Travail : Nom"',
-      options: {
-        isHighlighted: true
-      }
+      name: 'credits',
+      type: 'reference',
+      title: 'Crédit',
+      to: [{type: 'collaboration'}],
     },
     {
-      name: "alt",
-      type: "localeString",
-      title: "Alt text",
-      // description: "Important for SEO and accessiblity.",
-      // validation: Rule =>
-      //   Rule.error("You have to fill out the alternative text.").required(),
-      options: {
-        isHighlighted: true
-      }
-    }
+      name: 'alt',
+      type: 'localeString',
+      title: 'Alt text',
+    },
   ],
   preview: {
     select: {
-      imageUrl: "asset.url",
-      title: "caption"
-    }
-  }
-};
+      imageUrl: 'asset.url',
+      title: 'caption',
+    },
+  },
+}

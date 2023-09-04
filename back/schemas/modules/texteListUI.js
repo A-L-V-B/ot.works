@@ -1,31 +1,30 @@
 export default {
-  name: "texteListUI",
-  title: "Texte liste UI",
-  type: "object",
+  name: 'texteListUI',
+  title: 'Texte liste UI',
+  type: 'object',
   fields: [
     {
-      name: "title",
-      type: "string",
-      title: "Title"
+      name: 'title',
+      type: 'string',
+      title: 'Title',
     },
     {
-      name: "liste",
-      type: "array",
-      title: "Notes",
-      of: [{ type: "titleTexte" }]
-    }
+      name: 'liste',
+      type: 'array',
+      title: 'Notes',
+      of: [{type: 'titleTexte'}],
+    },
   ],
   preview: {
     select: {
-      title: "title"
+      title: 'title',
     },
     prepare(selection) {
-      const { title } = selection;
-      console.log(title);
+      const {title} = selection
       return {
         title: title,
-        subtitle: "Textes liste UI"
-      };
-    }
-  }
-};
+        subtitle: 'Textes liste UI',
+      }
+    },
+  },
+}

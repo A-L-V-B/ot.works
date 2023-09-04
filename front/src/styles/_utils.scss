@@ -1,3 +1,17 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@mixin fadeIn($delay: 0) {
+  opacity: 0;
+  animation: fadeIn 0.4s ease #{$delay * 0.2s} forwards;
+}
+
 img {
   max-width: 100%;
 }

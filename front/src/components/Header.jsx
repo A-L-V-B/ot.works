@@ -21,7 +21,12 @@ const query = graphql`
         link {
           _type
           slug {
-            current
+            fr {
+              current
+            }
+            en {
+              current
+            }
           }
         }
       }
@@ -67,7 +72,6 @@ const Header = ({ direction }) => {
   const _menuClose = () => setSmMenuActive(false)
 
   const hasMenu = nav.length > 0
-  // console.log(nav)
   return (
     <header className={clsx(direction, smMenuActive ? "is-active" : "")}>
       <div className="row no-gutter">

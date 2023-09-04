@@ -1,28 +1,33 @@
 export default {
-  name: "settings",
-  type: "document",
-  title: "Site Settings",
+  name: 'settings',
+  type: 'document',
+  title: 'Site Settings',
   preview: {
     select: {
-      siteTitle: "siteTitle"
+      siteTitle: 'siteTitle',
     },
     prepare(selection) {
-      const { siteTitle } = selection;
+      const {siteTitle} = selection
       return {
-        title: siteTitle.fr
-      };
-    }
+        title: siteTitle.fr,
+      }
+    },
   },
   fields: [
     {
-      name: "siteTitle",
-      title: "Site Title",
-      type: "localeString"
+      name: 'siteTitle',
+      type: 'siteTitle',
+      title: 'Site Title',
     },
     {
-      name: "message404",
-      type: "localeText",
-      title: "Message 404"
-    }
-  ]
-};
+      name: 'version',
+      type: 'string',
+      title: 'Version du site',
+    },
+    {
+      name: 'message404',
+      type: 'localeText',
+      title: 'Message 404',
+    },
+  ],
+}

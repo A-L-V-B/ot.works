@@ -1,9 +1,9 @@
-import { languages, baseLanguage } from "../i18n";
+import {languages, baseLanguage} from '../i18n'
 
 export default {
-  name: "localeString",
-  type: "object",
-  title: "Localized string",
+  name: 'localeString',
+  type: 'object',
+  title: 'Localized string',
   // fieldsets: [
   //   {
   //     title: "Translations",
@@ -11,10 +11,10 @@ export default {
   //     options: { collapsible: false }
   //   }
   // ],
-  fields: languages.map(lang => ({
+  fields: languages.map((lang) => ({
     title: lang.title,
     name: lang.name,
-    type: "string"
+    type: 'string',
     // fieldset: lang.isDefault ? null : "translations"
-  }))
-};
+  })),
+}

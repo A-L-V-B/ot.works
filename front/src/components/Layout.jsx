@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react"
+import smartquotes from "smartquotes"
 // import { useStaticQuery, graphql } from "gatsby"
 import Header from "./Header"
 import Footer from "./Footer"
@@ -21,6 +22,10 @@ const Layout = ({ children, pageContext: { template } }) => {
   const settings = {
     test: "test",
   }
+
+  useEffect(() => {
+    smartquotes().listen()
+  }, [])
 
   useEffect(() => {
     _onScroll()
@@ -48,7 +53,6 @@ const Layout = ({ children, pageContext: { template } }) => {
     _prevScrollTop = window.pageYOffset
   }
   const _format = () => {
-    // console.log("format");
     // const ww = window.innerWidth;
     // const wh = window.innerHeight;
     document.documentElement.style.setProperty(
@@ -61,7 +65,6 @@ const Layout = ({ children, pageContext: { template } }) => {
     //   .getBoundingClientRect()
     // if (headerBounding.height > 56) headerBounding.height = 56
 
-    document.documentElement.style.setProperty("--headerHeight", 54 + "px")
     document.documentElement.style.setProperty(
       "--headerHeightMobile",
       54 + "px"

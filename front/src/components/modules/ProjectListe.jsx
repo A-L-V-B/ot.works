@@ -1,65 +1,12 @@
-import React, { useEffect, useState } from "react"
-import PubSub from "pubsub-js"
+import React, { Fragment, useEffect, useState } from "react"
 import { _localizeField, _localizeText } from "../../core/utils"
-import ProjectOverlay from "./ProjectOverlay"
+import ListeItem from "./ListeItem"
 
 const ProjectListe = ({ input }) => {
-  const [image, setImage] = useState()
-
   const { listTitle, listedProjects } = input
-  // console.log("ProjectListe", image)
   const listedProjectsSorted = listedProjects.sort((a, b) => {
     return new Date(b.dateDelivered) - new Date(a.dateDelivered)
   })
-
-  useEffect(() => {
-    const token = PubSub.subscribe("CLOSE_OVERLAY", _onCloseOverlay)
-    return () => PubSub.unsubscribe(token)
-  }, [image, setImage])
-
-  const _onCloseOverlay = () => {
-    // console.log("ProjectListe: _onCloseOverlay")
-    setImage(null)
-  }
-
-  const _getYear = (d) => {
-    // console.log(d)
-    const year = new Date(d).getFullYear()
-    return !isNaN(year) ? `, ${year}` : ""
-  }
-
-  const _renderCat = (cat) => {
-    // return cat[0]
-    if (cat.length) {
-      if (cat[0] === "pro-bono" || cat[0] === "personal") {
-        return `[${_localizeText(cat[0])}]`
-      }
-    }
-  }
-
-  const _preloadImage = (asset) => {
-    if (asset) {
-      const _image = new Image()
-      _image.src = asset.src
-    }
-  }
-  const _onMouseEnter = (li) => {
-    if (_isTouch()) return
-    setImage(li.imageFeatured)
-  }
-  const _onMouseLeave = () => {
-    if (_isTouch()) return
-    console.log("_onMouseLeave no mobile")
-    setImage(null)
-  }
-
-  const _isTouch = () => {
-    return (
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    )
-  }
 
   return (
     <section className="project-liste">
@@ -73,49 +20,9 @@ const ProjectListe = ({ input }) => {
 
       <ul>
         {listedProjectsSorted.map((li, i) => (
-          <li
-            key={i}
-            // onMouseEnter={() => _preloadImage(li.imageFeatured)}
-            // onMouseLeave={() => setPreloadImage(false)}
-          >
-            <div className="inner">
-              <div className="client">
-                {li.client} {_renderCat(li.category)}
-              </div>
-              <div className="row">
-                <div className="col-md-10 col-xs-12">
-                  <div className="title fw500">
-                    {`${_localizeField(li.title)}${_getYear(li.dateDelivered)}`}
-                  </div>
-                </div>
-                <div className="col-md-1 col-xs-9 tar">
-                  {li.projectUrl && (
-                    <a href={li.projectUrl} target="_blank" rel="noreferrer">
-                      {_localizeText("link")}
-                    </a>
-                  )}
-                </div>
-                {li.imageFeatured && li.imageFeatured.asset && (
-                  <div className="col-md-1 col-xs-3 tar">
-                    <button
-                      onMouseEnter={() => _onMouseEnter(li)}
-                      onMouseLeave={() => _onMouseLeave()}
-                      onClick={() => {
-                        // console.log("click", image)
-                        !image ? setImage(li.imageFeatured) : setImage(null)
-                      }}
-                    >
-                      {_localizeText("image")}
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </li>
+          <ListeItem key={i} li={li} />
         ))}
       </ul>
-
-      <ProjectOverlay image={image} />
     </section>
   )
 }

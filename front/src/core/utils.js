@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { LocaleContext } from "../components/ui/LocaleWrapper"
 // const locales = require("../../config/i18n")
 import locales from "../../config/i18n"
+import createImageUrlBuilder from "@sanity/image-url"
 
 export function fileNameByUrl(url) {
   const decoded = decodeURIComponent(url)
@@ -14,11 +15,15 @@ export const _getLocale = () => {
 }
 
 export function _localizeField(field) {
-  // console.log(field)
   if (!field) return ""
   const locale = _getLocale()
-  // console.log(locale)
   return field[locale]
+}
+
+export function _localizeSlug(slug) {
+  if (!slug) return ""
+  const locale = _getLocale()
+  return locale === "fr" ? slug[locale].current : "en/" + slug[locale].current
 }
 
 export const _localizeText = (text) => {
@@ -34,3 +39,11 @@ export const _getHomeUrl = () => {
 export const _unique = (value, index, self) => {
   return self.indexOf(value) === index
 }
+
+const imageBuilder = createImageUrlBuilder({
+  projectId: "6hr2f37r",
+  dataset: "production",
+})
+
+export const urlForImage = (source) =>
+  imageBuilder.image(source).auto("format").fit("max")

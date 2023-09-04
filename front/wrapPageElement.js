@@ -20,7 +20,6 @@ const _wrapRootElement = ({ element }) => {
 }
 
 const _wrapPageElement = ({ element, props }) => {
-  // console.log(Layout)
   return (
     <LocaleWrapper {...props}>
       <Layout {...props}>{element}</Layout>
@@ -29,7 +28,6 @@ const _wrapPageElement = ({ element, props }) => {
 }
 
 const _onClientEntry = () => {
-  //console.log("We've started!")
   // callAnalyticsAPI()
   const isTouch = "ontouchstart" in window ? true : false
 
@@ -41,7 +39,6 @@ const _onClientEntry = () => {
 }
 
 const _onRouteUpdate = ({ location }) => {
-  //console.log('new pathname', location.pathname)
   PubSub.publish("ROUTE_UPDATE")
 }
 

@@ -1,4 +1,5 @@
 header {
+  @include fadeIn(1);
   position: fixed;
   // position: fixed;
   width: 100%;
@@ -19,6 +20,7 @@ header {
   }
   a,
   button {
+    line-height: em(27px, 22px);
     color: $noir-100;
     &:hover {
       color: $noir-50;

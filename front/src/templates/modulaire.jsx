@@ -5,42 +5,62 @@ import Modules from "../components/modules"
 import { _localizeField } from "../core/utils"
 
 export const query = graphql`
-  query PageBySlug($slug: String!) {
-    sanityPageModulaire(slug: { current: { eq: $slug } }) {
-      home
-      title
-      seo {
-        metaTitle {
-          fr
-          en
-        }
-        metaDescription {
-          fr
-          en
-        }
-        posterImage {
-          asset {
-            url
+  {
+    allSanityPageModulaire {
+      nodes {
+        home
+        title
+        slug {
+          fr {
+            current
+          }
+          en {
+            current
           }
         }
+        seo {
+          metaTitle {
+            fr
+            en
+          }
+          metaDescription {
+            fr
+            en
+          }
+          metaImage {
+            fr {
+              asset {
+                url
+              }
+            }
+            en {
+              asset {
+                url
+              }
+            }
+          }
+        }
+        _rawModules(resolveReferences: { maxDepth: 80 })
       }
-      _rawModules(resolveReferences: { maxDepth: 20 })
     }
   }
 `
 
-const PageModulaire = ({ data }) => {
-  // console.log(data.sanityPageModulaire)
-  const { home, seo, _rawModules } = data.sanityPageModulaire
+const PageModulaire = ({ data, pageContext }) => {
+  const { nodes } = data.allSanityPageModulaire
 
-  // useEffect(() => {}, [])
+  const page = nodes.find(
+    (el) => el.slug[pageContext.locale].current === pageContext.slug
+  )
+
+  const { home, seo, _rawModules } = page
 
   return (
     <div className="page">
       <Seo
         pageTitle={_localizeField(seo.metaTitle)}
         pageDescription={_localizeField(seo.metaDescription)}
-        pageImage={seo.posterImage?.asset?.url}
+        pageImage={_localizeField(seo.metaImage).asset?.url}
         template={`template-modulaire`}
         page={home}
       />

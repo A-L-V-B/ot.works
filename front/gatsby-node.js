@@ -8,7 +8,6 @@ const i18n = require("./config/i18n")
 const templateModulaire = path.resolve("src/templates/modulaire.jsx")
 
 const getLocalizedPath = (node, path) => {
-  // console.log(path, node.locale)
   return i18n[node.locale].default ? path : `/${i18n[node.locale].path}${path}`
 }
 
@@ -82,7 +81,12 @@ async function createAllPageModulaire(graphql, actions) {
         nodes {
           home
           slug {
-            current
+            fr {
+              current
+            }
+            en {
+              current
+            }
           }
         }
       }
@@ -93,30 +97,26 @@ async function createAllPageModulaire(graphql, actions) {
   const pages = (result.data.allSanityPageModulaire || {}).nodes || []
   pages.forEach((edge, index) => {
     Object.values(i18n).forEach((locale) => {
-      // console.log(locale)
       const { home, slug = {} } = edge
 
       const localizedPath = locale.default
         ? home
           ? `/`
-          : `/${slug.current}`
+          : `/${slug[locale.path].current}`
         : home
         ? `/${locale.path}`
-        : `/${locale.path}/${slug.current}`
-
-      console.log(locale.path, "localizedPath", localizedPath)
+        : `/${locale.path}/${slug[locale.path].current}`
 
       createPage({
         path: localizedPath,
         component: templateModulaire,
         context: {
-          slug: slug.current,
+          slug: slug[locale.path].current,
           template: "modulaire",
           locale: locale.path,
         },
       })
     })
-    // console.log(JSON.stringify(edge))
   })
 }
 
@@ -130,7 +130,6 @@ exports.onCreatePage = ({ page, actions }) => {
   // You can access the variable "house" in your page queries now
 
   const locale = page.path.indexOf("en") > -1 ? "en" : "fr"
-  // console.log(page.path, locale)
   createPage({
     ...page,
     context: {

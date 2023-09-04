@@ -8,7 +8,6 @@ const locales = require("../../../config/i18n")
 const LocaleSwitcher = () => {
   const _LocaleContext = useContext(LocaleContext)
   const { localeCtx, dispatch } = _LocaleContext
-  // console.log(_LocaleContext)
 
   // const _WrapperContext = useContext(WrapperContext)
   // const { locale } = _WrapperContext || "fr-FR"
@@ -17,7 +16,6 @@ const LocaleSwitcher = () => {
     // const { nav } = this.state
     // const { locale } = this.props
     // locales.splice(2, 1)
-    // console.log(locales)
     const languages = Object.values(locales).map((li, key) => {
       const _className = li.locale === localeCtx ? "active" : ""
       const path = li.default ? `/` : `/${li.path}`

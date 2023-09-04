@@ -1,47 +1,28 @@
-import { baseLanguage } from "../i18n";
-import { FiXSquare } from "react-icons/fi";
+import {FiXSquare} from 'react-icons/fi'
 
 export default {
-  name: "project",
-  type: "document",
-  title: "Projects",
+  name: 'project',
+  type: 'document',
+  title: 'Projects',
   icon: FiXSquare,
-  preview: {
-    select: {
-      // title: `title.${baseLanguage.name}`,
-      title: "name",
-      category: "category.0",
-      media: "imageFeatured"
-    },
-    prepare(selection) {
-      const { title, category, media } = selection;
-
-      return {
-        title: title,
-        subtitle: category,
-        media: media ? media : ""
-      };
-    }
-  },
   fields: [
     {
-      name: "name",
-      type: "string",
-      title: "Name",
-      description: "Le nom du projet dans le back uniquement"
+      name: 'name',
+      type: 'string',
+      title: 'Name',
+      description: 'Le nom du projet dans le back uniquement',
     },
     {
-      name: "title",
-      type: "localeString",
-      title: "Title",
-      description: "Description de la mission et du client, 80 caractères max."
-      // validation: Rule => Rule.max(80).warning("Keep your titles short")
+      name: 'title',
+      type: 'projectTitle',
+      title: 'Title',
+      description: 'Description de la mission et du client, 80 caractères max.',
     },
     {
-      name: "slug",
-      type: "slug",
-      title: "Slug",
-      description: "Au plus court, sans connecteurs logiques"
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      description: 'Au plus court, sans connecteurs logiques',
     },
     // {
     //   name: "localeSlug",
@@ -50,33 +31,33 @@ export default {
     //   description: "Au plus court, sans connecteurs logiques"
     // },
     {
-      name: "client",
-      type: "string",
-      title: "Client",
-      description: "Si le projet est perso, le nom du projet"
+      name: 'client',
+      type: 'string',
+      title: 'Client',
+      description: 'Si le projet est perso, le nom du projet',
     },
     {
-      title: "Category",
-      name: "category",
-      type: "array",
-      of: [{ type: "string" }],
+      title: 'Category',
+      name: 'category',
+      type: 'array',
+      of: [{type: 'string'}],
       options: {
         list: [
-          { value: "work", title: "Work" },
-          { value: "personal", title: "Perso" },
-          { value: "pro-bono", title: "Pro bono" }
-        ]
-      }
+          {value: 'work', title: 'Work'},
+          {value: 'personal', title: 'Perso'},
+          {value: 'pro-bono', title: 'Pro bono'},
+        ],
+      },
     },
     {
-      name: "dateDelivered",
-      type: "date",
-      title: "Date delivered"
+      name: 'dateDelivered',
+      type: 'date',
+      title: 'Date delivered',
     },
     {
-      name: "projectUrl",
-      type: "url",
-      title: "Live project URL"
+      name: 'projectUrl',
+      type: 'url',
+      title: 'Live project URL',
     },
     // {
     //   name: "projectImage",
@@ -84,9 +65,37 @@ export default {
     //   title: "Project image"
     // },
     {
-      name: "imageFeatured",
-      type: "imageFeatured",
-      title: "Project Image"
-    }
-  ]
-};
+      name: 'imageFeatured',
+      type: 'imageFeatured',
+      title: 'Project Image',
+    },
+    {
+      name: 'collaborations',
+      type: 'array',
+      title: 'En collaboration avec',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'collaboration'}],
+        },
+      ],
+    },
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      date: 'dateDelivered',
+      media: 'imageFeatured.asset',
+    },
+    prepare(selection) {
+      const {title, date, media} = selection
+      const year = date && date.split('-')[0]
+
+      return {
+        title: title,
+        subtitle: year,
+        media: media,
+      }
+    },
+  },
+}
