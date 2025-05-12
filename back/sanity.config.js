@@ -4,7 +4,6 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas/schema'
 import deskStructure from './src/deskStructure'
 import {media} from 'sanity-plugin-media'
-import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
   name: 'default',
@@ -19,7 +18,6 @@ export default defineConfig({
     }),
     visionTool(),
     media(),
-    vercelDeployTool(),
   ],
 
   schema: {
